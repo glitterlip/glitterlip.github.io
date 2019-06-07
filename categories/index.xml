@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Orianna</title>
+    <link>https://glitterlip.github.io/categories/</link>
+    <description>Recent content in Categories on Orianna</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    
+	<atom:link href="https://glitterlip.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Test</title>
+      <link>https://glitterlip.github.io/categories/test/</link>
+      <pubDate>Wed, 19 Aug 2015 20:29:37 -0700</pubDate>
+      
+      <guid>https://glitterlip.github.io/categories/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
