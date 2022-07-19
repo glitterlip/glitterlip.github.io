@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Paramita</title>
@@ -6,18 +6,14 @@
     <description>Recent content in Posts on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Fri, 07 Jun 2019 09:09:21 +0800</lastBuildDate>
-    
-	<atom:link href="https://glitterlip.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 07 Jun 2019 09:09:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>小米MIUI无需root开启 google feed,google assistant</title>
       <link>https://glitterlip.github.io/post/%E5%B0%8F%E7%B1%B3miui%E6%97%A0%E9%9C%80root%E5%BC%80%E5%90%AF-google-feedgoogle-assistant/</link>
       <pubDate>Fri, 07 Jun 2019 09:09:21 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/post/%E5%B0%8F%E7%B1%B3miui%E6%97%A0%E9%9C%80root%E5%BC%80%E5%90%AF-google-feedgoogle-assistant/</guid>
-      <description>之前用的酷派S1 刷了resurrection remix,搜索真的是太方便了,feed内容质量也高. 无奈骁龙 820&amp;frasl;821 真的是天生火炉,除了日常应用全部放冰箱里,依旧续航尿崩,打王者平均 15 fps,就比幻灯片切换快一点,3 月份米 9依然不好抢,提升也不大,于是 49 年入国军买了米 8&amp;hellip; 拿到手第一件事当然是 root 了了了了了一星期没成功,官方解锁工具死活不好使,可能和 amd 的 ryzen 有问题? 切了英文不用自带应用的话也没啥广告,就是偶尔有个</description>
+      <description>之前用的酷派S1 刷了resurrection remix,搜索真的是太方便了,feed内容质量也高. 无奈骁龙 820/821 真的是天生火炉,除了日常应用全部放冰箱里,依旧续航尿崩,打王者平均 15 fps,就比幻灯片切换快一点,3 月份米 9依然不好抢,提升也不大,于是 49 年入国军买了米 8&amp;hellip; 拿到手第一件事当然是 root 了了了了了一星期没成功,官方解锁工具死活不好使,可能和 amd 的 ryzen 有问题? 切了英文不用自带应用的话也没啥广告,就是偶尔有个</description>
     </item>
     
   </channel>

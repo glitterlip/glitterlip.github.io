@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Paramita</title>
@@ -6,26 +6,40 @@
     <description>Recent content in Tags on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Fri, 07 Jun 2019 09:09:21 +0800</lastBuildDate>
-    
-	<atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 19 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Google Assistant</title>
-      <link>https://glitterlip.github.io/tags/google-assistant/</link>
-      <pubDate>Fri, 07 Jun 2019 09:09:21 +0800</pubDate>
+      <title>golang</title>
+      <link>https://glitterlip.github.io/tags/golang/</link>
+      <pubDate>Tue, 19 Jul 2022 09:53:11 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/tags/google-assistant/</guid>
+      <guid>https://glitterlip.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Google Feed</title>
-      <link>https://glitterlip.github.io/tags/google-feed/</link>
-      <pubDate>Fri, 07 Jun 2019 09:09:21 +0800</pubDate>
+      <title>php</title>
+      <link>https://glitterlip.github.io/tags/php/</link>
+      <pubDate>Mon, 18 Jul 2022 19:53:11 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/tags/google-feed/</guid>
+      <guid>https://glitterlip.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>免签</title>
+      <link>https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE/</link>
+      <pubDate>Mon, 18 Jul 2022 19:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>支付宝</title>
+      <link>https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</link>
+      <pubDate>Mon, 18 Jul 2022 19:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D/</guid>
       <description></description>
     </item>
     
