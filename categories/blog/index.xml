@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Paramita</title>
+    <link>https://glitterlip.github.io/categories/blog/</link>
+    <description>Recent content in blog on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Tue, 19 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang template函数传递多个参数</title>
+      <link>https://glitterlip.github.io/blog/2022-07/golang-template%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0/</link>
+      <pubDate>Tue, 19 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-07/golang-template%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0/</guid>
+      <description>golang开发web页面时，会把页面的公共部分抽离出来，定义成组件 比如定义一个header，然后其他页面就无需再重复写了，直接引入即可 //header.html {{define &amp;#34;header&amp;#34;}} this is header. Current User:{{.user.Name}} {{end}} //detail.html {{template &amp;#34;header&amp;#34; .user}} 但是此时如果你想再展示天气，你可以定义一个UserWithWeather，这就有点不伦不类了 我们可以定义一个map模板函数 template.New(&amp;#34;view&amp;#34;).Funcs(template.FuncMap{ &amp;#34;mapof&amp;#34;: func(kvpairs ...interface{}) (map[string]interface{}, error) { if len(kvpairs)%2 != 0 { return nil, errors.New(&amp;#34;wrong number of arguements&amp;#34;) } dict := make(map[string]interface{}, len(kvpairs)/2) for i := 0; i &amp;lt; len(kvpairs); i += 2 { key, ok := kvpairs[i].(string) if !ok { return nil, errors.New(&amp;#34;map keys must be strings&amp;#34;) } dict[key] = kvpairs[i+1] } return dict, nil }, })</description>
+    </item>
+    
+    <item>
+      <title>支付宝免签付原理</title>
+      <link>https://glitterlip.github.io/blog/2022-07/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%8D%E7%AD%BE%E4%BB%98%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 18 Jul 2022 19:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-07/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%8D%E7%AD%BE%E4%BB%98%E5%8E%9F%E7%90%86/</guid>
+      <description>支付宝网站接入支付需要营业执照，ICP备案。 可以在百度或者高德随便找个门头照申请开通当面付，0.38的费率，单笔交易限额1000，日限额5w。不过如果频繁有外地ip支付就会风控，包括要求提供营业执照，限制收款，以及清退，最严重的就是当面抓了^ - ^。 这个时候可以用收款码（码支付）解决。 主要原理就是系统生成固定金额的支付宝个人收款码，展示给用户，用户付款，手机收到转账到帐通知后通知网站支付成功。 示例代</description>
+    </item>
+    
+    <item>
+      <title>golang cron包计划任务不执行</title>
+      <link>https://glitterlip.github.io/blog/2022-07/golang-cron%E5%8C%85%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E4%B8%8D%E6%89%A7%E8%A1%8C/</link>
+      <pubDate>Mon, 18 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-07/golang-cron%E5%8C%85%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E4%B8%8D%E6%89%A7%E8%A1%8C/</guid>
+      <description>cron包旧版本中的表达式和常见的linux crontab表达式并不一致， 多了一个秒级别的定时，新版本中v3已经移除了 如果你在使用github.com/robfig/cron/v3这个包的时候遇到计划任务未执行可能是这个原因 使用秒级定时器 c:=cron.New(cron.WithSeconds()) c.AddFunc(&amp;#34;0 30 * * * *&amp;#34;, func() { fmt.Println(&amp;#34;Every hour on the half hour&amp;#34;) }) 不需要秒级定时器 c:=cron.New() c.AddFunc(&amp;#34;30 * * * *&amp;#34;, func() { fmt.Println(&amp;#34;Every hour on the half hour&amp;#34;) })</description>
+    </item>
+    
+  </channel>
+</rss>

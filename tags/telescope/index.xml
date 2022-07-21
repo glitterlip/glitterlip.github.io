@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>telescope on Paramita</title>
+    <link>https://glitterlip.github.io/tags/telescope/</link>
+    <description>Recent content in telescope on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Wed, 20 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/telescope/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>laravel telescope get response code</title>
+      <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>
+      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/telescope-response-code/</guid>
+      <description>Telescope::tag(function (IncomingEntry $entry) { $tags = []; if ( $entry-&amp;gt;isRequest() ) { if ( $entry-&amp;gt;content[&amp;#39;response_status&amp;#39;] == 302 ) { $tags[] = &amp;#39;redirect&amp;#39;; } } return $tags; }); </description>
+    </item>
+    
+  </channel>
+</rss>
