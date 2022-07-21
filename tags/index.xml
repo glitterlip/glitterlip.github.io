@@ -6,22 +6,40 @@
     <description>Recent content in Tags on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 19 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>golang</title>
-      <link>https://glitterlip.github.io/tags/golang/</link>
-      <pubDate>Tue, 19 Jul 2022 09:53:11 +0800</pubDate>
+      <title>laravel</title>
+      <link>https://glitterlip.github.io/tags/laravel/</link>
+      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/tags/golang/</guid>
+      <guid>https://glitterlip.github.io/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>php</title>
       <link>https://glitterlip.github.io/tags/php/</link>
-      <pubDate>Mon, 18 Jul 2022 19:53:11 +0800</pubDate>
+      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>telescope</title>
+      <link>https://glitterlip.github.io/tags/telescope/</link>
+      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/telescope/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://glitterlip.github.io/tags/golang/</link>
+      <pubDate>Tue, 19 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
