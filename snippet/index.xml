@@ -9,3 +9,22 @@
     <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
+ng mysql设置时区</title>
+      <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
+      <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/mysql-loc/</guid>
+      <description>github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;amp;loc=Asia%2FShanghai</description>
+    </item>
+    
+    <item>
+      <title>laravel telescope get response code</title>
+      <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>
+      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/telescope-response-code/</guid>
+      <description>Telescope::tag(function (IncomingEntry $entry) { $tags = []; if ( $entry-&amp;gt;isRequest() ) { if ( $entry-&amp;gt;content[&amp;#39;response_status&amp;#39;] == 302 ) { $tags[] = &amp;#39;redirect&amp;#39;; } } return $tags; }); </description>
+    </item>
+    
+  </channel>
+</rss>
