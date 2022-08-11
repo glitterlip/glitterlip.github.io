@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mysql on Paramita</title>
+    <link>https://glitterlip.github.io/tags/mysql/</link>
+    <description>Recent content in mysql on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 06 Aug 2022 11:14:43 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang mysql设置时区</title>
+      <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
+      <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/mysql-loc/</guid>
+      <description>github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;amp;loc=Asia%2FShanghai</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -9,7 +9,16 @@
     <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
-ng mysql设置时区</title>
+design pro查看官网预览源码</title>
+      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
+      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+    </item>
+    
+    <item>
+      <title>golang mysql设置时区</title>
       <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
       <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
       

@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;loc=Asia%2FShanghai">
 
-  <meta property="og:title" content="snippet" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/categories/snippet/" />
+  <meta property="og:title" content="golang mysql设置时区" />
+<meta property="og:description" content="github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;loc=Asia%2FShanghai" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/snippet/mysql-loc/" /><meta property="article:section" content="snippet" />
+<meta property="article:published_time" content="2022-08-06T11:14:43+08:00" />
+<meta property="article:modified_time" content="2022-08-06T11:14:43+08:00" />
 
 
 
   <title>
   
-       snippet | Paramita 
+       golang mysql设置时区 | Paramita 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/categories/snippet/">
+  <link rel="canonical" href="https://glitterlip.github.io/snippet/mysql-loc/">
 
   
   
@@ -259,170 +261,122 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (3)</span>
-              </a>
-            </li>
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/snippet">
-                <span>Snippet (3)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/antd" role="button"><span>antd (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/snippet"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> snippet </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">golang mysql设置时区</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Aug 6, 2022</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      snippet
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                3 posts
-              </div>
-            
+
+          <div class="post-content markdown">
+            <p><code>github.com/go-sql-driver</code>包设置时区<br>
+DSN方式追加<code>loc</code>参数，值必须转义,<code>/</code>用<code>%2F</code>替换<br>
+DSN: <code>parseTime=true&amp;loc=Asia%2FShanghai</code></p>
+
           </div>
-      
+
           
-      </ul>
-      <ul>
-        
+          <div class="row">
+            <div class="col-md-8">
             
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.8</span>
-                </li>
+              <div class="mb-5">
                 
-                    <li class="post-item">
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
-    <span class="meta"><time datetime='2022-08-10T11:14:43&#43;08:00'>Aug 10, 2022</time></span>
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
     
-    <a href="https://glitterlip.github.io/snippet/ant-pro-preview/"><span>ant design pro查看官网预览源码</span></a>
-</li>
-
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-08-06T11:14:43&#43;08:00'>Aug 6, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/mysql-loc/"><span>golang mysql设置时区</span></a>
-</li>
-
-                
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.7</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-07-20T09:53:11&#43;08:00'>Jul 20, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/telescope-response-code/"><span>laravel telescope get response code</span></a>
-</li>
-
-                
-            
-        
-      </ul>
-    </div>
-    
+      <li><a href="https://glitterlip.github.io/tags/mysql" role="button">mysql </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/snippet/telescope-response-code/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>laravel telescope get response code</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://glitterlip.github.io/snippet/ant-pro-preview/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>ant design pro查看官网预览源码</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     
