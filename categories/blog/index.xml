@@ -6,7 +6,16 @@
     <description>Recent content in blog on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 16 Aug 2022 18:54:24 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 01:49:05 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ant-design-landing生成页面报错</title>
+      <link>https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Wed, 17 Aug 2022 01:49:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/</guid>
+      <description>后台写完了要写个落地页，自己css太菜了，找个现成的吧. 发现这个项目挺好https://github.com/ant-design/ant-design-landing，相当于低代码吧。 编辑器 里面随便点点很快就能生成一个react页面，还可以直接整合到umijs项目里面. 和其他xx开源的项目一样，kpi产物不少，代码放出来就不维护了，在线demo体验很好，一放到本地跑起来就疯狂报错，这个项目也是年</description>
+    </item>
+    
     <item>
       <title>ant design pro datepicker</title>
       <link>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</link>
