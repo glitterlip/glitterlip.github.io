@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTime&#39;, hideInSearch: true }, { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTimeRange&#39;, hideInTable: true, search: { transform: (value: any) =&gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时">
 
-  <meta property="og:title" content="免签" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE/" />
+  <meta property="og:title" content="ant design pro datepicker" />
+<meta property="og:description" content="使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTime&#39;, hideInSearch: true }, { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTimeRange&#39;, hideInTable: true, search: { transform: (value: any) =&gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-08-16T18:54:24+08:00" />
+<meta property="article:modified_time" content="2022-08-16T18:54:24+08:00" />
 
 
 
   <title>
   
-       免签 | Paramita 
+       ant design pro datepicker | Paramita 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/">
 
   
   
@@ -259,151 +261,134 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (4)</span>
-              </a>
-            </li>
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/snippet">
-                <span>Snippet (3)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/antd" role="button"><span>antd (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">ant design pro datepicker</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Aug 16, 2022</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      免签
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.7</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-07-18T19:53:11&#43;08:00'>Jul 18, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-07/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%8D%E7%AD%BE%E4%BB%98%E5%8E%9F%E7%90%86/"><span>支付宝免签付原理</span></a>
-</li>
 
-                
+          <div class="post-content markdown">
+            <p>使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选</p>
+<p>比如订单列表，支付时间字段的column列定义的<code>valueType</code>是<code>dateTime</code>,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选</p>
+<p>这个需求可以定义两个字段</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;支付时间&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">dataIndex</span><span class="o">:</span> <span class="s1">&#39;paid_at&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ellipsis</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;dateTime&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hideInSearch</span><span class="o">:</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;支付时间&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">dataIndex</span><span class="o">:</span> <span class="s1">&#39;paid_at&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ellipsis</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">valueType</span><span class="o">:</span> <span class="s1">&#39;dateTimeRange&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">hideInTable</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">search</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">transform</span><span class="o">:</span> <span class="p">(</span><span class="nx">value</span><span class="o">:</span> <span class="nx">any</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({</span><span class="nx">startTime</span><span class="o">:</span> <span class="nx">value</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">endTime</span><span class="o">:</span> <span class="nx">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]}),</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">},</span>
+</span></span></code></pre></div><p>筛选查询的时候定义为<code>dateTimeRange</code>，然后<code>hideInTable:true</code>在列表中隐藏这个字段</p>
+<p>然后定义一个<code>dateTime</code>，在表头筛选栏中隐藏即可</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        
-      </ul>
-    </div>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-07/golang-template%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>golang template函数传递多个参数</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     

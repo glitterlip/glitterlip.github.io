@@ -6,22 +6,31 @@
     <description>Recent content in Tags on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 10 Aug 2022 11:14:43 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Aug 2022 18:54:24 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>antd</title>
-      <link>https://glitterlip.github.io/tags/antd/</link>
-      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      <title>ant design</title>
+      <link>https://glitterlip.github.io/tags/ant-design/</link>
+      <pubDate>Tue, 16 Aug 2022 18:54:24 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/tags/antd/</guid>
+      <guid>https://glitterlip.github.io/tags/ant-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>react</title>
       <link>https://glitterlip.github.io/tags/react/</link>
-      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      <pubDate>Tue, 16 Aug 2022 18:54:24 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/tags/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>antd</title>
+      <link>https://glitterlip.github.io/tags/antd/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/antd/</guid>
       <description></description>
     </item>
     

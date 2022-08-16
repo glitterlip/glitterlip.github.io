@@ -6,7 +6,16 @@
     <description>Recent content in blog on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 19 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Aug 2022 18:54:24 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ant design pro datepicker</title>
+      <link>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</link>
+      <pubDate>Tue, 16 Aug 2022 18:54:24 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</guid>
+      <description>使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTime&amp;#39;, hideInSearch: true }, { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTimeRange&amp;#39;, hideInTable: true, search: { transform: (value: any) =&amp;gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时</description>
+    </item>
+    
     <item>
       <title>golang template函数传递多个参数</title>
       <link>https://glitterlip.github.io/blog/2022-07/golang-template%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0/</link>
