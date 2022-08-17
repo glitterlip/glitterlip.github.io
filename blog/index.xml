@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>umi4设置title keyword description</title>
+      <link>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</link>
+      <pubDate>Wed, 17 Aug 2022 01:49:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</guid>
+      <description>umijs升级到v4之后原来v3通过修改src/pages/document.ejs文件来设置title,keyword,description,favicon的方法 失效 了 新版本v4可以通过配置来修改 在config/config.ts中defineConfig方法添加字段 title: &amp;#34;title&amp;#34;, metas: [ { name: &amp;#39;keywords&amp;#39;, content: &amp;#39;keywords&amp;#39; }, { name: &amp;#39;description&amp;#39;, content: &amp;#39;description&amp;#39; }, ],</description>
+    </item>
+    
+    <item>
       <title>ant design pro datepicker</title>
       <link>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</link>
       <pubDate>Tue, 16 Aug 2022 18:54:24 +0800</pubDate>
