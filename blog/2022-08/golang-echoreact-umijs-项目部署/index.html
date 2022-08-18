@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Paramita">
+  <meta name="description" content="nginx 配置文件 server { #强制https listen 80; listen [::]:80; server_name project.com; return 301 https://project.com$request_uri; } map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } server { listen 443 ssl; ssl_certificate /etc/letsencrypt/live/project.com/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/project.com/privkey.pem; server_name project.com; #默认为umijs 构建产物 location / { root /data/project/project/public/dist; index index.html index.htm; try_files $uri $uri/ /index.html; } location /api { # golang后端api监听18081端口 proxy_pass http://127.0.0.1:18081/api; proxy_set_header Upgrade $http_upgrade; #websocket 链接 proxy_set_header Connection $connection_upgrade; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; } error_log /var/log/nginx/project_error.log; access_log /var/log/nginx/project_access.log; } k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用 golang echo 部署脚本 #! /bin/bash #打包压缩 GOOS=linux GOARCH=amd64 go build -o project &amp;&amp; zip project.zip project #scp上传">
+
+  <meta property="og:title" content="Golang Echo,React Umijs 项目部署" />
+<meta property="og:description" content="nginx 配置文件 server { #强制https listen 80; listen [::]:80; server_name project.com; return 301 https://project.com$request_uri; } map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } server { listen 443 ssl; ssl_certificate /etc/letsencrypt/live/project.com/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/project.com/privkey.pem; server_name project.com; #默认为umijs 构建产物 location / { root /data/project/project/public/dist; index index.html index.htm; try_files $uri $uri/ /index.html; } location /api { # golang后端api监听18081端口 proxy_pass http://127.0.0.1:18081/api; proxy_set_header Upgrade $http_upgrade; #websocket 链接 proxy_set_header Connection $connection_upgrade; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; } error_log /var/log/nginx/project_error.log; access_log /var/log/nginx/project_access.log; } k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用 golang echo 部署脚本 #! /bin/bash #打包压缩 GOOS=linux GOARCH=amd64 go build -o project &amp;&amp; zip project.zip project #scp上传" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-08-18T15:30:31+08:00" />
+<meta property="article:modified_time" content="2022-08-18T15:30:31+08:00" />
+
+
+
+  <title>
+  
+       Golang Echo,React Umijs 项目部署 | Paramita 
+  
+  </title>
+
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
+
+  
+  
+
+  
+  <link href="https://glitterlip.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://glitterlip.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://glitterlip.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://glitterlip.github.io/img/zheng.png"
+  
+  >
+
+
+  
+
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://glitterlip.github.io/">
+          
+        <img class="avatar" src="https://glitterlip.github.io/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Paramita</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://glitterlip.github.io/">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/blog/" >Blog  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/moment/" >Moment  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/snippet/" >Snippet  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/about/" >About  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://glitterlip.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://glitterlip.github.io/img/profile.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://glitterlip.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Paramita</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/glitterlip" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Golang Echo,React Umijs 项目部署</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Aug 18, 2022</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>2 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <h2 id="nginx-配置文件">nginx 配置文件</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-nginx" data-lang="nginx"><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">#强制https
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">listen</span> <span class="s">[::]:80</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">server_name</span> <span class="s">project.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kn">return</span> <span class="mi">301</span> <span class="s">https://project.com</span><span class="nv">$request_uri</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl"><span class="p">}</span>	
+</span></span><span class="line"><span class="cl"><span class="k">map</span> <span class="nv">$http_upgrade</span> <span class="nv">$connection_upgrade</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">default</span> <span class="s">upgrade</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">&#39;&#39;</span> <span class="s">close</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">server</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kn">listen</span> <span class="mi">443</span> <span class="s">ssl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">ssl_certificate</span> <span class="s">/etc/letsencrypt/live/project.com/fullchain.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">ssl_certificate_key</span> <span class="s">/etc/letsencrypt/live/project.com/privkey.pem</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="kn">server_name</span> <span class="s">project.com</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="c1">#默认为umijs 构建产物
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kn">root</span>   <span class="s">/data/project/project/public/dist</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    	<span class="kn">index</span>  <span class="s">index.html</span> <span class="s">index.htm</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    	<span class="kn">try_files</span> <span class="nv">$uri</span> <span class="nv">$uri/</span> <span class="s">/index.html</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">location</span> <span class="s">/api</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			
+</span></span><span class="line"><span class="cl">	    <span class="c1"># golang后端api监听18081端口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kn">proxy_pass</span> <span class="s">http://127.0.0.1:18081/api</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span> <span class="c1">#websocket 链接
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="nv">$connection_upgrade</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">		<span class="kn">proxy_set_header</span> <span class="s">X-Forwarded-For</span> <span class="nv">$proxy_add_x_forwarded_for</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kn">proxy_set_header</span> <span class="s">Host</span> <span class="nv">$http_host</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kn">proxy_set_header</span> <span class="s">X-Real-IP</span> <span class="nv">$remote_addr</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kn">error_log</span> <span class="s">/var/log/nginx/project_error.log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kn">access_log</span> <span class="s">/var/log/nginx/project_access.log</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用</p>
+<h2 id="golang-echo-部署脚本">golang echo 部署脚本</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#! /bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="c1">#打包压缩</span>
+</span></span><span class="line"><span class="cl"><span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build -o project <span class="o">&amp;&amp;</span> zip project.zip project 
+</span></span><span class="line"><span class="cl"><span class="c1">#scp上传</span>
+</span></span><span class="line"><span class="cl">scp -r ./project.zip root@hk1:/root/project/project
+</span></span><span class="line"><span class="cl"><span class="c1">#登录到hk1服务器</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># kill旧进程，这里也可以tmux直接停掉</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># attach old session</span>
+</span></span><span class="line"><span class="cl">ssh root@hk1 <span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">ps -ef | grep mqpay | grep -v grep | awk &#39;{print \$2}&#39; | xargs kill #tmux send-keys -t hk:0 C-c Enter
+</span></span></span><span class="line"><span class="cl"><span class="s2">tmux a
+</span></span></span><span class="line"><span class="cl"><span class="s2">tmux send-keys -t hk:0 &#39;unzip -o project.zip &amp;&amp; chmod +x project &amp;&amp; ./project&#39; Enter
+</span></span></span><span class="line"><span class="cl"><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s1">&#39;deployed&#39;</span>
+</span></span></code></pre></div><p><code>tmux send-keys -t $session:$window 'command1' keystroke</code></p>
+<p>向<code>tmux</code>发送指令，-t指定session/window 单引号接命令 回车键Enter <code>C-c</code> 这里是linux的停止命令</p>
+<blockquote>
+<p>tmux allows a command to be bound to most keys, with or without a prefix key.<br>
+When specifying keys, most represent themselves (for example ‘A’ to ‘Z’).<br>
+Ctrl keys may be prefixed with ‘C-’ or ‘^’, Shift keys with ‘S-’ and Alt (meta) with ‘M-’.<br>
+In addition, the following special key names are accepted: Up, Down, Left, Right, BSpace, BTab, DC (Delete), End, Enter, Escape, F1 to F12, Home, IC (Insert), NPage/PageDown/PgDn, PPage/PageUp/PgUp, Space, and Tab.<br>
+Note that to bind the ‘&quot;’ or ‘&rsquo;’ keys, quotation marks are necessary, for example:
+bind-key &lsquo;&quot;&rsquo; split-window
+bind-key &ldquo;&rsquo;&rdquo; new-window
+A command bound to the Any key will execute for all keys which do not have a more specific binding.</p>
+</blockquote>
+<p><code>unzip -o project.zip &amp;&amp; chmod +x project &amp;&amp; ./project</code> 解压缩并覆盖旧文件 然后赋予执行权限并启动项目</p>
+<p>golang后端使用了<code>logrus</code>记录日志，控制台只是输出请求日志方便查看</p>
+<h2 id="react-umijs-部署脚本">react umijs 部署脚本</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="cp">#! /bin/bash
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl">yarn build
+</span></span><span class="line"><span class="cl">ssh root@hk1 <span class="s2">&#34;cd /data/project/project &amp;&amp; rm -rf public/*&#34;</span>
+</span></span><span class="line"><span class="cl">scp -r ./dist root@hk1:/data/project/project/public
+</span></span></code></pre></div><p>比较简单，就是本地构建然后删除旧的，scp将新的上传到服务器</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/umi" role="button">umi </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/nginx" role="button">nginx </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>ant-design-landing生成页面报错</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/glitterlip " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://glitterlip.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://glitterlip.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://glitterlip.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
