@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>umijs on Paramita</title>
-    <link>https://glitterlip.github.io/tags/umijs/</link>
-    <description>Recent content in umijs on Paramita</description>
+    <title>tailwindcss on Paramita</title>
+    <link>https://glitterlip.github.io/tags/tailwindcss/</link>
+    <description>Recent content in tailwindcss on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 25 Aug 2022 20:56:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/umijs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 20:56:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/tailwindcss/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>umijs Tailwindcss样式冲突</title>
       <link>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</link>
@@ -14,15 +14,6 @@
       
       <guid>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</guid>
       <description>umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &amp;#39;./src/pages/**/*.tsx&amp;#39;, &amp;#39;./src/components/**.tsx&amp;#39;, &amp;#39;./src/layouts/**.tsx&amp;#39;, ], corePlugins: { preflight: false, } }</description>
-    </item>
-    
-    <item>
-      <title>umi4设置title keyword description</title>
-      <link>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</link>
-      <pubDate>Wed, 17 Aug 2022 01:49:05 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</guid>
-      <description>umijs升级到v4之后原来v3通过修改src/pages/document.ejs文件来设置title,keyword,description,favicon的方法 失效 了 新版本v4可以通过配置来修改 在config/config.ts中defineConfig方法添加字段 title: &amp;#34;title&amp;#34;, metas: [ { name: &amp;#39;keywords&amp;#39;, content: &amp;#39;keywords&amp;#39; }, { name: &amp;#39;description&amp;#39;, content: &amp;#39;description&amp;#39; }, ],</description>
     </item>
     
   </channel>

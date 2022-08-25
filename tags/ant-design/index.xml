@@ -6,7 +6,16 @@
     <description>Recent content in ant design on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 17 Aug 2022 01:49:05 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/ant-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 20:56:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/ant-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>umijs Tailwindcss样式冲突</title>
+      <link>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</guid>
+      <description>umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &amp;#39;./src/pages/**/*.tsx&amp;#39;, &amp;#39;./src/components/**.tsx&amp;#39;, &amp;#39;./src/layouts/**.tsx&amp;#39;, ], corePlugins: { preflight: false, } }</description>
+    </item>
+    
     <item>
       <title>ant-design-landing生成页面报错</title>
       <link>https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/</link>

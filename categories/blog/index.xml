@@ -6,7 +6,16 @@
     <description>Recent content in blog on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 18 Aug 2022 15:30:31 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Aug 2022 20:56:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>umijs Tailwindcss样式冲突</title>
+      <link>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</guid>
+      <description>umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &amp;#39;./src/pages/**/*.tsx&amp;#39;, &amp;#39;./src/components/**.tsx&amp;#39;, &amp;#39;./src/layouts/**.tsx&amp;#39;, ], corePlugins: { preflight: false, } }</description>
+    </item>
+    
     <item>
       <title>Golang Echo,React Umijs 项目部署</title>
       <link>https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
