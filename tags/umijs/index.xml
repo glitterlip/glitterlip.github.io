@@ -6,7 +6,16 @@
     <description>Recent content in umijs on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 25 Aug 2022 20:56:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/umijs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Sep 2022 10:03:58 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/umijs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>umijs配置多环境</title>
+      <link>https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Thu, 08 Sep 2022 10:03:58 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/</guid>
+      <description>umijs配置多环境 es的index 使用yarn create umi创建的项目，版本umi@4.0.13 首先修改package.json文件 { &amp;#34;scripts&amp;#34;: { &amp;#34;build&amp;#34;: &amp;#34;UMI_ENV=prod max build&amp;#34; } } 修改项目配置文件.umirc.ts import { defineConfig } from &amp;#39;@umijs/max&amp;#39;; const { UMI_ENV } = process.env; export default defineConfig({ define: { &amp;#39;process.env.UMI_ENV&amp;#39;: UMI_ENV, }, }); 在其他js文件中使用 export const BASEURL_HTTP = process.env.UMI_ENV == &amp;#39;prod&amp;#39; ? &amp;#39;/&amp;#39; : &amp;#39;http://127.0.0.1:18083&amp;#39;;</description>
+    </item>
+    
     <item>
       <title>umijs Tailwindcss样式冲突</title>
       <link>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</link>
