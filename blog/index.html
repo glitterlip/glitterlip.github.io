@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (9)</span>
+                <span>Blog (10)</span>
               </a>
             </li>
           
@@ -317,7 +317,9 @@
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (4)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (5)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (1)</span></a></li>
         
@@ -378,7 +380,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  9 posts
+                  10 posts
                 </div>
               
             </div>
@@ -411,13 +413,73 @@
         <a href="https://glitterlip.github.io/blog/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
       </li>
       <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
+      </li>
+      <li class="page-item">
         <a href="https://glitterlip.github.io/blog/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/4/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">gin打包html模板和静态资源文件</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 18, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      [GIN-debug] [WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called at initialization. ie. before any route is registered or the router is listening in a socket: router := gin.Default() router.SetHTMLTemplate(template) // &lt;&lt; good place Gin和Echo有点不一样，需要在注册路由之前注册模板 注册子目录的html文件 ├── go.mod ├── go.sum ├── app.go ├── resources │ ├── css │ │ └── input.css │ ├── js │ │ └── tailwind.config.js │ └── views │ ├── detail.html │ ├── home │ │ └── home.index.html │ └── search.html func walkDir(fileSystem embed.FS, path string) { _, err := T.ParseFS(fileSystem, path&#43;&#34;/*.html&#34;) if err != nil { panic(fmt.Sprintf(&#34;parse error:%s&#34;, err.Error())) } entries, _ := fs.ReadDir(fileSystem, path) for _, entry := range entries { if entry.IsDir() { walkDir(fileSystem, path&#43;&#34;/&#34;&#43;entry.Name()) } } } T:=template.New(&#34;view&#34;) T.ParseFS(ResourcesFS, &#34;resources/views/*.html&#34;) entries, _ := ResourcesFS.ReadDir(&#34;resources/views&#34;) for _, entry := range entries { if entry.IsDir() { walkDir(ResourcesFS, &#34;resources/views/&#34;&#43;entry.Name()) } }......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/gin" role="button">gin </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -526,78 +588,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Golang Echo,React Umijs 项目部署</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 18, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      nginx 配置文件 server { #强制https listen 80; listen [::]:80; server_name project.com; return 301 https://project.com$request_uri; } map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } server { listen 443 ssl; ssl_certificate /etc/letsencrypt/live/project.com/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/project.com/privkey.pem; server_name project.com; #默认为umijs 构建产物 location / { root /data/project/project/public/dist; index index.html index.htm; try_files $uri $uri/ /index.html; } location /api { # golang后端api监听18081端口 proxy_pass http://127.0.0.1:18081/api; proxy_set_header Upgrade $http_upgrade; #websocket 链接 proxy_set_header Connection $connection_upgrade; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; } error_log /var/log/nginx/project_error.log; access_log /var/log/nginx/project_access.log; } k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用 golang echo 部署脚本 #! /bin/bash #打包压缩 GOOS=linux GOARCH=amd64 go build -o project &amp;&amp; zip project.zip project #scp上传......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/umi" role="button">umi </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/nginx" role="button">nginx </a></li>
       
     
   </div>

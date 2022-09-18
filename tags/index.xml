@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 08 Sep 2022 10:03:58 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 01:26:18 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin</title>
+      <link>https://glitterlip.github.io/tags/gin/</link>
+      <pubDate>Sun, 18 Sep 2022 01:26:18 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/gin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://glitterlip.github.io/tags/golang/</link>
+      <pubDate>Sun, 18 Sep 2022 01:26:18 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>umijs</title>
       <link>https://glitterlip.github.io/tags/umijs/</link>
@@ -49,15 +67,6 @@
       <pubDate>Thu, 18 Aug 2022 15:30:31 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/tags/echo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://glitterlip.github.io/tags/golang/</link>
-      <pubDate>Thu, 18 Aug 2022 15:30:31 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/tags/golang/</guid>
       <description></description>
     </item>
     

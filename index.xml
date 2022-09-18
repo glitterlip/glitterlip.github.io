@@ -6,7 +6,16 @@
     <description>Recent content on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 08 Sep 2022 10:03:58 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 18 Sep 2022 01:26:18 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gin打包html模板和静态资源文件</title>
+      <link>https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sun, 18 Sep 2022 01:26:18 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/</guid>
+      <description>[GIN-debug] [WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called at initialization. ie. before any route is registered or the router is listening in a socket: router := gin.Default() router.SetHTMLTemplate(template) // &amp;lt;&amp;lt; good place Gin和Echo有点不一样，需要在注册路由之前注册模板 注册子目录的html文件 ├── go.mod ├── go.sum ├── app.go ├── resources │ ├── css │ │ └── input.css │ ├── js │ │ └── tailwind.config.js │ └── views │ ├── detail.html │ ├── home │ │ └── home.index.html │ └── search.html func walkDir(fileSystem embed.FS, path string) { _, err := T.ParseFS(fileSystem, path+&amp;#34;/*.html&amp;#34;) if err != nil { panic(fmt.Sprintf(&amp;#34;parse error:%s&amp;#34;, err.Error())) } entries, _ := fs.ReadDir(fileSystem, path) for _, entry := range entries { if entry.IsDir() { walkDir(fileSystem, path+&amp;#34;/&amp;#34;+entry.Name()) } } } T:=template.New(&amp;#34;view&amp;#34;) T.ParseFS(ResourcesFS, &amp;#34;resources/views/*.html&amp;#34;) entries, _ := ResourcesFS.ReadDir(&amp;#34;resources/views&amp;#34;) for _, entry := range entries { if entry.IsDir() { walkDir(ResourcesFS, &amp;#34;resources/views/&amp;#34;+entry.Name()) } }</description>
+    </item>
+    
     <item>
       <title>umijs配置多环境</title>
       <link>https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/</link>

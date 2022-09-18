@@ -7,24 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="umijs配置多环境 es的index 使用yarn create umi创建的项目，版本umi@4.0.13 首先修改package.json文件 { &#34;scripts&#34;: { &#34;build&#34;: &#34;UMI_ENV=prod max build&#34; } } 修改项目配置文件.umirc.ts import { defineConfig } from &#39;@umijs/max&#39;; const { UMI_ENV } = process.env; export default defineConfig({ define: { &#39;process.env.UMI_ENV&#39;: UMI_ENV, }, }); 在其他js文件中使用 export const BASEURL_HTTP = process.env.UMI_ENV == &#39;prod&#39; ? &#39;/&#39; : &#39;http://127.0.0.1:18083&#39;;">
+  <meta name="description" content="[GIN-debug] [WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called at initialization. ie. before any route is registered or the router is listening in a socket: router := gin.Default() router.SetHTMLTemplate(template) // &lt;&lt; good place Gin和Echo有点不一样，需要在注册路由之前注册模板 注册子目录的html文件 ├── go.mod ├── go.sum ├── app.go ├── resources │ ├── css │ │ └── input.css │ ├── js │ │ └── tailwind.config.js │ └── views │ ├── detail.html │ ├── home │ │ └── home.index.html │ └── search.html func walkDir(fileSystem embed.FS, path string) { _, err := T.ParseFS(fileSystem, path&#43;&#34;/*.html&#34;) if err != nil { panic(fmt.Sprintf(&#34;parse error:%s&#34;, err.Error())) } entries, _ := fs.ReadDir(fileSystem, path) for _, entry := range entries { if entry.IsDir() { walkDir(fileSystem, path&#43;&#34;/&#34;&#43;entry.Name()) } } } T:=template.New(&#34;view&#34;) T.ParseFS(ResourcesFS, &#34;resources/views/*.html&#34;) entries, _ := ResourcesFS.ReadDir(&#34;resources/views&#34;) for _, entry := range entries { if entry.IsDir() { walkDir(ResourcesFS, &#34;resources/views/&#34;&#43;entry.Name()) } }">
 
-  <meta property="og:title" content="umijs配置多环境" />
-<meta property="og:description" content="umijs配置多环境 es的index 使用yarn create umi创建的项目，版本umi@4.0.13 首先修改package.json文件 { &#34;scripts&#34;: { &#34;build&#34;: &#34;UMI_ENV=prod max build&#34; } } 修改项目配置文件.umirc.ts import { defineConfig } from &#39;@umijs/max&#39;; const { UMI_ENV } = process.env; export default defineConfig({ define: { &#39;process.env.UMI_ENV&#39;: UMI_ENV, }, }); 在其他js文件中使用 export const BASEURL_HTTP = process.env.UMI_ENV == &#39;prod&#39; ? &#39;/&#39; : &#39;http://127.0.0.1:18083&#39;;" />
+  <meta property="og:title" content="gin打包html模板和静态资源文件" />
+<meta property="og:description" content="[GIN-debug] [WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called at initialization. ie. before any route is registered or the router is listening in a socket: router := gin.Default() router.SetHTMLTemplate(template) // &lt;&lt; good place Gin和Echo有点不一样，需要在注册路由之前注册模板 注册子目录的html文件 ├── go.mod ├── go.sum ├── app.go ├── resources │ ├── css │ │ └── input.css │ ├── js │ │ └── tailwind.config.js │ └── views │ ├── detail.html │ ├── home │ │ └── home.index.html │ └── search.html func walkDir(fileSystem embed.FS, path string) { _, err := T.ParseFS(fileSystem, path&#43;&#34;/*.html&#34;) if err != nil { panic(fmt.Sprintf(&#34;parse error:%s&#34;, err.Error())) } entries, _ := fs.ReadDir(fileSystem, path) for _, entry := range entries { if entry.IsDir() { walkDir(fileSystem, path&#43;&#34;/&#34;&#43;entry.Name()) } } } T:=template.New(&#34;view&#34;) T.ParseFS(ResourcesFS, &#34;resources/views/*.html&#34;) entries, _ := ResourcesFS.ReadDir(&#34;resources/views&#34;) for _, entry := range entries { if entry.IsDir() { walkDir(ResourcesFS, &#34;resources/views/&#34;&#43;entry.Name()) } }" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-09-08T10:03:58+08:00" />
-<meta property="article:modified_time" content="2022-09-08T10:03:58+08:00" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-09-18T01:26:18+08:00" />
+<meta property="article:modified_time" content="2022-09-18T01:26:18+08:00" />
 
 
 
   <title>
   
-       umijs配置多环境 | Paramita 
+       gin打包html模板和静态资源文件 | Paramita 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/">
 
   
   
@@ -286,11 +286,11 @@
     
   </ul>
 
-  <div class="px-4 post-heading">umijs配置多环境</div>
+  <div class="px-4 post-heading">gin打包html模板和静态资源文件</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Sep 8, 2022</li>
+      <li>Sep 18, 2022</li>
     
 
     
@@ -304,27 +304,50 @@
 
 
           <div class="post-content markdown">
-            <p>umijs配置多环境</p>
-<p>es的index</p>
-<p>使用<code>yarn create umi</code>创建的项目，版本<code>umi@4.0.13</code></p>
-<p>首先修改<code>package.json</code>文件</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="nt">&#34;scripts&#34;</span><span class="p">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nt">&#34;build&#34;</span><span class="p">:</span> <span class="s2">&#34;UMI_ENV=prod max build&#34;</span>
-</span></span><span class="line"><span class="cl">  <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>修改项目配置文件<code>.umirc.ts</code></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">defineConfig</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;@umijs/max&#39;</span><span class="p">;</span>
+            <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">[</span><span class="nx">GIN</span><span class="o">-</span><span class="nx">debug</span><span class="p">]</span> <span class="p">[</span><span class="nx">WARNING</span><span class="p">]</span> <span class="nx">Since</span> <span class="nf">SetHTMLTemplate</span><span class="p">()</span> <span class="nx">is</span> <span class="nx">NOT</span> <span class="nx">thread</span><span class="o">-</span><span class="nx">safe</span><span class="p">.</span> <span class="nx">It</span> <span class="nx">should</span> <span class="nx">only</span> <span class="nx">be</span> <span class="nx">called</span>
+</span></span><span class="line"><span class="cl"><span class="nx">at</span> <span class="nx">initialization</span><span class="p">.</span> <span class="nx">ie</span><span class="p">.</span> <span class="nx">before</span> <span class="nx">any</span> <span class="nx">route</span> <span class="nx">is</span> <span class="nx">registered</span> <span class="nx">or</span> <span class="nx">the</span> <span class="nx">router</span> <span class="nx">is</span> <span class="nx">listening</span> <span class="nx">in</span> <span class="nx">a</span> <span class="nx">socket</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">{</span> <span class="nx">UMI_ENV</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="nx">defineConfig</span><span class="p">({</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">define</span><span class="o">:</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="s1">&#39;process.env.UMI_ENV&#39;</span><span class="o">:</span> <span class="nx">UMI_ENV</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">},</span>
-</span></span><span class="line"><span class="cl"><span class="p">});</span>
-</span></span></code></pre></div><p>在其他js文件中使用</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kr">export</span> <span class="kr">const</span> <span class="nx">BASEURL_HTTP</span> <span class="o">=</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">UMI_ENV</span> <span class="o">==</span> <span class="s1">&#39;prod&#39;</span> <span class="o">?</span> <span class="s1">&#39;/&#39;</span> <span class="o">:</span> <span class="s1">&#39;http://127.0.0.1:18083&#39;</span><span class="p">;</span>
-</span></span></code></pre></div>
+</span></span><span class="line"><span class="cl">        <span class="nx">router</span> <span class="o">:=</span> <span class="nx">gin</span><span class="p">.</span><span class="nf">Default</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">router</span><span class="p">.</span><span class="nf">SetHTMLTemplate</span><span class="p">(</span><span class="nx">template</span><span class="p">)</span> <span class="c1">// &lt;&lt; good place
+</span></span></span></code></pre></div><p><code>Gin</code>和<code>Echo</code>有点不一样，需要在注册路由之前注册模板</p>
+<h2 id="注册子目录的html文件">注册子目录的html文件</h2>
+<pre tabindex="0"><code>├── go.mod
+├── go.sum
+├── app.go
+├── resources
+│   ├── css
+│   │   └── input.css
+│   ├── js
+│   │   └── tailwind.config.js
+│   └── views
+│       ├── detail.html
+│       ├── home
+│       │   └── home.index.html
+│       └── search.html
+</code></pre><pre tabindex="0"><code>func walkDir(fileSystem embed.FS, path string) {
+	_, err := T.ParseFS(fileSystem, path+&#34;/*.html&#34;)
+	if err != nil {
+		panic(fmt.Sprintf(&#34;parse error:%s&#34;, err.Error()))
+	}
+	entries, _ := fs.ReadDir(fileSystem, path)
+	for _, entry := range entries {
+		if entry.IsDir() {
+			walkDir(fileSystem, path+&#34;/&#34;+entry.Name())
+		}
+	}
+}
+
+T:=template.New(&#34;view&#34;)
+T.ParseFS(ResourcesFS, &#34;resources/views/*.html&#34;)
+
+entries, _ := ResourcesFS.ReadDir(&#34;resources/views&#34;)
+for _, entry := range entries {
+    if entry.IsDir() {
+        walkDir(ResourcesFS, &#34;resources/views/&#34;+entry.Name())
+    }
+}
+	
+</code></pre>
           </div>
 
           
@@ -337,7 +360,10 @@
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
+      <li><a href="https://glitterlip.github.io/tags/gin" role="button">gin </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
       
     
   </div>
@@ -353,23 +379,16 @@
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/ class="post-meta">Previous
+                <a href=https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>umijs Tailwindcss样式冲突</span>
+                    <span>umijs配置多环境</span>
                   </div>
                 </a>
               
             </div>
             
             <div class="col-md-6 text-right" >
-              
-                <a href=https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/ class="post-meta">Next
-                  <div class="pt-2 pb-5 flex-reverse">
-                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>gin打包html模板和静态资源文件</span>
-                  </div>
-                </a>
               
             </div>
           </div>
