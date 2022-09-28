@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (11)</span>
+                <span>Blog (12)</span>
               </a>
             </li>
           
@@ -333,11 +333,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (2)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (6)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (7)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (1)</span></a></li>
         
@@ -382,7 +382,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  11 posts
+                  12 posts
                 </div>
               
             </div>
@@ -425,6 +425,60 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">umijs配置多环境</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 8, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      umijs配置多环境 es的index 使用yarn create umi创建的项目，版本umi@4.0.13 首先修改package.json文件 { &#34;scripts&#34;: { &#34;build&#34;: &#34;UMI_ENV=prod max build&#34; } } 修改项目配置文件.umirc.ts import { defineConfig } from &#39;@umijs/max&#39;; const { UMI_ENV } = process.env; export default defineConfig({ define: { &#39;process.env.UMI_ENV&#39;: UMI_ENV, }, }); 在其他js文件中使用 export const BASEURL_HTTP = process.env.UMI_ENV == &#39;prod&#39; ? &#39;/&#39; : &#39;http://127.0.0.1:18083&#39;;......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -478,7 +532,7 @@
       <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
       
     
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
       
     
   </div>
@@ -544,73 +598,13 @@
       <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
       
     
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
       
     
       <li><a href="https://glitterlip.github.io/tags/umi" role="button">umi </a></li>
       
     
       <li><a href="https://glitterlip.github.io/tags/nginx" role="button">nginx </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">umi4设置title keyword description</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 17, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      umijs升级到v4之后原来v3通过修改src/pages/document.ejs文件来设置title,keyword,description,favicon的方法 失效 了 新版本v4可以通过配置来修改 在config/config.ts中defineConfig方法添加字段 title: &#34;title&#34;, metas: [ { name: &#39;keywords&#39;, content: &#39;keywords&#39; }, { name: &#39;description&#39;, content: &#39;description&#39; }, ],......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
       
     
   </div>

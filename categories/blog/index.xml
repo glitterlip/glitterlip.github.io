@@ -6,7 +6,16 @@
     <description>Recent content in blog on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 28 Sep 2022 10:44:03 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 22:04:41 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailwind Missing</title>
+      <link>https://glitterlip.github.io/blog/2022-09/tailwind-missing/</link>
+      <pubDate>Wed, 28 Sep 2022 22:04:41 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/tailwind-missing/</guid>
+      <description>Tailwindcss 动态生成类名失效 用的reactjs和JedWatson/classnames这个包做一个随时间变化颜色的功能 const [colorCls, setColorCls] = useState&amp;lt;string&amp;gt;(&amp;#39;green-400&amp;#39;) &amp;lt;span className={classNames(&amp;#39;text-base font-extrabold&amp;#39;, `text-${colorCls}`)}&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;div className={classNames(&amp;#39;p-4&amp;#39;, `bg-${colorCls}`)}&amp;gt;&amp;lt;/span&amp;gt; 类名正常生成了，但是css没生成 ，因为tailwindcss不支持动态生成的，即使开了jit模式也不行，必须在构建的时候被扫描到才行。 只能写全类名或者定义一个临时变量保存所有可能类名了</description>
+    </item>
+    
     <item>
       <title>linux less命令</title>
       <link>https://glitterlip.github.io/blog/2022-09/linux-less%E5%91%BD%E4%BB%A4/</link>

@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 28 Sep 2022 10:44:03 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Sep 2022 22:04:41 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>reactjs</title>
+      <link>https://glitterlip.github.io/tags/reactjs/</link>
+      <pubDate>Wed, 28 Sep 2022 22:04:41 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/reactjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tailwindcss</title>
+      <link>https://glitterlip.github.io/tags/tailwindcss/</link>
+      <pubDate>Wed, 28 Sep 2022 22:04:41 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/tags/tailwindcss/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>less</title>
       <link>https://glitterlip.github.io/tags/less/</link>
@@ -58,24 +76,6 @@
       <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/tags/ant-design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>react</title>
-      <link>https://glitterlip.github.io/tags/react/</link>
-      <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/tags/react/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tailwindcss</title>
-      <link>https://glitterlip.github.io/tags/tailwindcss/</link>
-      <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/tags/tailwindcss/</guid>
       <description></description>
     </item>
     

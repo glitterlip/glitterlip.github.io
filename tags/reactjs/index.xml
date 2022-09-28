@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reactjs on Paramita</title>
+    <link>https://glitterlip.github.io/tags/reactjs/</link>
+    <description>Recent content in reactjs on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Wed, 28 Sep 2022 22:04:41 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tailwind Missing</title>
+      <link>https://glitterlip.github.io/blog/2022-09/tailwind-missing/</link>
+      <pubDate>Wed, 28 Sep 2022 22:04:41 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/tailwind-missing/</guid>
+      <description>Tailwindcss 动态生成类名失效 用的reactjs和JedWatson/classnames这个包做一个随时间变化颜色的功能 const [colorCls, setColorCls] = useState&amp;lt;string&amp;gt;(&amp;#39;green-400&amp;#39;) &amp;lt;span className={classNames(&amp;#39;text-base font-extrabold&amp;#39;, `text-${colorCls}`)}&amp;gt;&amp;lt;/span&amp;gt; &amp;lt;div className={classNames(&amp;#39;p-4&amp;#39;, `bg-${colorCls}`)}&amp;gt;&amp;lt;/span&amp;gt; 类名正常生成了，但是css没生成 ，因为tailwindcss不支持动态生成的，即使开了jit模式也不行，必须在构建的时候被扫描到才行。 只能写全类名或者定义一个临时变量保存所有可能类名了</description>
+    </item>
+    
+    <item>
+      <title>umijs Tailwindcss样式冲突</title>
+      <link>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</link>
+      <pubDate>Thu, 25 Aug 2022 20:56:00 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/</guid>
+      <description>umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &amp;#39;./src/pages/**/*.tsx&amp;#39;, &amp;#39;./src/components/**.tsx&amp;#39;, &amp;#39;./src/layouts/**.tsx&amp;#39;, ], corePlugins: { preflight: false, } }</description>
+    </item>
+    
+    <item>
+      <title>Golang Echo,React Umijs 项目部署</title>
+      <link>https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Thu, 18 Aug 2022 15:30:31 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</guid>
+      <description>nginx 配置文件 server { #强制https listen 80; listen [::]:80; server_name project.com; return 301 https://project.com$request_uri; } map $http_upgrade $connection_upgrade { default upgrade; &amp;#39;&amp;#39; close; } server { listen 443 ssl; ssl_certificate /etc/letsencrypt/live/project.com/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/project.com/privkey.pem; server_name project.com; #默认为umijs 构建产物 location / { root /data/project/project/public/dist; index index.html index.htm; try_files $uri $uri/ /index.html; } location /api { # golang后端api监听18081端口 proxy_pass http://127.0.0.1:18081/api; proxy_set_header Upgrade $http_upgrade; #websocket 链接 proxy_set_header Connection $connection_upgrade; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; } error_log /var/log/nginx/project_error.log; access_log /var/log/nginx/project_access.log; } k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用 golang echo 部署脚本 #! /bin/bash #打包压缩 GOOS=linux GOARCH=amd64 go build -o project &amp;amp;&amp;amp; zip project.zip project #scp上传</description>
+    </item>
+    
+    <item>
+      <title>ant-design-landing生成页面报错</title>
+      <link>https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/</link>
+      <pubDate>Wed, 17 Aug 2022 01:49:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/</guid>
+      <description>后台写完了要写个落地页，自己css太菜了，找个现成的吧. 发现这个项目挺好https://github.com/ant-design/ant-design-landing，相当于低代码吧。 编辑器 里面随便点点很快就能生成一个react页面，还可以直接整合到umijs项目里面. 和其他xx开源的项目一样，kpi产物不少，代码放出来就不维护了，在线demo体验很好，一放到本地跑起来就疯狂报错，这个项目也是年</description>
+    </item>
+    
+    <item>
+      <title>umi4设置title keyword description</title>
+      <link>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</link>
+      <pubDate>Wed, 17 Aug 2022 01:49:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/</guid>
+      <description>umijs升级到v4之后原来v3通过修改src/pages/document.ejs文件来设置title,keyword,description,favicon的方法 失效 了 新版本v4可以通过配置来修改 在config/config.ts中defineConfig方法添加字段 title: &amp;#34;title&amp;#34;, metas: [ { name: &amp;#39;keywords&amp;#39;, content: &amp;#39;keywords&amp;#39; }, { name: &amp;#39;description&amp;#39;, content: &amp;#39;description&amp;#39; }, ],</description>
+    </item>
+    
+    <item>
+      <title>ant design pro datepicker</title>
+      <link>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</link>
+      <pubDate>Tue, 16 Aug 2022 18:54:24 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</guid>
+      <description>使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTime&amp;#39;, hideInSearch: true }, { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTimeRange&amp;#39;, hideInTable: true, search: { transform: (value: any) =&amp;gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时</description>
+    </item>
+    
+    <item>
+      <title>ant design pro查看官网预览源码</title>
+      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
+      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+    </item>
+    
+  </channel>
+</rss>
