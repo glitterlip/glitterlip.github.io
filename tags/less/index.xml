@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>less on Paramita</title>
+    <link>https://glitterlip.github.io/tags/less/</link>
+    <description>Recent content in less on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Wed, 28 Sep 2022 10:44:03 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/less/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux less命令</title>
+      <link>https://glitterlip.github.io/blog/2022-09/linux-less%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 28 Sep 2022 10:44:03 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/linux-less%E5%91%BD%E4%BB%A4/</guid>
+      <description>linux中的less命令 -G 移动到最后一页 -gg 第一页 -F 实时更新 -b 向上翻页 -空格 向下翻页 /kw 向后搜索kw ?kw 向前搜索kw 实时过滤 有时候查看nginx日志时，想查看爬虫抓取记录，可以在查看时输入&amp;amp;bingbot|Googlebot|Baiduspider, &amp;amp;后面接正则表达式，bingbot|Googlebot|Baiduspider表示过滤展示日志中行记录包含必应或者百度或者谷歌蜘蛛的记录，</description>
+    </item>
+    
+  </channel>
+</rss>
