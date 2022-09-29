@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Paramita">
+  <meta name="description" content="为了防止小程序的接口被盗用，用了小程序的加密网络通道,前端使用cryptojs加密，报错Native crypto module could not be used to get secure random number. 结论 修改package.json,版本降级,&quot;crypto-js&quot;: &quot;3.1.9-1&quot;, 或者改成使用https://github.com/ricmoo/aes-js 原因 刚开始用的官方文档推荐的https://github.com/ricmoo/aes-js ,结果aes-cbc">
+
+  <meta property="og:title" content="小程序加密网络通道,小程序aes加密" />
+<meta property="og:description" content="为了防止小程序的接口被盗用，用了小程序的加密网络通道,前端使用cryptojs加密，报错Native crypto module could not be used to get secure random number. 结论 修改package.json,版本降级,&quot;crypto-js&quot;: &quot;3.1.9-1&quot;, 或者改成使用https://github.com/ricmoo/aes-js 原因 刚开始用的官方文档推荐的https://github.com/ricmoo/aes-js ,结果aes-cbc" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-09-29T14:23:49+08:00" />
+<meta property="article:modified_time" content="2022-09-29T14:23:49+08:00" />
+
+
+
+  <title>
+  
+       小程序加密网络通道,小程序aes加密 | Paramita 
+  
+  </title>
+
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/">
+
+  
+  
+
+  
+  <link href="https://glitterlip.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://glitterlip.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://glitterlip.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://glitterlip.github.io/img/zheng.png"
+  
+  >
+
+
+  
+
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://glitterlip.github.io/">
+          
+        <img class="avatar" src="https://glitterlip.github.io/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Paramita</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://glitterlip.github.io/">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/blog/" >Blog  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/moment/" >Moment  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/snippet/" >Snippet  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/about/" >About  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://glitterlip.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://glitterlip.github.io/img/profile.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://glitterlip.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>Paramita</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/glitterlip" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">小程序加密网络通道,小程序aes加密</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Sep 29, 2022</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>3 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <p>为了防止小程序的接口被盗用，用了小程序的加密网络通道,前端使用cryptojs加密，报错<code>Native crypto module could not be used to get secure random number.</code></p>
+<h2 id="结论">结论</h2>
+<ol>
+<li>修改<code>package.json</code>,版本降级,<code>&quot;crypto-js&quot;: &quot;3.1.9-1&quot;,</code></li>
+<li>或者改成使用<code>https://github.com/ricmoo/aes-js</code></li>
+</ol>
+<h2 id="原因">原因</h2>
+<p>刚开始用的官方文档推荐的<code>https://github.com/ricmoo/aes-js</code> ,结果aes-cbc模式的还要自己实现Pkcs7填充,</p>
+<p>改用了<code>https://github.com/brix/crypto-js</code>这个包</p>
+<p>这个包的新版本web开发时是没问题的，但是小程序环境会报<code>Native crypto module could not be used to get secure random number.</code>这个错误</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">var</span> <span class="nx">CryptoJS</span> <span class="o">=</span> <span class="nx">CryptoJS</span> <span class="o">||</span> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">Math</span><span class="p">,</span> <span class="kc">undefined</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">crypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native crypto from window (Browser)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">crypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">crypto</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">crypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native crypto in web worker (Browser)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">self</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">self</span><span class="p">.</span><span class="nx">crypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">self</span><span class="p">.</span><span class="nx">crypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native crypto from worker
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">globalThis</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">globalThis</span><span class="p">.</span><span class="nx">crypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">globalThis</span><span class="p">.</span><span class="nx">crypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native (experimental IE 11) crypto from window (Browser)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">crypto</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nb">window</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">&amp;&amp;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msCrypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">crypto</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">msCrypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native crypto from global (NodeJS)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">crypto</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">global</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">global</span><span class="p">.</span><span class="nx">crypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">global</span><span class="p">.</span><span class="nx">crypto</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Native crypto import via require (NodeJS)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">crypto</span> <span class="o">&amp;&amp;</span> <span class="k">typeof</span> <span class="nx">require</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">crypto</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;crypto&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * Cryptographically secure pseudorandom number generator
+</span></span></span><span class="line"><span class="cl"><span class="cm">   *
+</span></span></span><span class="line"><span class="cl"><span class="cm">   * As Math.random() is cryptographically not safe to use
+</span></span></span><span class="line"><span class="cl"><span class="cm">   */</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">cryptoSecureRandomInt</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">crypto</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// Use getRandomValues method (Browser)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">getRandomValues</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">getRandomValues</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint32Array</span><span class="p">(</span><span class="mi">1</span><span class="p">))[</span><span class="mi">0</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="c1">// Use randomBytes method (NodeJS)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">randomBytes</span> <span class="o">===</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="k">return</span> <span class="nx">crypto</span><span class="p">.</span><span class="nx">randomBytes</span><span class="p">(</span><span class="mi">4</span><span class="p">).</span><span class="nx">readInt32LE</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s1">&#39;Native crypto module could not be used to get secure random number.&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="p">}(</span><span class="nb">Math</span><span class="p">));</span>
+</span></span></code></pre></div><p>正常的浏览器环境会实现<a href="https://developer.mozilla.org/en-US/docs/Web/API/Crypto">Crypto接口</a>, 里面有个<code>getRandomValues</code>
+方法生成加密用的随机数,crypto-js通过从3.2.0开始新增了<code>cryptoSecureRandomInt</code>方法，通过<code>window.crypto.getRandomValues</code>来调用,
+小程序虽然实现了这个方法，但是要通过<code>wx.getUserCryptoManager().getRandomValues</code>
+来调用，<code>crypto-js</code>也没有提供设置<code>getRandomValues</code>属性的方法.因此出现了开头的错误.那我们就退回之前的好了。</p>
+<h2 id="示例代码">示例代码</h2>
+<h3 id="小程序tarojs加密发送数据">小程序tarojs加密发送数据</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">userCryptoManager</span> <span class="o">=</span> <span class="nx">Taro</span><span class="p">.</span><span class="nx">getUserCryptoManager</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">str</span> <span class="o">=</span> <span class="s2">&#34;data to be sent&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">userCryptoManager</span><span class="p">.</span><span class="nx">getLatestUserKey</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">success</span><span class="o">:</span> <span class="p">(</span><span class="nx">res</span><span class="o">:</span> <span class="nx">Taro</span><span class="p">.</span><span class="nx">UserCryptoManager</span><span class="p">.</span><span class="nx">getLatestUserKey</span><span class="p">.</span><span class="nx">SuccessCallbackResult</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">{</span><span class="nx">encryptKey</span><span class="p">,</span> <span class="nx">iv</span><span class="p">,</span> <span class="nx">version</span><span class="p">,</span> <span class="nx">expireTime</span><span class="p">}</span> <span class="o">=</span> <span class="nx">res</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">Crypto</span><span class="p">.</span><span class="nx">AES</span><span class="p">.</span><span class="nx">encrypt</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">Crypto</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">encryptKey</span><span class="p">),</span> <span class="p">{</span><span class="nx">iv</span><span class="o">:</span> <span class="nx">Crypto</span><span class="p">.</span><span class="nx">enc</span><span class="p">.</span><span class="nx">Utf8</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">iv</span><span class="p">)}).</span><span class="nx">toString</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nx">Taro</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span><span class="o">:</span> <span class="s1">&#39;https://xx.x.com/api/v1/check&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">data</span><span class="o">:</span> <span class="p">{</span><span class="nx">version</span><span class="p">,</span> <span class="nx">data</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">header</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;content-type&#39;</span><span class="o">:</span> <span class="s1">&#39;application/x-www-form-urlencoded&#39;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><h3 id="服务端golang解密">服务端golang解密</h3>
+<ol>
+<li>先获取前端加密用的key</li>
+</ol>
+<p>用到的包 <code>github.com/ArtisanCloud/PowerWeChat</code>,<code>github.com/tidwall/gjson</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-golang" data-lang="golang"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">AesDecryptByCBC</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="nx">key</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">iv</span> <span class="o">...</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 判断key长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">keyLenMap</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kd">struct</span><span class="p">{}{</span><span class="mi">16</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">24</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">32</span><span class="p">:</span> <span class="p">{}}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">keyLenMap</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">key</span><span class="p">)];</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;key长度错误&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// encrypted密文反解base64
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">decodeString</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nf">DecodeString</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// key 转[]byte
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">keyByte</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 创建一个cipher.Block接口。参数key为密钥，长度只能是16、24、32字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">block</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">aes</span><span class="p">.</span><span class="nf">NewCipher</span><span class="p">(</span><span class="nx">keyByte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 获取秘钥块的长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">blockSize</span> <span class="o">:=</span> <span class="nx">block</span><span class="p">.</span><span class="nf">BlockSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 选择加密模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">blockMode</span> <span class="nx">cipher</span><span class="p">.</span><span class="nx">BlockMode</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">iv</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">blockMode</span> <span class="p">=</span> <span class="nx">cipher</span><span class="p">.</span><span class="nf">NewCBCDecrypter</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">iv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">blockMode</span> <span class="p">=</span> <span class="nx">cipher</span><span class="p">.</span><span class="nf">NewCBCDecrypter</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="nx">keyByte</span><span class="p">[:</span><span class="nx">blockSize</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 创建数组，存储解密结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">decodeResult</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 解密
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">blockMode</span><span class="p">.</span><span class="nf">CryptBlocks</span><span class="p">(</span><span class="nx">decodeResult</span><span class="p">,</span> <span class="nx">decodeString</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 解码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">padding</span> <span class="o">:=</span> <span class="nf">PKCS7UNPadding</span><span class="p">(</span><span class="nx">decodeResult</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nb">string</span><span class="p">(</span><span class="nx">padding</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">AesEncryptByCBC</span><span class="p">(</span><span class="nx">str</span><span class="p">,</span> <span class="nx">key</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">iv</span> <span class="o">...</span><span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 判断key长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">keyLenMap</span> <span class="o">:=</span> <span class="kd">map</span><span class="p">[</span><span class="kt">int</span><span class="p">]</span><span class="kd">struct</span><span class="p">{}{</span><span class="mi">16</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">24</span><span class="p">:</span> <span class="p">{},</span> <span class="mi">32</span><span class="p">:</span> <span class="p">{}}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">keyLenMap</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="nx">key</span><span class="p">)];</span> <span class="p">!</span><span class="nx">ok</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">panic</span><span class="p">(</span><span class="s">&#34;key长度错误&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 待加密字符串转成byte
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">originDataByte</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 秘钥转成[]byte
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">keyByte</span> <span class="o">:=</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">key</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 创建一个cipher.Block接口。参数key为密钥，长度只能是16、24、32字节
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">block</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">aes</span><span class="p">.</span><span class="nf">NewCipher</span><span class="p">(</span><span class="nx">keyByte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 获取秘钥长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">blockSize</span> <span class="o">:=</span> <span class="nx">block</span><span class="p">.</span><span class="nf">BlockSize</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 补码填充
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">originDataByte</span> <span class="p">=</span> <span class="nf">PKCS7Padding</span><span class="p">(</span><span class="nx">originDataByte</span><span class="p">,</span> <span class="nx">blockSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 选用加密模式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">blockMode</span> <span class="nx">cipher</span><span class="p">.</span><span class="nx">BlockMode</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nx">iv</span><span class="p">)</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">blockMode</span> <span class="p">=</span> <span class="nx">cipher</span><span class="p">.</span><span class="nf">NewCBCEncrypter</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">iv</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">blockMode</span> <span class="p">=</span> <span class="nx">cipher</span><span class="p">.</span><span class="nf">NewCBCEncrypter</span><span class="p">(</span><span class="nx">block</span><span class="p">,</span> <span class="nx">keyByte</span><span class="p">[:</span><span class="nx">blockSize</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 创建数组，存储加密结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">encrypted</span> <span class="o">:=</span> <span class="nb">make</span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">originDataByte</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 加密
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">blockMode</span><span class="p">.</span><span class="nf">CryptBlocks</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">,</span> <span class="nx">originDataByte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// []byte转成base64
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nf">EncodeToString</span><span class="p">(</span><span class="nx">encrypted</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">PKCS7UNPadding</span><span class="p">(</span><span class="nx">originDataByte</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">length</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">originDataByte</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">unpadding</span> <span class="o">:=</span> <span class="nb">int</span><span class="p">(</span><span class="nx">originDataByte</span><span class="p">[</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="nx">originDataByte</span><span class="p">[:(</span><span class="nx">length</span> <span class="o">-</span> <span class="nx">unpadding</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">PKCS7Padding</span><span class="p">(</span><span class="nx">originByte</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="nx">blockSize</span> <span class="kt">int</span><span class="p">)</span> <span class="p">[]</span><span class="kt">byte</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 计算补码长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">padding</span> <span class="o">:=</span> <span class="nx">blockSize</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="nx">originByte</span><span class="p">)</span><span class="o">%</span><span class="nx">blockSize</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 生成补码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">padText</span> <span class="o">:=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">Repeat</span><span class="p">([]</span><span class="kt">byte</span><span class="p">{</span><span class="nb">byte</span><span class="p">(</span><span class="nx">padding</span><span class="p">)},</span> <span class="nx">padding</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 追加补码
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="nb">append</span><span class="p">(</span><span class="nx">originByte</span><span class="p">,</span> <span class="nx">padText</span><span class="o">...</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">DecryptMsg</span><span class="p">(</span><span class="nx">openid</span><span class="p">,</span> <span class="nx">sessionKey</span><span class="p">,</span> <span class="nx">msg</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//从internet.getUserEncryptKey获取最近的key
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    
+</span></span><span class="line"><span class="cl">    <span class="c1">//构造签名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">h</span> <span class="o">:=</span> <span class="nx">hmac</span><span class="p">.</span><span class="nf">New</span><span class="p">(</span><span class="nx">sha256</span><span class="p">.</span><span class="nx">New</span><span class="p">,</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">sessionKey</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">h</span><span class="p">.</span><span class="nf">Write</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">sign</span> <span class="o">:=</span> <span class="nx">hex</span><span class="p">.</span><span class="nf">EncodeToString</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nf">Sum</span><span class="p">(</span><span class="kc">nil</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">m</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">params</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">object</span><span class="p">.</span><span class="nx">StringMap</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="s">&#34;openid&#34;</span><span class="p">:</span>     <span class="nx">openid</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="s">&#34;signature&#34;</span><span class="p">:</span>  <span class="nx">sign</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="s">&#34;sig_method&#34;</span><span class="p">:</span> <span class="s">&#34;hmac_sha256&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//发起请求
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">Mp</span><span class="p">.</span><span class="nx">Internet</span><span class="p">.</span><span class="nf">HttpPostJson</span><span class="p">(</span><span class="s">&#34;wxa/business/getuserencryptkey&#34;</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kc">nil</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">m</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="c1">//解析微信返回的数据，取最新一条
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">keyI</span> <span class="o">:=</span> <span class="nx">m</span><span class="p">[</span><span class="s">&#34;key_info_list&#34;</span><span class="p">].([]</span><span class="kd">interface</span><span class="p">{})[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">firstKey</span> <span class="o">:=</span> <span class="nx">keyI</span><span class="p">.(</span><span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kd">interface</span><span class="p">{})</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="c1">//返回的就是解密的数据字符串 &#34;data to be sent&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="nx">utils</span><span class="p">.</span><span class="nf">AesDecryptByCBC</span><span class="p">(</span><span class="nx">base64</span><span class="p">.</span><span class="nx">StdEncoding</span><span class="p">.</span><span class="nf">EncodeToString</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nx">msg</span><span class="p">)),</span> <span class="nx">firstKey</span><span class="p">[</span><span class="s">&#34;encrypt_key&#34;</span><span class="p">].(</span><span class="kt">string</span><span class="p">),</span> <span class="nx">firstKey</span><span class="p">[</span><span class="s">&#34;iv&#34;</span><span class="p">].(</span><span class="kt">string</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/tarojs" role="button">tarojs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-09/tailwind-missing/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Tailwind Missing</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/glitterlip " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://glitterlip.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://glitterlip.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://glitterlip.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
