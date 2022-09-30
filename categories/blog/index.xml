@@ -6,7 +6,16 @@
     <description>Recent content in blog on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 28 Sep 2022 22:04:41 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Sep 2022 14:23:49 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小程序加密网络通道,小程序aes加密</title>
+      <link>https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/</link>
+      <pubDate>Thu, 29 Sep 2022 14:23:49 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/</guid>
+      <description>为了防止小程序的接口被盗用，用了小程序的加密网络通道,前端使用cryptojs加密，报错Native crypto module could not be used to get secure random number. 结论 修改package.json,版本降级,&amp;quot;crypto-js&amp;quot;: &amp;quot;3.1.9-1&amp;quot;, 或者改成使用https://github.com/ricmoo/aes-js 原因 刚开始用的官方文档推荐的https://github.com/ricmoo/aes-js ,结果aes-cbc</description>
+    </item>
+    
     <item>
       <title>Tailwind Missing</title>
       <link>https://glitterlip.github.io/blog/2022-09/tailwind-missing/</link>

@@ -43,5 +43,14 @@
       <description>使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTime&amp;#39;, hideInSearch: true }, { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTimeRange&amp;#39;, hideInTable: true, search: { transform: (value: any) =&amp;gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时</description>
     </item>
     
+    <item>
+      <title>ant design pro查看官网预览源码</title>
+      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
+      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+    </item>
+    
   </channel>
 </rss>
