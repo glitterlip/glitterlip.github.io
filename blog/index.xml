@@ -8,6 +8,15 @@
     <language>zn-Hans</language>
     <lastBuildDate>Thu, 13 Sep 2018 22:31:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Laravel Job添加telescope Tags</title>
+      <link>https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/</link>
+      <pubDate>Sat, 01 Oct 2022 14:57:40 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/</guid>
+      <description>请求添加tag laravel开了telescope，请求添加tag还好说 //直接在TelescopeServiceProvider的register方法判断就好了 Telescope::tag(function (IncomingEntry $entry) { if ($entry-&amp;gt;isRequest()){ $tags = []; $tags[] = preg_replace(&amp;#39;/(\d+)\.(\d+)\.(\d+)\.(\d+)/&amp;#39;, &amp;#39;$1.$2.*.*&amp;#39;, request()-&amp;gt;getClientIp()); $tags[] = preg_replace(&amp;#39;/(\d+)\.(\d+)\.(\d+)\.(\d+)/&amp;#39;, &amp;#39;$1.$2.$3.*&amp;#39;, request()-&amp;gt;getClientIp()); $tags[] = $t; if (! request()-&amp;gt;header(&amp;#39;referer&amp;#39;) ) { $tags[] = &amp;#39;noreferer&amp;#39;; } return $tags; } }); job添加tag 想给job添加tag,而且需要根据job的数据添加tag,直接在job方法中新增一个tags方法即可 &amp;lt;?php namespace App\Jobs; class XXJob implements ShouldQueue, ShouldBeUnique { use Dispatchable, InteractsWithQueue, Queueable, SerializesModels; public $id; public function __construct($id) { $this-&amp;gt;id = $id; } public function</description>
+    </item>
+    
+    <item>
       <title>小程序加密网络通道,小程序aes加密</title>
       <link>https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/</link>
       <pubDate>Thu, 29 Sep 2022 14:23:49 +0800</pubDate>
