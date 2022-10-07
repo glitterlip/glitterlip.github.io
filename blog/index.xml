@@ -8,6 +8,15 @@
     <language>zn-Hans</language>
     <lastBuildDate>Thu, 13 Sep 2018 22:31:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ssh端口转发</title>
+      <link>https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</link>
+      <pubDate>Thu, 06 Oct 2022 22:11:41 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/</guid>
+      <description>ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki</description>
+    </item>
+    
+    <item>
       <title>Laravel Job添加telescope Tags</title>
       <link>https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/</link>
       <pubDate>Sat, 01 Oct 2022 14:57:40 +0800</pubDate>

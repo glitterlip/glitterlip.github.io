@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (14)</span>
+                <span>Blog (15)</span>
               </a>
             </li>
           
@@ -366,7 +366,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (1)</span></a></li>
         
@@ -376,7 +376,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (8)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
         
@@ -424,6 +424,63 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">ssh端口转发</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 6, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -645,63 +702,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/less" role="button">less </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-09/gin%E6%89%93%E5%8C%85html%E6%A8%A1%E6%9D%BF%E5%92%8C%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">gin打包html模板和静态资源文件</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 18, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      [GIN-debug] [WARNING] Since SetHTMLTemplate() is NOT thread-safe. It should only be called at initialization. ie. before any route is registered or the router is listening in a socket: router := gin.Default() router.SetHTMLTemplate(template) // &lt;&lt; good place Gin和Echo有点不一样，需要在注册路由之前注册模板 注册子目录的html文件 ├── go.mod ├── go.sum ├── app.go ├── resources │ ├── css │ │ └── input.css │ ├── js │ │ └── tailwind.config.js │ └── views │ ├── detail.html │ ├── home │ │ └── home.index.html │ └── search.html func walkDir(fileSystem embed.FS, path string) { _, err := T.ParseFS(fileSystem, path&#43;&#34;/*.html&#34;) if err != nil { panic(fmt.Sprintf(&#34;parse error:%s&#34;, err.Error())) } entries, _ := fs.ReadDir(fileSystem, path) for _, entry := range entries { if entry.IsDir() { walkDir(fileSystem, path&#43;&#34;/&#34;&#43;entry.Name()) } } } T:=template.New(&#34;view&#34;) T.ParseFS(ResourcesFS, &#34;resources/views/*.html&#34;) entries, _ := ResourcesFS.ReadDir(&#34;resources/views&#34;) for _, entry := range entries { if entry.IsDir() { walkDir(ResourcesFS, &#34;resources/views/&#34;&#43;entry.Name()) } }......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/gin" role="button">gin </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
       
     
   </div>
