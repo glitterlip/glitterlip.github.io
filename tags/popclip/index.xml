@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>popclip on Paramita</title>
+    <link>https://glitterlip.github.io/tags/popclip/</link>
+    <description>Recent content in popclip on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Mon, 10 Oct 2022 15:30:54 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/popclip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>编写popclip扩展</title>
+      <link>https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/</link>
+      <pubDate>Mon, 10 Oct 2022 15:30:54 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/</guid>
+      <description>最近网站碰到的爬虫有点多，经常需要查询ip的asn， 每次都要复制然后打开浏览器再粘贴。popclip有一个插件可以自动识别选中的文本里的网址并通过浏览器打开,想着自己改改弄一个扩展解放双手 新的popclip从PopClip 2021.11开始，支持一种简便的扩展编写方式 Extension Snippets ，只需要按照对应格式编写一个yaml配置文件，然后选中，在点击popclip弹出的install按钮即可 # popclip extension to check ip name: IP Check icon: search IP</description>
+    </item>
+    
+  </channel>
+</rss>
