@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (16)</span>
+                <span>Blog (18)</span>
               </a>
             </li>
           
@@ -317,9 +317,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (5)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (6)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
         
@@ -388,7 +390,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  16 posts
+                  18 posts
                 </div>
               
             </div>
@@ -434,6 +436,120 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-07/golang-template%E5%87%BD%E6%95%B0%E4%BC%A0%E9%80%92%E5%A4%9A%E4%B8%AA%E5%8F%82%E6%95%B0/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">golang template函数传递多个参数</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 19, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      golang开发web页面时，会把页面的公共部分抽离出来，定义成组件 比如定义一个header，然后其他页面就无需再重复写了，直接引入即可 //header.html {{define &#34;header&#34;}} this is header. Current User:{{.user.Name}} {{end}} //detail.html {{template &#34;header&#34; .user}} 但是此时如果你想再展示天气，你可以定义一个UserWithWeather，这就有点不伦不类了 我们可以定义一个map模板函数 template.New(&#34;view&#34;).Funcs(template.FuncMap{ &#34;mapof&#34;: func(kvpairs ...interface{}) (map[string]interface{}, error) { if len(kvpairs)%2 != 0 { return nil, errors.New(&#34;wrong number of arguements&#34;) } dict := make(map[string]interface{}, len(kvpairs)/2) for i := 0; i &lt; len(kvpairs); i &#43;= 2 { key, ok := kvpairs[i].(string) if !ok { return nil, errors.New(&#34;map keys must be strings&#34;) } dict[key] = kvpairs[i&#43;1] } return dict, nil }, })......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-07/%E6%94%AF%E4%BB%98%E5%AE%9D%E5%85%8D%E7%AD%BE%E4%BB%98%E5%8E%9F%E7%90%86/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">支付宝免签付原理</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 18, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      支付宝网站接入支付需要营业执照，ICP备案。 可以在百度或者高德随便找个门头照申请开通当面付，0.38的费率，单笔交易限额1000，日限额5w。不过如果频繁有外地ip支付就会风控，包括要求提供营业执照，限制收款，以及清退，最严重的就是当面抓了^ - ^。 这个时候可以用收款码（码支付）解决。 主要原理就是系统生成固定金额的支付宝个人收款码，展示给用户，用户付款，手机收到转账到帐通知后通知网站支付成功。 示例代......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button">支付宝 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button">免签 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">

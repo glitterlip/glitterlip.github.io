@@ -6,7 +6,16 @@
     <description>Recent content in laravel on Paramita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 01 Oct 2022 14:57:40 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Oct 2022 16:44:28 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Laravel查看缓存剩余时间</title>
+      <link>https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sat, 22 Oct 2022 16:44:28 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/</guid>
+      <description>laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &amp;#39;prefix&amp;#39; =&amp;gt; env(&amp;#39;CACHE_PREFIX&amp;#39;, Str::slug(env(&amp;#39;APP_NAME&amp;#39;, &amp;#39;laravel&amp;#39;), &amp;#39;_&amp;#39;).&amp;#39;_cache&amp;#39;) Laravel的数据库配置文件config/database.php &amp;#39;redis&amp;#39; =&amp;gt; [ &amp;#39;client&amp;#39; =&amp;gt; env(&amp;#39;REDIS_CLIENT&amp;#39;, &amp;#39;phpredis&amp;#39;), &amp;#39;options&amp;#39; =&amp;gt; [ &amp;#39;cluster&amp;#39; =&amp;gt; env(&amp;#39;REDIS_CLUSTER&amp;#39;, &amp;#39;redis&amp;#39;), &amp;#39;prefix&amp;#39; =&amp;gt; env(&amp;#39;REDIS_PREFIX&amp;#39;, Str::slug(env(&amp;#39;APP_NAME&amp;#39;, &amp;#39;laravel&amp;#39;), &amp;#39;_&amp;#39;) . &amp;#39;_database_&amp;#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache</description>
+    </item>
+    
     <item>
       <title>Laravel Job添加telescope Tags</title>
       <link>https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/</link>

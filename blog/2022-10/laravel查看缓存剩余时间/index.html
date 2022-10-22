@@ -7,24 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="最近网站碰到的爬虫有点多，经常需要查询ip的asn， 每次都要复制然后打开浏览器再粘贴。popclip有一个插件可以自动识别选中的文本里的网址并通过浏览器打开,想着自己改改弄一个扩展解放双手 新的popclip从PopClip 2021.11开始，支持一种简便的扩展编写方式 Extension Snippets ，只需要按照对应格式编写一个yaml配置文件，然后选中，在点击popclip弹出的install按钮即可 # popclip extension to check ip name: IP Check icon: search IP">
+  <meta name="description" content="laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &#39;prefix&#39; =&gt; env(&#39;CACHE_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;).&#39;_cache&#39;) Laravel的数据库配置文件config/database.php &#39;redis&#39; =&gt; [ &#39;client&#39; =&gt; env(&#39;REDIS_CLIENT&#39;, &#39;phpredis&#39;), &#39;options&#39; =&gt; [ &#39;cluster&#39; =&gt; env(&#39;REDIS_CLUSTER&#39;, &#39;redis&#39;), &#39;prefix&#39; =&gt; env(&#39;REDIS_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;) . &#39;_database_&#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache">
 
-  <meta property="og:title" content="编写popclip扩展" />
-<meta property="og:description" content="最近网站碰到的爬虫有点多，经常需要查询ip的asn， 每次都要复制然后打开浏览器再粘贴。popclip有一个插件可以自动识别选中的文本里的网址并通过浏览器打开,想着自己改改弄一个扩展解放双手 新的popclip从PopClip 2021.11开始，支持一种简便的扩展编写方式 Extension Snippets ，只需要按照对应格式编写一个yaml配置文件，然后选中，在点击popclip弹出的install按钮即可 # popclip extension to check ip name: IP Check icon: search IP" />
+  <meta property="og:title" content="Laravel查看缓存剩余时间" />
+<meta property="og:description" content="laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &#39;prefix&#39; =&gt; env(&#39;CACHE_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;).&#39;_cache&#39;) Laravel的数据库配置文件config/database.php &#39;redis&#39; =&gt; [ &#39;client&#39; =&gt; env(&#39;REDIS_CLIENT&#39;, &#39;phpredis&#39;), &#39;options&#39; =&gt; [ &#39;cluster&#39; =&gt; env(&#39;REDIS_CLUSTER&#39;, &#39;redis&#39;), &#39;prefix&#39; =&gt; env(&#39;REDIS_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;) . &#39;_database_&#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-10-10T15:30:54+08:00" />
-<meta property="article:modified_time" content="2022-10-10T15:30:54+08:00" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-10-22T16:44:28+08:00" />
+<meta property="article:modified_time" content="2022-10-22T16:44:28+08:00" />
 
 
 
   <title>
   
-       编写popclip扩展 | Paramita 
+       Laravel查看缓存剩余时间 | Paramita 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/">
 
   
   
@@ -286,11 +286,11 @@
     
   </ul>
 
-  <div class="px-4 post-heading">编写popclip扩展</div>
+  <div class="px-4 post-heading">Laravel查看缓存剩余时间</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Oct 10, 2022</li>
+      <li>Oct 22, 2022</li>
     
 
     
@@ -304,29 +304,27 @@
 
 
           <div class="post-content markdown">
-            <p>最近网站碰到的爬虫有点多，经常需要查询ip的asn，
-每次都要复制然后打开浏览器再粘贴。popclip有一个插件可以自动识别选中的文本里的网址并通过浏览器打开,想着自己改改弄一个扩展解放双手</p>
-<p>新的popclip从<code>PopClip 2021.11</code>开始，支持一种简便的扩展编写方式 <a href="https://github.com/pilotmoon/PopClip-Extensions#extension-snippets">Extension Snippets</a>  ，只需要按照对应格式编写一个<code>yaml</code>配置文件，然后选中，在点击popclip弹出的install按钮即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># popclip extension to check ip</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">IP Check</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">search IP</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">actions</span><span class="p">:</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">check ip</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">search IP</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}&#39;</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">javascript</span><span class="p">:</span><span class="w"> </span><span class="l">popclip.openUrl(&#39;https://ipinfo.io/&#39; + popclip.input.matchedText)</span><span class="w">
-</span></span></span></code></pre></div><p>上面是一个例子，popclip识别到选中文本包含一个ipv4的地址时，会弹出一个按钮，点击即可打开浏览器并访问<code>https://ipinfo.io/ip</code> 这个地址</p>
-<p>以<code># popclip</code>开头的yaml的注释，
-接下来是yaml格式配置</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c"># popclip extension to check ip</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">IP Check</span><span class="w"> </span><span class="c"># 名字</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">search IP</span><span class="w"> </span><span class="c"># 图标 前面是修饰符，支持`circle`,`square`,`circle`,`search`，后面是文字，文字和修饰符用空格隔开</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">actions</span><span class="p">:</span><span class="w"> </span><span class="c">#插件包含的操作</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span>- <span class="nt">title</span><span class="p">:</span><span class="w"> </span><span class="l">check ip</span><span class="w"> </span><span class="c">#鼠标放到popclip对应操作按钮的提示</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">icon</span><span class="p">:</span><span class="w"> </span><span class="l">search IP</span><span class="w"> </span><span class="c">#图标</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;((25[0-5]|(2[0-4]|1\d|[1-9]|)\d)\.?\b){4}&#39;</span><span class="w"> </span><span class="c"># 相当于过滤器，只有当选中文本匹配规则时，这个操作才显示出来</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">javascript</span><span class="p">:</span><span class="w"> </span><span class="l">popclip.openUrl(&#39;https://ipinfo.io/&#39; + popclip.input.matchedText)</span><span class="w"> </span><span class="c"># 具体的脚本</span><span class="w">
-</span></span></span></code></pre></div>
+            <p>laravel当配置redis为缓存时查看缓存的剩余时间</p>
+<p>Laravel版本<code>9.12</code></p>
+<p>Laravel的缓存配置文件<code>config/cache.php</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="s1">&#39;prefix&#39;</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">&#39;CACHE_PREFIX&#39;</span><span class="p">,</span> <span class="nx">Str</span><span class="o">::</span><span class="na">slug</span><span class="p">(</span><span class="nx">env</span><span class="p">(</span><span class="s1">&#39;APP_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;laravel&#39;</span><span class="p">),</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;_cache&#39;</span><span class="p">)</span>
+</span></span></code></pre></div><p>Laravel的数据库配置文件<code>config/database.php</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="s1">&#39;redis&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;client&#39;</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">&#39;REDIS_CLIENT&#39;</span><span class="p">,</span> <span class="s1">&#39;phpredis&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;cluster&#39;</span> <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">&#39;REDIS_CLUSTER&#39;</span><span class="p">,</span> <span class="s1">&#39;redis&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;prefix&#39;</span>  <span class="o">=&gt;</span> <span class="nx">env</span><span class="p">(</span><span class="s1">&#39;REDIS_PREFIX&#39;</span><span class="p">,</span> <span class="nx">Str</span><span class="o">::</span><span class="na">slug</span><span class="p">(</span><span class="nx">env</span><span class="p">(</span><span class="s1">&#39;APP_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;laravel&#39;</span><span class="p">),</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span> <span class="o">.</span> <span class="s1">&#39;_database_&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span></code></pre></div><p>Laravel 缓存key的生成规则为<code>config('database.redis.options.prefix').config('cache.prefix').'_cache:key'</code></p>
+<p>当应用env的<code>APP_NAME</code>为<code>app</code>时，执行<code>Cache::put('test',1,6000)</code>命令，会在redis中生成一个<code>app_databse_app_cache:test</code>的键，值为<code>1</code>,ttl为6000</p>
+<p>查看命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Redis</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Redis</span><span class="o">::</span><span class="na">connection</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">ttl</span><span class="p">(</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;cache.prefix&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="nv">$keyname</span><span class="p">)</span>
+</span></span></code></pre></div>
           </div>
 
           
@@ -339,10 +337,7 @@
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://glitterlip.github.io/tags/popclip" role="button">popclip </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/mac" role="button">mac </a></li>
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>
@@ -358,23 +353,16 @@
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/ class="post-meta">Previous
+                <a href=https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>ssh端口转发</span>
+                    <span>grpc笔记</span>
                   </div>
                 </a>
               
             </div>
             
             <div class="col-md-6 text-right" >
-              
-                <a href=https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/ class="post-meta">Next
-                  <div class="pt-2 pb-5 flex-reverse">
-                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>grpc笔记</span>
-                  </div>
-                </a>
               
             </div>
           </div>

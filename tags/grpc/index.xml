@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>grpc on Paramita</title>
+    <link>https://glitterlip.github.io/tags/grpc/</link>
+    <description>Recent content in grpc on Paramita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 15 Oct 2022 19:46:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/grpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grpc笔记</title>
+      <link>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 15 Oct 2022 19:46:21 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</guid>
+      <description>版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.19.4 package protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码 protoc-gen-go v1.28.1 protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码 protoc-gen-go-grpc 1.2.0 目录 helloworld/ ├── client.go - 客户端代码 ├── go.mod - go模块配置文件 ├── proto - 协议目录 │ ├── helloworld.pb.go - rpc协议go版本代码 命令生成 │ ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成 │ └── helloworld.proto - rpc协议文件 └── server.go - rpc服务端代码 helloworld.proto syntax = &amp;#34;proto3&amp;#34;; // 定义包名 package proto; option go_package</description>
+    </item>
+    
+  </channel>
+</rss>

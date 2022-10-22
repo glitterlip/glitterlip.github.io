@@ -8,6 +8,24 @@
     <language>zn-Hans</language>
     <lastBuildDate>Thu, 13 Sep 2018 22:31:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Laravel查看缓存剩余时间</title>
+      <link>https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/</link>
+      <pubDate>Sat, 22 Oct 2022 16:44:28 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/</guid>
+      <description>laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &amp;#39;prefix&amp;#39; =&amp;gt; env(&amp;#39;CACHE_PREFIX&amp;#39;, Str::slug(env(&amp;#39;APP_NAME&amp;#39;, &amp;#39;laravel&amp;#39;), &amp;#39;_&amp;#39;).&amp;#39;_cache&amp;#39;) Laravel的数据库配置文件config/database.php &amp;#39;redis&amp;#39; =&amp;gt; [ &amp;#39;client&amp;#39; =&amp;gt; env(&amp;#39;REDIS_CLIENT&amp;#39;, &amp;#39;phpredis&amp;#39;), &amp;#39;options&amp;#39; =&amp;gt; [ &amp;#39;cluster&amp;#39; =&amp;gt; env(&amp;#39;REDIS_CLUSTER&amp;#39;, &amp;#39;redis&amp;#39;), &amp;#39;prefix&amp;#39; =&amp;gt; env(&amp;#39;REDIS_PREFIX&amp;#39;, Str::slug(env(&amp;#39;APP_NAME&amp;#39;, &amp;#39;laravel&amp;#39;), &amp;#39;_&amp;#39;) . &amp;#39;_database_&amp;#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache</description>
+    </item>
+    
+    <item>
+      <title>grpc笔记</title>
+      <link>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Sat, 15 Oct 2022 19:46:21 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</guid>
+      <description>版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.19.4 package protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码 protoc-gen-go v1.28.1 protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码 protoc-gen-go-grpc 1.2.0 目录 helloworld/ ├── client.go - 客户端代码 ├── go.mod - go模块配置文件 ├── proto - 协议目录 │ ├── helloworld.pb.go - rpc协议go版本代码 命令生成 │ ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成 │ └── helloworld.proto - rpc协议文件 └── server.go - rpc服务端代码 helloworld.proto syntax = &amp;#34;proto3&amp;#34;; // 定义包名 package proto; option go_package</description>
+    </item>
+    
+    <item>
       <title>编写popclip扩展</title>
       <link>https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/</link>
       <pubDate>Mon, 10 Oct 2022 15:30:54 +0800</pubDate>

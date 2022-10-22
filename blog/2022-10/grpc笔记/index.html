@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.19.4 package protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码 protoc-gen-go v1.28.1 protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码 protoc-gen-go-grpc 1.2.0 目录 helloworld/ ├── client.go - 客户端代码 ├── go.mod - go模块配置文件 ├── proto - 协议目录 │ ├── helloworld.pb.go - rpc协议go版本代码 命令生成 │ ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成 │ └── helloworld.proto - rpc协议文件 └── server.go - rpc服务端代码 helloworld.proto syntax = &#34;proto3&#34;; // 定义包名 package proto; option go_package">
 
-  <meta property="og:title" content="小程序" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" />
+  <meta property="og:title" content="grpc笔记" />
+<meta property="og:description" content="版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.19.4 package protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码 protoc-gen-go v1.28.1 protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码 protoc-gen-go-grpc 1.2.0 目录 helloworld/ ├── client.go - 客户端代码 ├── go.mod - go模块配置文件 ├── proto - 协议目录 │ ├── helloworld.pb.go - rpc协议go版本代码 命令生成 │ ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成 │ └── helloworld.proto - rpc协议文件 └── server.go - rpc服务端代码 helloworld.proto syntax = &#34;proto3&#34;; // 定义包名 package proto; option go_package" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-10-15T19:46:21+08:00" />
+<meta property="article:modified_time" content="2022-10-15T19:46:21+08:00" />
 
 
 
   <title>
   
-       小程序 | Paramita 
+       grpc笔记 | Paramita 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/">
 
   
   
@@ -259,171 +261,219 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (18)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (6)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (8)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">grpc笔记</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Oct 15, 2022</li>
     
 
     
+      <li class="middot"></li>
+      <li>2 minutes read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      小程序
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.9</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-09-29T14:23:49&#43;08:00'>Sep 29, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/"><span>小程序加密网络通道,小程序aes加密</span></a>
-</li>
 
-                
-            
-        
-      </ul>
-    </div>
+          <div class="post-content markdown">
+            <p>版本</p>
+<pre tabindex="0"><code>go version
+go1.19.1 darwin/arm64
+protoc --version
+libprotoc 3.19.4
+</code></pre><p>package</p>
+<pre tabindex="0"><code>protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码
+protoc-gen-go v1.28.1
+protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码
+protoc-gen-go-grpc 1.2.0
+</code></pre><p>目录</p>
+<pre tabindex="0"><code>helloworld/
+├── client.go - 客户端代码
+├── go.mod  - go模块配置文件
+├── proto     - 协议目录
+│   ├── helloworld.pb.go - rpc协议go版本代码 命令生成
+│   ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成
+│   └── helloworld.proto - rpc协议文件
+└── server.go  - rpc服务端代码
+</code></pre><p>helloworld.proto</p>
+<pre tabindex="0"><code>syntax = &#34;proto3&#34;;
+// 定义包名
+package proto;
+
+option go_package = &#34;/pbpackage&#34;;//go语言代码的包名,生成的hello.pb.go,hello_grpc.pb.go文件所属包为pbpackage
+
+
+// 定义Greeter服务
+service Greeter {
+  // 定义SayHello方法，接受HelloRequest消息， 并返回HelloReply消息
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// 定义HelloRequest消息
+message HelloRequest {
+  // name字段
+  string name = 1;
+}
+
+// 定义HelloReply消息
+message HelloReply {
+  // message字段
+  string message = 1;
+}
+</code></pre><p>生成代码命令</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">protoc --go_out<span class="o">=</span>. --go_opt<span class="o">=</span><span class="nv">paths</span><span class="o">=</span>source_relative --go-grpc_out<span class="o">=</span>. --go-grpc_opt<span class="o">=</span><span class="nv">paths</span><span class="o">=</span>source_relative helloworld.proto
+</span></span></code></pre></div><p>类型</p>
+<pre tabindex="0"><code>//1. enum
+enum NameType {
+    NickName = 0;
+    TrueName = 1;
+}
+
+message HelloRequest {
+    string name = 1;
+    NameType nameType = 2;
+}
+
+//2. map
+
+message HelloRequest {
+    map&lt;string, string&gt; names = 2;
+}
+
+//3. 嵌套
+
+message HelloRequest {
+    message World {
+        string name = 1;
+    }
     
+    repeated World worlds = 1;
+}
+
+message World {
+    string name = 1;
+}
+
+message HelloRequest {
+    repeated World worlds = 1;
+}
+
+//4. oneof
+
+message HelloRequest {
+    oneof name {
+        string nick_name = 1;
+        string true_name = 2;
+    }
+}
+
+//5. 保留字段
+
+message Foo {
+  reserved 2, 15, 9 to 11;
+  reserved &#34;foo&#34;, &#34;bar&#34;;
+}
+</code></pre><p>grpc出现`Cannot use &lsquo;&amp;X{}&rsquo; (type *X) as the type Y Type cannot implement &lsquo;Y&rsquo; as it has a non-exported method and is defined in a different package</p>
+<p>删除goland生成的<code>mustEmbedUnimplementedGreetServiceServer</code>的方法然后让struct 继承自<code>x_grpc.pb.go</code>文件里的 <code>pb.UnimplementedXxxx</code>即可</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/grpc" role="button">grpc </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>编写popclip扩展</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>Laravel查看缓存剩余时间</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     
