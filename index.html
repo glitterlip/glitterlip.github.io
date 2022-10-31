@@ -10,7 +10,7 @@
   <meta name="author" content="Paramita">
   <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
 
-  <meta property="og:title" content="Paramita" />
+  <meta property="og:title" content="代码笔记" />
 <meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://glitterlip.github.io/" />
@@ -19,7 +19,7 @@
 
   <title>
   
-      Paramita
+      代码笔记
   
   </title>
 
@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (18)</span>
+                <span>Blog (19)</span>
               </a>
             </li>
           
@@ -356,6 +356,8 @@
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
@@ -380,6 +382,8 @@
         
             <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (8)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
@@ -393,6 +397,8 @@
             <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -430,6 +436,66 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-11/fix-cloudflare-r2-network-connection-lost-error/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">fix Cloudflare R2 Network connection lost error</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Nov 1, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      想白嫖下cloudflare的R2，workers上传文件的时候总是会出现Network connection lost error错误， 用的Hono包，完全照着cloudflare的官方文档抄 export const AddFile = async (c: Context): Promise&lt;Response&gt; =&gt; { //save object const data = await c.req.formData(); const file: File = data.get(&#34;file&#34;) as File; const name = await md5(file) as string; const bucket = c.env.DRIVE as R2Bucket try { const saved = await bucket.put(name, file, { httpMetadata: { contentType: file.type }, customMetadata: { createdAt: Date.now().toString(), } }) } catch (e) { console.log(e) return Error(c, CODE_CLOUDFLARE_SERVICE_FAILED, &#39;service unavailable,please try again later&#39;) } return Success(c, &#39;ok&#39;) } 结果总是网络链接断开,用wrangler还有网站的Real-time Logs 啥信息都看不出来......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button">cloudflare </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/workers" role="button">workers </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/r2" role="button">R2 </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -645,63 +711,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel Job添加telescope Tags</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 1, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      请求添加tag laravel开了telescope，请求添加tag还好说 //直接在TelescopeServiceProvider的register方法判断就好了 Telescope::tag(function (IncomingEntry $entry) { if ($entry-&gt;isRequest()){ $tags = []; $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.*.*&#39;, request()-&gt;getClientIp()); $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.$3.*&#39;, request()-&gt;getClientIp()); $tags[] = $t; if (! request()-&gt;header(&#39;referer&#39;) ) { $tags[] = &#39;noreferer&#39;; } return $tags; } }); job添加tag 想给job添加tag,而且需要根据job的数据添加tag,直接在job方法中新增一个tags方法即可 &lt;?php namespace App\Jobs; class XXJob implements ShouldQueue, ShouldBeUnique { use Dispatchable, InteractsWithQueue, Queueable, SerializesModels; public $id; public function __construct($id) { $this-&gt;id = $id; } public function......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/telescope" role="button">telescope </a></li>
       
     
   </div>

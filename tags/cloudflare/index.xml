@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cloudflare on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/cloudflare/</link>
+    <description>Recent content in cloudflare on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Tue, 01 Nov 2022 00:23:51 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/cloudflare/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fix Cloudflare R2 Network connection lost error</title>
+      <link>https://glitterlip.github.io/blog/2022-11/fix-cloudflare-r2-network-connection-lost-error/</link>
+      <pubDate>Tue, 01 Nov 2022 00:23:51 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-11/fix-cloudflare-r2-network-connection-lost-error/</guid>
+      <description>想白嫖下cloudflare的R2，workers上传文件的时候总是会出现Network connection lost error错误， 用的Hono包，完全照着cloudflare的官方文档抄 export const AddFile = async (c: Context): Promise&amp;lt;Response&amp;gt; =&amp;gt; { //save object const data = await c.req.formData(); const file: File = data.get(&amp;#34;file&amp;#34;) as File; const name = await md5(file) as string; const bucket = c.env.DRIVE as R2Bucket try { const saved = await bucket.put(name, file, { httpMetadata: { contentType: file.type }, customMetadata: { createdAt: Date.now().toString(), } }) } catch (e) { console.log(e) return Error(c, CODE_CLOUDFLARE_SERVICE_FAILED, &amp;#39;service unavailable,please try again later&amp;#39;) } return Success(c, &amp;#39;ok&amp;#39;) } 结果总是网络链接断开,用wrangler还有网站的Real-time Logs 啥信息都看不出来</description>
+    </item>
+    
+  </channel>
+</rss>

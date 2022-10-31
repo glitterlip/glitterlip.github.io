@@ -20,7 +20,7 @@
 
   <title>
   
-       Laravel查看缓存剩余时间 | Paramita 
+       Laravel查看缓存剩余时间 | 代码笔记 
   
   </title>
 
@@ -216,7 +216,7 @@
       <div class="col-12 col-sm-7 text-left pl-2">
         <a href="https://glitterlip.github.io/">
           <h1 class="mb-2 h1" style="font-weight: 300;" >
-            <strong>Paramita</strong>
+            <strong>代码笔记</strong>
           </h1>
         </a>
         
@@ -324,6 +324,15 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Redis</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="nx">Redis</span><span class="o">::</span><span class="na">connection</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">ttl</span><span class="p">(</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;cache.prefix&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="nv">$keyname</span><span class="p">)</span>
+</span></span></code></pre></div><p>如果用了<code>tags</code>方法,laravel会生成一个临时key，临时key的值是真实键值对的键</p>
+<p><code>Cache::tags('test1')-&gt;put('test',1,6000)</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//先拿到临时key 
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$tempKey</span> <span class="o">=</span> <span class="nx">Redis</span><span class="o">::</span><span class="na">connection</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;cache.prefix&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;:tag:&#39;</span><span class="o">.</span><span class="nv">$tagName</span><span class="o">.</span><span class="s1">&#39;:key&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//反序列化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nv">$tempKeyStr</span> <span class="o">=</span> <span class="nx">unserialize</span><span class="p">(</span><span class="nv">$tempKey</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Redis</span><span class="o">::</span><span class="na">connection</span><span class="p">(</span><span class="s1">&#39;cache&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">ttl</span><span class="p">(</span><span class="nx">config</span><span class="p">(</span><span class="s1">&#39;cache.prefix&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="nx">sha1</span><span class="p">(</span><span class="nv">$tempKeyStr</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;:&#39;</span><span class="o">.</span><span class="nv">$keyname</span><span class="p">)</span>
 </span></span></code></pre></div>
           </div>
 
@@ -363,6 +372,13 @@
             </div>
             
             <div class="col-md-6 text-right" >
+              
+                <a href=https://glitterlip.github.io/blog/2022-11/fix-cloudflare-r2-network-connection-lost-error/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>fix Cloudflare R2 Network connection lost error</span>
+                  </div>
+                </a>
               
             </div>
           </div>

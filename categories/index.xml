@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Paramita</title>
+    <title>Categories on 代码笔记</title>
     <link>https://glitterlip.github.io/categories/</link>
-    <description>Recent content in Categories on Paramita</description>
+    <description>Recent content in Categories on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 22 Oct 2022 16:44:28 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Nov 2022 00:23:51 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>blog</title>
       <link>https://glitterlip.github.io/categories/blog/</link>
-      <pubDate>Sat, 22 Oct 2022 16:44:28 +0800</pubDate>
+      <pubDate>Tue, 01 Nov 2022 00:23:51 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/categories/blog/</guid>
       <description></description>

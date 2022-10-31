@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Snippet Code on Paramita</title>
+    <title>Snippets on 代码笔记</title>
     <link>https://glitterlip.github.io/snippet/</link>
-    <description>Recent content in Snippet Code on Paramita</description>
+    <description>Recent content in Snippets on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>
-design pro查看官网预览源码</title>
+    <lastBuildDate>Wed, 10 Aug 2022 11:14:43 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ant design pro查看官网预览源码</title>
       <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
       <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
       
