@@ -1,38 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Snippets on 代码笔记</title>
+    <title>Snippet Code on 代码笔记</title>
     <link>https://glitterlip.github.io/snippet/</link>
-    <description>Recent content in Snippets on 代码笔记</description>
+    <description>Recent content in Snippet Code on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 10 Aug 2022 11:14:43 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>ant design pro查看官网预览源码</title>
-      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
-      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
-      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
-    </item>
-    
-    <item>
-      <title>golang mysql设置时区</title>
-      <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
-      <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/snippet/mysql-loc/</guid>
-      <description>github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;amp;loc=Asia%2FShanghai</description>
-    </item>
-    
-    <item>
-      <title>laravel telescope get response code</title>
-      <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>
-      <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/snippet/telescope-response-code/</guid>
-      <description>Telescope::tag(function (IncomingEntry $entry) { $tags = []; if ( $entry-&amp;gt;isRequest() ) { if ( $entry-&amp;gt;content[&amp;#39;response_status&amp;#39;] == 302 ) { $tags[] = &amp;#39;redirect&amp;#39;; } } return $tags; }); </description>
-    </item>
-    
+    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
