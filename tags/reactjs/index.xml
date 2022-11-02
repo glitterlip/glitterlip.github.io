@@ -6,7 +6,17 @@
     <description>Recent content in reactjs on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 29 Sep 2022 14:23:49 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Nov 2022 03:38:38 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qrcode React</title>
+      <link>https://glitterlip.github.io/snippet/qrcode-react/</link>
+      <pubDate>Thu, 03 Nov 2022 03:38:38 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/qrcode-react/</guid>
+      <description>download qrcode.react svg as png to fix Function components cannot be given refs. Attempts to access this ref will fail error
+import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &amp;#39;qrcode.react&amp;#39; export function App(props) { const divRef = useRef(null); const download = () =&amp;gt; { const node = divRef.current?.children[0]; if (node == null) { return; } const dataURI = node.toDataURL(&amp;#39;image/png&amp;#39;); let a = document.createElement(&amp;#39;a&amp;#39;); a.download = &amp;#39;qrcode-canvas.png&amp;#39;; a.href = dataURI; a.click(); }; return ( &amp;lt;div className=&amp;#39;App&amp;#39;&amp;gt; &amp;lt;h1&amp;gt;Hello React.&amp;lt;/h1&amp;gt; &amp;lt;div className={&amp;#39;mx-auto pt-2&amp;#39;} ref={divRef}&amp;gt; &amp;lt;QRCodeCanvas value={&amp;#34;https://playcode.io/react&amp;#34;} /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div className=&amp;#39;mx-auto pt-2&amp;#39;&amp;gt; &amp;lt;button onClick={download}&amp;gt; Download &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ); } // Log to console console.log(&amp;#39;Hello console&amp;#39;); </description>
+    </item>
+    
     <item>
       <title>小程序加密网络通道,小程序aes加密</title>
       <link>https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/</link>

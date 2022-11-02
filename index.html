@@ -374,7 +374,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
         
@@ -384,7 +384,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (8)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
         
@@ -436,6 +436,60 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/snippet/qrcode-react/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Qrcode React</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Nov 3, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      download qrcode.react svg as png to fix Function components cannot be given refs. Attempts to access this ref will fail error
+import React,{useRef} from &#39;react&#39;; import {QRCodeCanvas} from &#39;qrcode.react&#39; export function App(props) { const divRef = useRef(null); const download = () =&gt; { const node = divRef.current?.children[0]; if (node == null) { return; } const dataURI = node.toDataURL(&#39;image/png&#39;); let a = document.createElement(&#39;a&#39;); a.download = &#39;qrcode-canvas.png&#39;; a.href = dataURI; a.click(); }; return ( &lt;div className=&#39;App&#39;&gt; &lt;h1&gt;Hello React.&lt;/h1&gt; &lt;div className={&#39;mx-auto pt-2&#39;} ref={divRef}&gt; &lt;QRCodeCanvas value={&#34;https://playcode.io/react&#34;} /&gt; &lt;/div&gt; &lt;div className=&#39;mx-auto pt-2&#39;&gt; &lt;button onClick={download}&gt; Download &lt;/button&gt; &lt;/div&gt; &lt;/div&gt; ); } // Log to console console.log(&#39;Hello console&#39;); ......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/mysql" role="button">mysql </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -654,63 +708,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/mac" role="button">mac </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ssh端口转发</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 6, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
       
     
   </div>

@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://glitterlip.github.io/tags/mysql/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/snippet/qrcode-react/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/reactjs/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/snippet/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/</loc>
+    <lastmod>2022-11-03T03:38:38+08:00</lastmod>
+  </url><url>
     <loc>https://glitterlip.github.io/categories/blog/</loc>
     <lastmod>2022-11-01T00:23:51+08:00</lastmod>
   </url><url>
@@ -17,13 +35,7 @@
     <loc>https://glitterlip.github.io/tags/r2/</loc>
     <lastmod>2022-11-01T00:23:51+08:00</lastmod>
   </url><url>
-    <loc>https://glitterlip.github.io/tags/</loc>
-    <lastmod>2022-11-01T00:23:51+08:00</lastmod>
-  </url><url>
     <loc>https://glitterlip.github.io/tags/workers/</loc>
-    <lastmod>2022-11-01T00:23:51+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/</loc>
     <lastmod>2022-11-01T00:23:51+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/laravel/</loc>
@@ -64,9 +76,6 @@
   </url><url>
     <loc>https://glitterlip.github.io/tags/telescope/</loc>
     <lastmod>2022-10-01T14:57:40+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/tags/reactjs/</loc>
-    <lastmod>2022-09-29T14:23:49+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/tarojs/</loc>
     <lastmod>2022-09-29T14:23:49+08:00</lastmod>
@@ -131,13 +140,7 @@
     <loc>https://glitterlip.github.io/snippet/ant-pro-preview/</loc>
     <lastmod>2022-08-10T11:14:43+08:00</lastmod>
   </url><url>
-    <loc>https://glitterlip.github.io/snippet/</loc>
-    <lastmod>2022-08-10T11:14:43+08:00</lastmod>
-  </url><url>
     <loc>https://glitterlip.github.io/snippet/mysql-loc/</loc>
-    <lastmod>2022-08-06T11:14:43+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/tags/mysql/</loc>
     <lastmod>2022-08-06T11:14:43+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/snippet/telescope-response-code/</loc>
