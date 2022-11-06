@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>reactjs on 代码笔记</title>
+    <link>https://glitterlip.github.io/snippet/reactjs/</link>
+    <description>Recent content in reactjs on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Thu, 03 Nov 2022 03:38:38 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/reactjs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qrcode React</title>
+      <link>https://glitterlip.github.io/snippet/qrcode-react/</link>
+      <pubDate>Thu, 03 Nov 2022 03:38:38 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/qrcode-react/</guid>
+      <description>download qrcode.react svg as png to fix Function components cannot be given refs. Attempts to access this ref will fail error
+import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &amp;#39;qrcode.react&amp;#39; export function App(props) { const divRef = useRef(null); const download = () =&amp;gt; { const node = divRef.current?.children[0]; if (node == null) { return; } const dataURI = node.toDataURL(&amp;#39;image/png&amp;#39;); let a = document.createElement(&amp;#39;a&amp;#39;); a.download = &amp;#39;qrcode-canvas.png&amp;#39;; a.href = dataURI; a.click(); }; return ( &amp;lt;div className=&amp;#39;App&amp;#39;&amp;gt; &amp;lt;h1&amp;gt;Hello React.&amp;lt;/h1&amp;gt; &amp;lt;div className={&amp;#39;mx-auto pt-2&amp;#39;} ref={divRef}&amp;gt; &amp;lt;QRCodeCanvas value={&amp;#34;https://playcode.io/react&amp;#34;} /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div className=&amp;#39;mx-auto pt-2&amp;#39;&amp;gt; &amp;lt;button onClick={download}&amp;gt; Download &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ); } // Log to console console.log(&amp;#39;Hello console&amp;#39;); </description>
+    </item>
+    
+  </channel>
+</rss>

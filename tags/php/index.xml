@@ -6,7 +6,16 @@
     <description>Recent content in php on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 20 Jul 2022 09:53:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 15 Oct 2022 19:46:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grpc php客户端与golang服务端通信</title>
+      <link>https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/</link>
+      <pubDate>Sat, 15 Oct 2022 19:46:21 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/</guid>
+      <description>版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.21.9 projectpath 代表项目根目录 Go服务端 初始化golang项目，编写proto文件 // projectpath/proto/link.proto syntax = &amp;#34;proto3&amp;#34;; package proto; option go_package = &amp;#34;/proto&amp;#34;; service Link{ rpc GetLink(GetLinkRequest) returns (GetLinkResponse){} } message GetLinkRequest{ int32 driver = 1; string linkId = 2; string token = 3; } message GetLinkResponse { int32 code = 1; string link = 2; string pwd = 3; } 安装所需工具 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 //用于生成xx.pb.go文件 主要是link.proto里面的message对应的go代码 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2 //用于生成xx_grpc.pb.go 即grpc服务的go版本服务端和客户端 //安装之后查看是否安</description>
+    </item>
+    
     <item>
       <title>laravel telescope get response code</title>
       <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>

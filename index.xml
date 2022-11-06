@@ -6,7 +6,25 @@
     <description>Recent content on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 03 Nov 2022 03:38:38 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 05 Nov 2022 22:57:57 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>412</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/412/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/412/</guid>
+      <description>412. Fizz Buzz 题目 Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”. Example: n = 15, Return: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;4&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;7&amp;#34;, &amp;#34;8&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;13&amp;#34;, &amp;#34;14&amp;#34;, &amp;#34;FizzBuzz&amp;#34; ] 题目大意 3的倍数输出 &amp;ldquo;Fizz&amp;rdquo;，5的倍数输出 &amp;ldquo;Buzz&amp;rdquo;，15的倍数输出 &amp;ldquo;FizzBuzz&amp;rdquo;，其他时候都输出原本的数字。 解题思路 按照题意</description>
+    </item>
+    
+    <item>
+      <title>1672</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1672/</link>
+      <pubDate>Sat, 05 Nov 2022 00:05:15 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/1672/</guid>
+      <description>1672. Richest Customer Wealth 题目 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the ith customer has in the jth bank. Return the wealth that the richest customer has. A customer&amp;rsquo;s wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth. Example 1: Input: accounts = [[1,2,3],[3,2,1]] Output: 6 Explanation:1st customer has wealth = 1 + 2 + 3 = 6 2nd customer has wealth = 3 + 2 + 1 = 6 Both customers are considered the richest with a wealth of 6 each, so return 6. Example 2: Input: accounts = [[1,5],[7,3],[3,5]] Output: 10 Explanation: 1st customer has wealth = 6 2nd customer has wealth = 10 3rd customer has wealth = 8 The 2nd customer is the richest with a wealth of 10. Example 3: Input: accounts = [[2,8,7],[7,1,3],[1,9,5]] Output: 17 Constraints: m == accounts.length n == accounts[i].length 1 &amp;lt;= m, n &amp;lt;= 50 1 &amp;lt;= accounts[i][j] &amp;lt;= 100 题目大意 给你一个 m x n 的整数网格 accounts ，其中 accounts[i][j] 是第 i</description>
+    </item>
+    
     <item>
       <title>Qrcode React</title>
       <link>https://glitterlip.github.io/snippet/qrcode-react/</link>
@@ -36,12 +54,12 @@ import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &
     </item>
     
     <item>
-      <title>grpc笔记</title>
-      <link>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</link>
+      <title>grpc php客户端与golang服务端通信</title>
+      <link>https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/</link>
       <pubDate>Sat, 15 Oct 2022 19:46:21 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/blog/2022-10/grpc%E7%AC%94%E8%AE%B0/</guid>
-      <description>版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.19.4 package protoc-gen-go --version //用于生成xx.pb.go 即grpc go语言版本的代码 protoc-gen-go v1.28.1 protoc-gen-go-grpc --version //用于生成xx_grpc.pb.go 即grpc服务service相关代码 protoc-gen-go-grpc 1.2.0 目录 helloworld/ ├── client.go - 客户端代码 ├── go.mod - go模块配置文件 ├── proto - 协议目录 │ ├── helloworld.pb.go - rpc协议go版本代码 命令生成 │ ├── helloworld_grpc.pb.go - rpc协议go版本代码 命令生成 │ └── helloworld.proto - rpc协议文件 └── server.go - rpc服务端代码 helloworld.proto syntax = &amp;#34;proto3&amp;#34;; // 定义包名 package proto; option go_package</description>
+      <guid>https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/</guid>
+      <description>版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.21.9 projectpath 代表项目根目录 Go服务端 初始化golang项目，编写proto文件 // projectpath/proto/link.proto syntax = &amp;#34;proto3&amp;#34;; package proto; option go_package = &amp;#34;/proto&amp;#34;; service Link{ rpc GetLink(GetLinkRequest) returns (GetLinkResponse){} } message GetLinkRequest{ int32 driver = 1; string linkId = 2; string token = 3; } message GetLinkResponse { int32 code = 1; string link = 2; string pwd = 3; } 安装所需工具 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 //用于生成xx.pb.go文件 主要是link.proto里面的message对应的go代码 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2 //用于生成xx_grpc.pb.go 即grpc服务的go版本服务端和客户端 //安装之后查看是否安</description>
     </item>
     
     <item>
@@ -159,6 +177,15 @@ import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &
       
       <guid>https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/</guid>
       <description>使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTime&amp;#39;, hideInSearch: true }, { title: &amp;#39;支付时间&amp;#39;, dataIndex: &amp;#39;paid_at&amp;#39;, ellipsis: true, valueType: &amp;#39;dateTimeRange&amp;#39;, hideInTable: true, search: { transform: (value: any) =&amp;gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时</description>
+    </item>
+    
+    <item>
+      <title>1480. Running Sum of 1d Array #</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1480/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/1480/</guid>
+      <description>1480. Running Sum of 1d Array 题目 Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]). Return the running sum of nums. Example 1: Input: nums = [1,2,3,4] Output: [1,3,6,10] Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4]. Example 2: Input: nums = [1,1,1,1,1] Output: [1,2,3,4,5] Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1]. Example 3: Input: nums = [3,1,2,10,1] Output: [3,4,6,16,17] Constraints: 1 &amp;lt;= nums.length &amp;lt;= 1000 -10^6 &amp;lt;= nums[i] &amp;lt;= 10^6 题目大意 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。请返回 nums 的动态和。 解题思路 简单题，按照题意依次循环计算前缀和即</description>
     </item>
     
     <item>

@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Snippets on 代码笔记</title>
+    <title>Snippet Code on 代码笔记</title>
     <link>https://glitterlip.github.io/snippet/</link>
-    <description>Recent content in Snippets on 代码笔记</description>
+    <description>Recent content in Snippet Code on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 03 Nov 2022 03:38:38 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Qrcode React</title>
-      <link>https://glitterlip.github.io/snippet/qrcode-react/</link>
+      <title>golang</title>
+      <link>https://glitterlip.github.io/snippet/golang/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>leetcode</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reactjs</title>
+      <link>https://glitterlip.github.io/snippet/reactjs/</link>
       <pubDate>Thu, 03 Nov 2022 03:38:38 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/qrcode-react/</guid>
-      <description>download qrcode.react svg as png to fix Function components cannot be given refs. Attempts to access this ref will fail error
-import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &amp;#39;qrcode.react&amp;#39; export function App(props) { const divRef = useRef(null); const download = () =&amp;gt; { const node = divRef.current?.children[0]; if (node == null) { return; } const dataURI = node.toDataURL(&amp;#39;image/png&amp;#39;); let a = document.createElement(&amp;#39;a&amp;#39;); a.download = &amp;#39;qrcode-canvas.png&amp;#39;; a.href = dataURI; a.click(); }; return ( &amp;lt;div className=&amp;#39;App&amp;#39;&amp;gt; &amp;lt;h1&amp;gt;Hello React.&amp;lt;/h1&amp;gt; &amp;lt;div className={&amp;#39;mx-auto pt-2&amp;#39;} ref={divRef}&amp;gt; &amp;lt;QRCodeCanvas value={&amp;#34;https://playcode.io/react&amp;#34;} /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div className=&amp;#39;mx-auto pt-2&amp;#39;&amp;gt; &amp;lt;button onClick={download}&amp;gt; Download &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ); } // Log to console console.log(&amp;#39;Hello console&amp;#39;); </description>
+      <guid>https://glitterlip.github.io/snippet/reactjs/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>ant design pro查看官网预览源码</title>
-      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
+      <title>antd</title>
+      <link>https://glitterlip.github.io/snippet/antd/</link>
       <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
-      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+      <guid>https://glitterlip.github.io/snippet/antd/</guid>
+      <description></description>
     </item>
     
     <item>
-      <title>golang mysql设置时区</title>
-      <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
-      <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
-      
-      <guid>https://glitterlip.github.io/snippet/mysql-loc/</guid>
-      <description>github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;amp;loc=Asia%2FShanghai</description>
-    </item>
-    
-    <item>
-      <title>laravel telescope get response code</title>
-      <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>
+      <title>php</title>
+      <link>https://glitterlip.github.io/snippet/php/</link>
       <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/telescope-response-code/</guid>
-      <description>Telescope::tag(function (IncomingEntry $entry) { $tags = []; if ( $entry-&amp;gt;isRequest() ) { if ( $entry-&amp;gt;content[&amp;#39;response_status&amp;#39;] == 302 ) { $tags[] = &amp;#39;redirect&amp;#39;; } } return $tags; }); </description>
+      <guid>https://glitterlip.github.io/snippet/php/</guid>
+      <description></description>
     </item>
     
   </channel>
