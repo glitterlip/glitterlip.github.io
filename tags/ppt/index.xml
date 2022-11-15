@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ppt on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/ppt/</link>
+    <description>Recent content in ppt on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Tue, 15 Nov 2022 19:44:05 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/ppt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aspose Slide 生成图片缩略图中文乱码</title>
+      <link>https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+      <pubDate>Tue, 15 Nov 2022 19:44:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+      <description>aspose slide生成图片缩略图中文乱码 使用aspose slide 给ppt生成图片缩略图，mac上没问题，部署到服务器上，生成的缩略图中文全部都是方块 把mac的字体传到服务器上还是不行,读取ppt时会出现 class com.aspose.slides.PptxReadException: Index 32 out of bounds for length 32 ---&amp;gt; class com.aspose.slides.ms.pbdb106a0.bt com.aspose.slides.avm.do(Unknown Source) com.aspose.slides.Presentation.int(Unknown Source) com.aspose.slides.Presentation.if(Unknown Source) com.aspose.slides.Presentation.&amp;lt;init&amp;gt;(Unknown Source) com.aspose.slides.Presentation.&amp;lt;init&amp;gt;(Unknown Source) 这个错误，后来换成使用win10的字体可以了 centos7的步骤 把字体上传到 /usr/share/fonts/win 目录 cd /usr/share/fonts/win mkfontscale //建立索引 fc-cache //刷新缓存 fc-list //查看字体列表 fc-list :lang=zh</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,34 @@
     <description>Recent content on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 05 Nov 2022 22:57:57 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Nov 2022 19:44:05 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aspose Slide 生成图片缩略图中文乱码</title>
+      <link>https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>
+      <pubDate>Tue, 15 Nov 2022 19:44:05 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</guid>
+      <description>aspose slide生成图片缩略图中文乱码 使用aspose slide 给ppt生成图片缩略图，mac上没问题，部署到服务器上，生成的缩略图中文全部都是方块 把mac的字体传到服务器上还是不行,读取ppt时会出现 class com.aspose.slides.PptxReadException: Index 32 out of bounds for length 32 ---&amp;gt; class com.aspose.slides.ms.pbdb106a0.bt com.aspose.slides.avm.do(Unknown Source) com.aspose.slides.Presentation.int(Unknown Source) com.aspose.slides.Presentation.if(Unknown Source) com.aspose.slides.Presentation.&amp;lt;init&amp;gt;(Unknown Source) com.aspose.slides.Presentation.&amp;lt;init&amp;gt;(Unknown Source) 这个错误，后来换成使用win10的字体可以了 centos7的步骤 把字体上传到 /usr/share/fonts/win 目录 cd /usr/share/fonts/win mkfontscale //建立索引 fc-cache //刷新缓存 fc-list //查看字体列表 fc-list :lang=zh</description>
+    </item>
+    
+    <item>
+      <title>goquery 处理中文网页</title>
+      <link>https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/</link>
+      <pubDate>Wed, 09 Nov 2022 03:51:51 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/</guid>
+      <description>&amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=gb2312&amp;#34;&amp;gt; 爬虫处理网页，标签用的gb2312字符集，goquery拿到的是乱码 刚开始用的 func DecodeToGBK2312(text string) string { dst := make([]byte, len(text)*2) tr := simplifiedchinese.HZGB2312.NewDecoder() nDst, _, _ := tr.Transform(dst, []byte(text), true) return string(dst[:nDst]) } 还是乱码。。。。 后来在wiki里找了一种方法 func detectContentCharset(body io.Reader) string { r := bufio.NewReader(body) if data, err := r.Peek(1024); err == nil { if _, name, ok := charset.DetermineEncoding(data, &amp;#34;&amp;#34;); ok { return name } } return &amp;#34;utf-8&amp;#34; } // DecodeHTMLBody returns an decoding reader of the html Body for the specified `charset` // If `charset` is empty, DecodeHTMLBody tries to guess the encoding from the content func DecodeHTMLBody(body io.Reader, charset string) (io.Reader, error) { if charset == &amp;#34;&amp;#34; { charset = detectContentCharset(body) } e, err := htmlindex.Get(charset) if err != nil { return nil, err } if name, _ := htmlindex.Name(e); name != &amp;#34;utf-8&amp;#34; { body = e.NewDecoder().Reader(body) } return body, nil } 试了下如果</description>
+    </item>
+    
+    <item>
+      <title>1342</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1342/</link>
+      <pubDate>Mon, 07 Nov 2022 03:59:30 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/1342/</guid>
+      <description>1342. Number of Steps to Reduce a Number to Zero 题目 Given an integer num, return the number of steps to reduce it to zero. In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it. Example 1: Input: num = 14 Output: 6 Explanation: Step 1) 14 is even; divide by 2 and obtain 7. Step 2) 7 is odd; subtract 1 and obtain 6. Step 3) 6 is even; divide by 2 and obtain 3. Step 4) 3 is odd; subtract 1 and obtain 2. Step 5) 2 is even; divide by 2 and obtain 1. Step 6) 1 is odd; subtract 1 and obtain 0. Example 2: Input: num = 8 Output: 4 Explanation: Step 1) 8 is even; divide by 2 and obtain 4. Step 2) 4 is even; divide by 2 and obtain 2. Step 3) 2 is even; divide by 2 and obtain 1. Step 4) 1 is odd; subtract 1 and obtain 0. Example 3: Input: num = 123 Output: 12 Constraints: 0 &amp;lt;= num &amp;lt;= 106 题目大意 给你一个数，偶数</description>
+    </item>
+    
     <item>
       <title>412</title>
       <link>https://glitterlip.github.io/snippet/leetcode/412/</link>
@@ -14,6 +41,15 @@
       
       <guid>https://glitterlip.github.io/snippet/leetcode/412/</guid>
       <description>412. Fizz Buzz 题目 Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”. Example: n = 15, Return: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;4&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;7&amp;#34;, &amp;#34;8&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;13&amp;#34;, &amp;#34;14&amp;#34;, &amp;#34;FizzBuzz&amp;#34; ] 题目大意 3的倍数输出 &amp;ldquo;Fizz&amp;rdquo;，5的倍数输出 &amp;ldquo;Buzz&amp;rdquo;，15的倍数输出 &amp;ldquo;FizzBuzz&amp;rdquo;，其他时候都输出原本的数字。 解题思路 按照题意</description>
+    </item>
+    
+    <item>
+      <title>412</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/876/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/876/</guid>
+      <description>412. Fizz Buzz 题目 Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5] Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3. (The judge&amp;#39;s serialization of this node is [3,4,5]). Note that we returned a ListNode object ans, such that: ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL. Example 2: Input: [1,2,3,4,5,6] Output: Node 4 from this list (Serialization: [4,5,6]) Since the list has two middle nodes with values 3 and 4, we return the second one. Note: The number of nodes in the given list will be between 1 and 100. 题目大意 输出链表中间结点。这题在前面题目中反复出现了很多次了。 如果链表长度是奇数，输出中间结点是中间结点。如果链表长度是双数，输出中间结点是中位数后</description>
     </item>
     
     <item>

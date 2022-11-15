@@ -6,7 +6,16 @@
     <description>Recent content in golang on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 05 Nov 2022 22:57:57 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/golang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 03:59:30 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1342</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1342/</link>
+      <pubDate>Mon, 07 Nov 2022 03:59:30 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/1342/</guid>
+      <description>1342. Number of Steps to Reduce a Number to Zero 题目 Given an integer num, return the number of steps to reduce it to zero. In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it. Example 1: Input: num = 14 Output: 6 Explanation: Step 1) 14 is even; divide by 2 and obtain 7. Step 2) 7 is odd; subtract 1 and obtain 6. Step 3) 6 is even; divide by 2 and obtain 3. Step 4) 3 is odd; subtract 1 and obtain 2. Step 5) 2 is even; divide by 2 and obtain 1. Step 6) 1 is odd; subtract 1 and obtain 0. Example 2: Input: num = 8 Output: 4 Explanation: Step 1) 8 is even; divide by 2 and obtain 4. Step 2) 4 is even; divide by 2 and obtain 2. Step 3) 2 is even; divide by 2 and obtain 1. Step 4) 1 is odd; subtract 1 and obtain 0. Example 3: Input: num = 123 Output: 12 Constraints: 0 &amp;lt;= num &amp;lt;= 106 题目大意 给你一个数，偶数</description>
+    </item>
+    
     <item>
       <title>412</title>
       <link>https://glitterlip.github.io/snippet/leetcode/412/</link>
@@ -14,6 +23,15 @@
       
       <guid>https://glitterlip.github.io/snippet/leetcode/412/</guid>
       <description>412. Fizz Buzz 题目 Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”. Example: n = 15, Return: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;4&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;7&amp;#34;, &amp;#34;8&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;13&amp;#34;, &amp;#34;14&amp;#34;, &amp;#34;FizzBuzz&amp;#34; ] 题目大意 3的倍数输出 &amp;ldquo;Fizz&amp;rdquo;，5的倍数输出 &amp;ldquo;Buzz&amp;rdquo;，15的倍数输出 &amp;ldquo;FizzBuzz&amp;rdquo;，其他时候都输出原本的数字。 解题思路 按照题意</description>
+    </item>
+    
+    <item>
+      <title>412</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/876/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/876/</guid>
+      <description>412. Fizz Buzz 题目 Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5] Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3. (The judge&amp;#39;s serialization of this node is [3,4,5]). Note that we returned a ListNode object ans, such that: ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL. Example 2: Input: [1,2,3,4,5,6] Output: Node 4 from this list (Serialization: [4,5,6]) Since the list has two middle nodes with values 3 and 4, we return the second one. Note: The number of nodes in the given list will be between 1 and 100. 题目大意 输出链表中间结点。这题在前面题目中反复出现了很多次了。 如果链表长度是奇数，输出中间结点是中间结点。如果链表长度是双数，输出中间结点是中位数后</description>
     </item>
     
     <item>

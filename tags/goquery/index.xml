@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>goquery on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/goquery/</link>
+    <description>Recent content in goquery on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Wed, 09 Nov 2022 03:51:51 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/goquery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>goquery 处理中文网页</title>
+      <link>https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/</link>
+      <pubDate>Wed, 09 Nov 2022 03:51:51 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/</guid>
+      <description>&amp;lt;meta http-equiv=&amp;#34;Content-Type&amp;#34; content=&amp;#34;text/html; charset=gb2312&amp;#34;&amp;gt; 爬虫处理网页，标签用的gb2312字符集，goquery拿到的是乱码 刚开始用的 func DecodeToGBK2312(text string) string { dst := make([]byte, len(text)*2) tr := simplifiedchinese.HZGB2312.NewDecoder() nDst, _, _ := tr.Transform(dst, []byte(text), true) return string(dst[:nDst]) } 还是乱码。。。。 后来在wiki里找了一种方法 func detectContentCharset(body io.Reader) string { r := bufio.NewReader(body) if data, err := r.Peek(1024); err == nil { if _, name, ok := charset.DetermineEncoding(data, &amp;#34;&amp;#34;); ok { return name } } return &amp;#34;utf-8&amp;#34; } // DecodeHTMLBody returns an decoding reader of the html Body for the specified `charset` // If `charset` is empty, DecodeHTMLBody tries to guess the encoding from the content func DecodeHTMLBody(body io.Reader, charset string) (io.Reader, error) { if charset == &amp;#34;&amp;#34; { charset = detectContentCharset(body) } e, err := htmlindex.Get(charset) if err != nil { return nil, err } if name, _ := htmlindex.Name(e); name != &amp;#34;utf-8&amp;#34; { body = e.NewDecoder().Reader(body) } return body, nil } 试了下如果</description>
+    </item>
+    
+  </channel>
+</rss>
