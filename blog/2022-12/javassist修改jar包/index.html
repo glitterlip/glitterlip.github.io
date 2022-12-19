@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Paramita">
+  <meta name="description" content="用aspose slide为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制 pom文件 &lt;dependency&gt; &lt;groupId&gt;com.aspose&lt;/groupId&gt; &lt;artifactId&gt;aspose-slides&lt;/artifactId&gt; &lt;version&gt;22.9&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar &lt;/systemPath&gt; &lt;classifier&gt;jdk16&lt;/classifier&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.javassist&lt;/groupId&gt; &lt;artifactId&gt;javassist&lt;/artifactId&gt; &lt;version&gt;3.28.0-GA&lt;/version&gt; &lt;/dependency&gt; 填个错的license试试 String license = &#34;&lt;License&gt;\n&#34; &#43; &#34; &lt;Data&gt;\n&#34; &#43; &#34; &lt;Products&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Total for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Words for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;/Products&gt;\n&#34; &#43; &#34; &lt;EditionType&gt;Enterprise&lt;/EditionType&gt;\n&#34; &#43; &#34; &lt;SubscriptionExpiry&gt;20991231&lt;/SubscriptionExpiry&gt;\n&#34; &#43; &#34; &lt;LicenseExpiry&gt;20991231&lt;/LicenseExpiry&gt;\n&#34; &#43; &#34; &lt;SerialNumber&gt;8bfe198c-7f0c-4ef8-8ff0-&lt;/SerialNumber&gt;\n&#34; &#43; &#34; &lt;/Data&gt;\n&#34; &#43; &#34;&lt;/License&gt;&#34;; InputStream is = new ByteArrayInputStream(license.getBytes(StandardCharsets.UTF_8)); License aposeLic = new License(); aposeLic.setLicense(is); 看看报错信息 2022-12-04 03:03:45.498 ERROR 63412 --- [nio-8091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is class com.aspose.slides.exceptions.InvalidOperationException: License parsing error ---&gt; class com.aspose.slides.exceptions.InvalidOperationException: Signature check error. ---&gt; java.security.SignatureException: Signature length not correct: got 0 but was expecting 256 --- End">
+
+  <meta property="og:title" content="javassist修改jar包" />
+<meta property="og:description" content="用aspose slide为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制 pom文件 &lt;dependency&gt; &lt;groupId&gt;com.aspose&lt;/groupId&gt; &lt;artifactId&gt;aspose-slides&lt;/artifactId&gt; &lt;version&gt;22.9&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar &lt;/systemPath&gt; &lt;classifier&gt;jdk16&lt;/classifier&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.javassist&lt;/groupId&gt; &lt;artifactId&gt;javassist&lt;/artifactId&gt; &lt;version&gt;3.28.0-GA&lt;/version&gt; &lt;/dependency&gt; 填个错的license试试 String license = &#34;&lt;License&gt;\n&#34; &#43; &#34; &lt;Data&gt;\n&#34; &#43; &#34; &lt;Products&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Total for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Words for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;/Products&gt;\n&#34; &#43; &#34; &lt;EditionType&gt;Enterprise&lt;/EditionType&gt;\n&#34; &#43; &#34; &lt;SubscriptionExpiry&gt;20991231&lt;/SubscriptionExpiry&gt;\n&#34; &#43; &#34; &lt;LicenseExpiry&gt;20991231&lt;/LicenseExpiry&gt;\n&#34; &#43; &#34; &lt;SerialNumber&gt;8bfe198c-7f0c-4ef8-8ff0-&lt;/SerialNumber&gt;\n&#34; &#43; &#34; &lt;/Data&gt;\n&#34; &#43; &#34;&lt;/License&gt;&#34;; InputStream is = new ByteArrayInputStream(license.getBytes(StandardCharsets.UTF_8)); License aposeLic = new License(); aposeLic.setLicense(is); 看看报错信息 2022-12-04 03:03:45.498 ERROR 63412 --- [nio-8091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is class com.aspose.slides.exceptions.InvalidOperationException: License parsing error ---&gt; class com.aspose.slides.exceptions.InvalidOperationException: Signature check error. ---&gt; java.security.SignatureException: Signature length not correct: got 0 but was expecting 256 --- End" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-12-04T02:25:06+08:00" />
+<meta property="article:modified_time" content="2022-12-04T02:25:06+08:00" />
+
+
+
+  <title>
+  
+       javassist修改jar包 | 代码笔记 
+  
+  </title>
+
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/">
+
+  
+  
+
+  
+  <link href="https://glitterlip.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://glitterlip.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://glitterlip.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://glitterlip.github.io/img/zheng.png"
+  
+  >
+
+
+  
+
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://glitterlip.github.io/">
+          
+        <img class="avatar" src="https://glitterlip.github.io/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Paramita</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://glitterlip.github.io/">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/blog/" >Blog  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/moment/" >Moment  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/snippet/" >Snippet  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/about/" >About  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://glitterlip.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://glitterlip.github.io/img/profile.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://glitterlip.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>代码笔记</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/glitterlip" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">javassist修改jar包</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 4, 2022</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>3 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <p>用<code>aspose slide</code>为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制</p>
+<p>pom文件</p>
+<pre tabindex="0"><code>&lt;dependency&gt;
+    &lt;groupId&gt;com.aspose&lt;/groupId&gt;
+    &lt;artifactId&gt;aspose-slides&lt;/artifactId&gt;
+    &lt;version&gt;22.9&lt;/version&gt;
+    &lt;scope&gt;system&lt;/scope&gt;
+    &lt;systemPath&gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar
+    &lt;/systemPath&gt;
+    &lt;classifier&gt;jdk16&lt;/classifier&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.javassist&lt;/groupId&gt;
+    &lt;artifactId&gt;javassist&lt;/artifactId&gt;
+    &lt;version&gt;3.28.0-GA&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre><p>填个错的license试试</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"> <span class="n">String</span> <span class="n">license</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">                <span class="s">&#34;&lt;License&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;  &lt;Data&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;Products&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;      &lt;Product&gt;Aspose.Total for Java&lt;/Product&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;      &lt;Product&gt;Aspose.Words for Java&lt;/Product&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;/Products&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;EditionType&gt;Enterprise&lt;/EditionType&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;SubscriptionExpiry&gt;20991231&lt;/SubscriptionExpiry&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;LicenseExpiry&gt;20991231&lt;/LicenseExpiry&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;    &lt;SerialNumber&gt;8bfe198c-7f0c-4ef8-8ff0-&lt;/SerialNumber&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;  &lt;/Data&gt;\n&#34;</span> <span class="o">+</span>
+</span></span><span class="line"><span class="cl">                        <span class="s">&#34;&lt;/License&gt;&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">InputStream</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ByteArrayInputStream</span><span class="o">(</span><span class="n">license</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="n">StandardCharsets</span><span class="o">.</span><span class="na">UTF_8</span><span class="o">));</span>
+</span></span><span class="line"><span class="cl">        <span class="n">License</span> <span class="n">aposeLic</span> <span class="o">=</span> <span class="k">new</span> <span class="n">License</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">aposeLic</span><span class="o">.</span><span class="na">setLicense</span><span class="o">(</span><span class="n">is</span><span class="o">);</span>
+</span></span></code></pre></div><p>看看报错信息</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">2022</span><span class="o">-</span><span class="n">12</span><span class="o">-</span><span class="n">04</span> <span class="n">03</span><span class="o">:</span><span class="n">03</span><span class="o">:</span><span class="n">45</span><span class="o">.</span><span class="na">498</span> <span class="n">ERROR</span> <span class="n">63412</span> <span class="o">---</span> <span class="o">[</span><span class="n">nio</span><span class="o">-</span><span class="n">8091</span><span class="o">-</span><span class="n">exec</span><span class="o">-</span><span class="n">1</span><span class="o">]</span> <span class="n">o</span><span class="o">.</span><span class="na">a</span><span class="o">.</span><span class="na">c</span><span class="o">.</span><span class="na">c</span><span class="o">.</span><span class="na">C</span><span class="o">.[.[.[/].[</span><span class="n">dispatcherServlet</span><span class="o">]</span>    <span class="o">:</span> <span class="n">Servlet</span><span class="o">.</span><span class="na">service</span><span class="o">()</span> <span class="k">for</span> <span class="n">servlet</span> <span class="o">[</span><span class="n">dispatcherServlet</span><span class="o">]</span> <span class="n">in</span> <span class="n">context</span> <span class="n">with</span> <span class="n">path</span> <span class="o">[]</span> <span class="n">threw</span> <span class="n">exception</span> <span class="o">[</span><span class="n">Request</span> <span class="n">processing</span> <span class="n">failed</span><span class="o">;</span> <span class="n">nested</span> <span class="n">exception</span> <span class="n">is</span> <span class="kd">class</span> <span class="nc">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">exceptions</span><span class="o">.</span><span class="na">InvalidOperationException</span><span class="o">:</span> <span class="n">License</span> <span class="n">parsing</span> <span class="n">error</span> <span class="o">---&gt;</span> <span class="kd">class</span> <span class="nc">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">exceptions</span><span class="o">.</span><span class="na">InvalidOperationException</span><span class="o">:</span> <span class="n">Signature</span> <span class="n">check</span> <span class="n">error</span><span class="o">.</span> <span class="o">---&gt;</span> <span class="n">java</span><span class="o">.</span><span class="na">security</span><span class="o">.</span><span class="na">SignatureException</span><span class="o">:</span> <span class="n">Signature</span> <span class="n">length</span> <span class="n">not</span> <span class="n">correct</span><span class="o">:</span> <span class="n">got</span> <span class="n">0</span> <span class="n">but</span> <span class="n">was</span> <span class="n">expecting</span> <span class="n">256</span>
+</span></span><span class="line"><span class="cl">   <span class="o">---</span> <span class="n">End</span> <span class="n">of</span> <span class="n">inner</span> <span class="n">exception</span> <span class="n">stack</span> <span class="n">trace</span> <span class="o">---</span>
+</span></span><span class="line"><span class="cl"><span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">final</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">Unknown</span> <span class="n">Source</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">return</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">Unknown</span> <span class="n">Source</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">return</span><span class="o">.</span><span class="na">if</span><span class="o">(</span><span class="n">Unknown</span> <span class="n">Source</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">return</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">Unknown</span> <span class="n">Source</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">License</span><span class="o">.</span><span class="na">setLicense</span><span class="o">(</span><span class="n">Unknown</span> <span class="n">Source</span><span class="o">)</span>
+</span></span></code></pre></div><p><code>com.aspose.slides.internal.oh.return</code>类的<code>do</code>方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">do</span><span class="o">(</span><span class="n">Node</span> <span class="n">var0</span><span class="o">,</span> <span class="n">Node</span> <span class="n">var1</span><span class="o">,</span> <span class="n">String</span><span class="o">[]</span> <span class="n">var2</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">var3</span> <span class="o">=</span> <span class="n">var0</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="k">do</span><span class="o">(</span><span class="n">var0</span><span class="o">)</span> <span class="o">:</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">byte</span><span class="o">[]</span> <span class="n">var4</span> <span class="o">=</span> <span class="n">var3</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="s">&#34;UTF-16LE&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">String</span> <span class="n">var5</span> <span class="o">=</span> <span class="n">var1</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">?</span> <span class="n">var1</span><span class="o">.</span><span class="na">getFirstChild</span><span class="o">().</span><span class="na">getNodeValue</span><span class="o">()</span> <span class="o">:</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">byte</span><span class="o">[]</span> <span class="n">var6</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">try</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">var5</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">PublicKey</span> <span class="n">var7</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">KeyFactory</span> <span class="n">var8</span> <span class="o">=</span> <span class="n">KeyFactory</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;RSA&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">RSAPublicKeySpec</span> <span class="n">var9</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="k">if</span><span class="o">(</span><span class="n">var2</span><span class="o">),</span> <span class="n">var6</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">var7</span> <span class="o">=</span> <span class="n">var8</span><span class="o">.</span><span class="na">generatePublic</span><span class="o">(</span><span class="n">var9</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">var15</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">(</span><span class="k">new</span> <span class="kd">final</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}).</span><span class="na">do</span><span class="o">((</span><span class="k">new</span> <span class="kt">boolean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}).</span><span class="na">if</span><span class="o">,</span> <span class="n">var15</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="n">Signature</span> <span class="n">var17</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="o">(</span><span class="n">var6</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">128</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">var17</span> <span class="o">=</span> <span class="n">Signature</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;SHA1withRSA&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">var17</span><span class="o">.</span><span class="na">initVerify</span><span class="o">(</span><span class="n">var7</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="n">var17</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">var4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">do</span><span class="o">(</span><span class="n">var17</span><span class="o">,</span> <span class="n">var6</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">var17</span> <span class="o">=</span> <span class="n">Signature</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&#34;SHA256withRSA&#34;</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">var17</span><span class="o">.</span><span class="na">initVerify</span><span class="o">(</span><span class="n">var7</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">var17</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">var4</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">do</span><span class="o">(</span><span class="n">var17</span><span class="o">,</span> <span class="n">var6</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InvalidOperationException</span> <span class="n">var14</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">InvalidOperationException</span> <span class="n">var18</span> <span class="o">=</span> <span class="n">var14</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">var19</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(</span><span class="k">if</span><span class="o">(</span><span class="n">var2</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">var19</span> <span class="o">=</span> <span class="kt">long</span><span class="o">.</span><span class="na">if</span><span class="o">(</span><span class="n">var6</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">var19</span> <span class="o">=</span> <span class="kt">long</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">var6</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="n">String</span> <span class="n">var10</span> <span class="o">=</span> <span class="s">&#34;AQAB&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">byte</span><span class="o">[]</span> <span class="n">var11</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">try</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">var19</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="kt">byte</span><span class="o">[]</span> <span class="n">var12</span> <span class="o">=</span> <span class="n">com</span><span class="o">.</span><span class="na">aspose</span><span class="o">.</span><span class="na">slides</span><span class="o">.</span><span class="na">internal</span><span class="o">.</span><span class="na">oh</span><span class="o">.</span><span class="na">try</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">var10</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="o">(!</span><span class="kd">implements</span><span class="o">.</span><span class="na">do</span><span class="o">(</span><span class="n">var4</span><span class="o">,</span> <span class="n">var6</span><span class="o">,</span> <span class="n">var11</span><span class="o">,</span> <span class="n">var12</span><span class="o">))</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">(</span><span class="k">new</span> <span class="kd">final</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">}).</span><span class="na">do</span><span class="o">((</span><span class="k">new</span> <span class="kt">boolean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="o">}).</span><span class="na">int</span><span class="o">,</span> <span class="n">var18</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">var13</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">(</span><span class="k">new</span> <span class="kd">final</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}).</span><span class="na">do</span><span class="o">((</span><span class="k">new</span> <span class="kt">boolean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="o">}).</span><span class="na">int</span><span class="o">,</span> <span class="n">var14</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">var16</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">(</span><span class="k">new</span> <span class="kd">final</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}).</span><span class="na">do</span><span class="o">((</span><span class="k">new</span> <span class="kt">boolean</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}).</span><span class="na">int</span><span class="o">,</span> <span class="n">var16</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>方法签名是<code>void</code>，没有返回值，应该是里面做了什么见不得人的事</p>
+<p>修改启动方法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@SpringBootApplication</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">PptApplication</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//        SpringApplication.run(PptApplication.class, args);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">modifyPptJar</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">modifyPptJar</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ClassPool</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">insertClassPath</span><span class="o">(</span><span class="s">&#34;/Users/bao/Documents/devworkspace/java/ppt/src/main/resources/lib/aspose-slides-22.9-jdk16.jar&#34;</span><span class="o">);</span><span class="c1">//jar包地址
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">CtClass</span> <span class="n">zzZJJClass</span> <span class="o">=</span> <span class="n">ClassPool</span><span class="o">.</span><span class="na">getDefault</span><span class="o">().</span><span class="na">getCtClass</span><span class="o">(</span><span class="s">&#34;com.aspose.slides.internal.oh.return&#34;</span><span class="o">);</span> <span class="c1">//修改这个类
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">CtMethod</span><span class="o">[]</span> <span class="n">methodA</span> <span class="o">=</span> <span class="n">zzZJJClass</span><span class="o">.</span><span class="na">getDeclaredMethods</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="o">(</span><span class="n">CtMethod</span> <span class="n">ctMethod</span> <span class="o">:</span> <span class="n">methodA</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">CtClass</span><span class="o">[]</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">ctMethod</span><span class="o">.</span><span class="na">getParameterTypes</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="o">(</span><span class="n">ps</span><span class="o">.</span><span class="na">length</span> <span class="o">==</span> <span class="n">3</span> <span class="o">&amp;&amp;</span> <span class="n">ctMethod</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;do&#34;</span><span class="o">))</span> <span class="o">{</span><span class="c1">//3个参数并且方法名是do的方法
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;ps[0].getName==&#34;</span> <span class="o">+</span> <span class="n">ps</span><span class="o">[</span><span class="n">0</span><span class="o">].</span><span class="na">getName</span><span class="o">());</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ctMethod</span><span class="o">.</span><span class="na">setBody</span><span class="o">(</span><span class="s">&#34;{}&#34;</span><span class="o">);</span> <span class="c1">//把这个方法清空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="o">}</span>
+</span></span><span class="line"><span class="cl">            <span class="n">zzZJJClass</span><span class="o">.</span><span class="na">writeFile</span><span class="o">(</span><span class="s">&#34;/Users/bao/Desktop&#34;</span><span class="o">);</span><span class="c1">//把修改后的文件保存到桌面
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;错误==&#34;</span> <span class="o">+</span> <span class="n">e</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">        <span class="o">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>解压原始jar包，删除里面的<code>ASPOSE.RSA</code>文件和<code>ASPOSE.SF</code>文件，然后把桌面新生成的<code>/Users/bao/Desktop/com/aspose/slides/internal/oh/return.class</code>文件放到jar包里,mac可以用maczip这个软件，也不用解压，直接文件拖到maczip里，问你是否替换，确定就可以更新jar包了</p>
+<p>最后把新的jar包加到项目里，maven更新下就没水印了</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/java" role="button">java </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Aspose Slide 生成图片缩略图中文乱码</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/glitterlip " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://glitterlip.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://glitterlip.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://glitterlip.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>
