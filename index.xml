@@ -6,7 +6,16 @@
     <description>Recent content on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 15 Nov 2022 19:44:05 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Dec 2022 02:25:06 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>javassist修改jar包</title>
+      <link>https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/</link>
+      <pubDate>Sun, 04 Dec 2022 02:25:06 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/</guid>
+      <description>用aspose slide为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制 pom文件 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.aspose&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aspose-slides&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;22.9&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;system&amp;lt;/scope&amp;gt; &amp;lt;systemPath&amp;gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar &amp;lt;/systemPath&amp;gt; &amp;lt;classifier&amp;gt;jdk16&amp;lt;/classifier&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.javassist&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javassist&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.28.0-GA&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 填个错的license试试 String license = &amp;#34;&amp;lt;License&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;Data&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;Products&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;Product&amp;gt;Aspose.Total for Java&amp;lt;/Product&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;Product&amp;gt;Aspose.Words for Java&amp;lt;/Product&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;/Products&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;EditionType&amp;gt;Enterprise&amp;lt;/EditionType&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;SubscriptionExpiry&amp;gt;20991231&amp;lt;/SubscriptionExpiry&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;LicenseExpiry&amp;gt;20991231&amp;lt;/LicenseExpiry&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;SerialNumber&amp;gt;8bfe198c-7f0c-4ef8-8ff0-&amp;lt;/SerialNumber&amp;gt;\n&amp;#34; + &amp;#34; &amp;lt;/Data&amp;gt;\n&amp;#34; + &amp;#34;&amp;lt;/License&amp;gt;&amp;#34;; InputStream is = new ByteArrayInputStream(license.getBytes(StandardCharsets.UTF_8)); License aposeLic = new License(); aposeLic.setLicense(is); 看看报错信息 2022-12-04 03:03:45.498 ERROR 63412 --- [nio-8091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is class com.aspose.slides.exceptions.InvalidOperationException: License parsing error ---&amp;gt; class com.aspose.slides.exceptions.InvalidOperationException: Signature check error. ---&amp;gt; java.security.SignatureException: Signature length not correct: got 0 but was expecting 256 --- End</description>
+    </item>
+    
     <item>
       <title>Aspose Slide 生成图片缩略图中文乱码</title>
       <link>https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</link>

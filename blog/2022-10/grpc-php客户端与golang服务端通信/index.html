@@ -295,7 +295,7 @@
 
     
       <li class="middot"></li>
-      <li>2 minutes read</li>
+      <li>3 minutes read</li>
     
   </ul>
   
@@ -437,6 +437,38 @@ libprotoc 3.21.9
 </span></span><span class="line"><span class="cl">        <span class="nv">$grpcRequest</span><span class="o">-&gt;</span><span class="na">setToken</span><span class="p">(</span><span class="s2">&#34;testtoken&#34;</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">        <span class="nv">$resp</span> <span class="o">=</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">GetLink</span><span class="p">(</span><span class="nv">$grpcRequest</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">wait</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl">        <span class="nx">dd</span><span class="p">(</span><span class="nv">$resp</span><span class="p">);</span>
+</span></span></code></pre></div><p>wait返回值为数组，第一个元素可以转换成proto生成的response，这里是<code>GetLinkResponse</code>,第二个是meta信息关联数组,里面code为0时请求成功，其他值为grpc调用失败，需要处理</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">array</span><span class="o">:</span><span class="mi">2</span> <span class="p">[</span><span class="nx">▼</span> <span class="c1">// app/Http/Controllers/IndexController.php:38
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="mi">0</span> <span class="o">=&gt;</span> <span class="nx">Proto\GetLinkResponse</span> <span class="p">{</span><span class="c1">#2004 ▼
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">#code: 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">#link: &#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">#pwd: &#34;ocod&#34;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">-</span><span class="nx">desc</span><span class="o">:</span> <span class="nx">Google\Protobuf\Internal\Descriptor</span> <span class="p">{</span><span class="c1">#2042 ▼
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="o">-</span><span class="nx">full_name</span><span class="o">:</span> <span class="s2">&#34;proto.GetLinkResponse&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">field</span><span class="o">:</span> <span class="k">array</span><span class="o">:</span><span class="mi">3</span> <span class="p">[</span><span class="nx">▶</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">json_to_field</span><span class="o">:</span> <span class="k">array</span><span class="o">:</span><span class="mi">3</span> <span class="p">[</span><span class="nx">▶</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">name_to_field</span><span class="o">:</span> <span class="k">array</span><span class="o">:</span><span class="mi">3</span> <span class="p">[</span><span class="nx">▶</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">index_to_field</span><span class="o">:</span> <span class="k">array</span><span class="o">:</span><span class="mi">3</span> <span class="p">[</span><span class="nx">▶</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">nested_type</span><span class="o">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">enum_type</span><span class="o">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">klass</span><span class="o">:</span> <span class="s2">&#34;Proto\GetLinkResponse&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">legacy_klass</span><span class="o">:</span> <span class="s2">&#34;Proto\GetLinkResponse&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">previous_klass</span><span class="o">:</span> <span class="s2">&#34;Proto\GetLinkResponse&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">options</span><span class="o">:</span> <span class="k">null</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">oneof_decl</span><span class="o">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span><span class="nx">public_desc</span><span class="o">:</span> <span class="nx">Google\Protobuf\Descriptor</span> <span class="p">{</span><span class="c1">#2043 ▼
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="o">-</span><span class="nx">internal_desc</span><span class="o">:</span> <span class="nx">Google\Protobuf\Internal\Descriptor</span> <span class="p">{</span><span class="c1">#2042}
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="o">-</span><span class="nx">unknown</span><span class="o">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="mi">1</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="c1">#2034 ▼
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">+</span><span class="s2">&#34;metadata&#34;</span><span class="o">:</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span><span class="s2">&#34;code&#34;</span><span class="o">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">    <span class="o">+</span><span class="s2">&#34;details&#34;</span><span class="o">:</span> <span class="s2">&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">]</span>
 </span></span></code></pre></div><p>如果有端口连通性问题可以用telnet，或者</p>
 <pre tabindex="0"><code># Download image
 docker pull fullstorydev/grpcurl:latest
