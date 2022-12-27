@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (22)</span>
+                <span>Blog (24)</span>
               </a>
             </li>
           
@@ -360,11 +360,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (12)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
         
@@ -372,7 +372,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -446,6 +446,120 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">golang实现laravel的cache remember方法</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 27, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      怀念laravel的缓存，太方便了，用golang实现一下 安利一下这个包 gookit/cache type Cache interface { // basic operation Has(key string) bool Get(key string) interface{} Set(key string, val interface{}, ttl time.Duration) (err error) Del(key string) error // multi operation GetMulti(keys []string) map[string]interface{} SetMulti(values map[string]interface{}, ttl time.Duration) (err error) DelMulti(keys []string) error // clear and close Clear() error Close() error } 这个包通过适配各种常用的缓存驱动来提供统一的封装好的缓存操作方法。切换驱动只需要一行代码就行。 func Remember(ctx context.Context, pointer interface{}, key string, ttl time.Duration, cb func() error) error { if cache.Has(key) { //如果缓存有值，则反序列化 return Json.Unmarshal(cache.Get(key).([]byte), pointer) } else { //如果没有值，调用callback， err := cb() if err != nil { return err } /......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-12/echo%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%90%86%E7%9C%9F%E5%AE%9Eip/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Echo获取代理真实Ip</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 19, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP _, n1, _ := net.ParseCIDR(&#34;110.42.x.x/32&#34;) //解析cidr拿到ipnet _, n2, _ := net.ParseCIDR(&#34;119.28.x.x/32&#34;) E.IPExtractor = echo.ExtractIPFromXFFHeader(echo.TrustIPRange(n1),echo.TrustIPRange(n2)) //设置代理的ip......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -604,112 +718,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/goquery" role="button">goquery </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/snippet/leetcode/1342/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">1342</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 7, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      1342. Number of Steps to Reduce a Number to Zero 题目 Given an integer num, return the number of steps to reduce it to zero. In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it. Example 1: Input: num = 14 Output: 6 Explanation: Step 1) 14 is even; divide by 2 and obtain 7. Step 2) 7 is odd; subtract 1 and obtain 6. Step 3) 6 is even; divide by 2 and obtain 3. Step 4) 3 is odd; subtract 1 and obtain 2. Step 5) 2 is even; divide by 2 and obtain 1. Step 6) 1 is odd; subtract 1 and obtain 0. Example 2: Input: num = 8 Output: 4 Explanation: Step 1) 8 is even; divide by 2 and obtain 4. Step 2) 4 is even; divide by 2 and obtain 2. Step 3) 2 is even; divide by 2 and obtain 1. Step 4) 1 is odd; subtract 1 and obtain 0. Example 3: Input: num = 123 Output: 12 Constraints: 0 &lt;= num &lt;= 106 题目大意 给你一个数，偶数......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/leetcode" role="button">leetcode </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/snippet/leetcode/412/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">412</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 5, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      412. Fizz Buzz 题目 Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”. Example: n = 15, Return: [ &#34;1&#34;, &#34;2&#34;, &#34;Fizz&#34;, &#34;4&#34;, &#34;Buzz&#34;, &#34;Fizz&#34;, &#34;7&#34;, &#34;8&#34;, &#34;Fizz&#34;, &#34;Buzz&#34;, &#34;11&#34;, &#34;Fizz&#34;, &#34;13&#34;, &#34;14&#34;, &#34;FizzBuzz&#34; ] 题目大意 3的倍数输出 “Fizz”，5的倍数输出 “Buzz”，15的倍数输出 “FizzBuzz”，其他时候都输出原本的数字。 解题思路 按照题意......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/leetcode" role="button">leetcode </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
       
     
   </div>

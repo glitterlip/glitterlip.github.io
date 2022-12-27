@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (22)</span>
+                <span>Blog (24)</span>
               </a>
             </li>
           
@@ -317,11 +317,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (12)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
         
@@ -329,7 +329,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -406,7 +406,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  22 posts
+                  24 posts
                 </div>
               
             </div>
@@ -452,6 +452,120 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">ssh端口转发</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 6, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Laravel Job添加telescope Tags</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 1, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      请求添加tag laravel开了telescope，请求添加tag还好说 //直接在TelescopeServiceProvider的register方法判断就好了 Telescope::tag(function (IncomingEntry $entry) { if ($entry-&gt;isRequest()){ $tags = []; $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.*.*&#39;, request()-&gt;getClientIp()); $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.$3.*&#39;, request()-&gt;getClientIp()); $tags[] = $t; if (! request()-&gt;header(&#39;referer&#39;) ) { $tags[] = &#39;noreferer&#39;; } return $tags; } }); job添加tag 想给job添加tag,而且需要根据job的数据添加tag,直接在job方法中新增一个tags方法即可 &lt;?php namespace App\Jobs; class XXJob implements ShouldQueue, ShouldBeUnique { use Dispatchable, InteractsWithQueue, Queueable, SerializesModels; public $id; public function __construct($id) { $this-&gt;id = $id; } public function......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/telescope" role="button">telescope </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -503,120 +617,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-09/tailwind-missing/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Tailwind Missing</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 28, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      Tailwindcss 动态生成类名失效 用的reactjs和JedWatson/classnames这个包做一个随时间变化颜色的功能 const [colorCls, setColorCls] = useState&lt;string&gt;(&#39;green-400&#39;) &lt;span className={classNames(&#39;text-base font-extrabold&#39;, `text-${colorCls}`)}&gt;&lt;/span&gt; &lt;div className={classNames(&#39;p-4&#39;, `bg-${colorCls}`)}&gt;&lt;/span&gt; 类名正常生成了，但是css没生成 ，因为tailwindcss不支持动态生成的，即使开了jit模式也不行，必须在构建的时候被扫描到才行。 只能写全类名或者定义一个临时变量保存所有可能类名了......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button">tailwindcss </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-09/linux-less%E5%91%BD%E4%BB%A4/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">linux less命令</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 28, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      linux中的less命令 -G 移动到最后一页 -gg 第一页 -F 实时更新 -b 向上翻页 -空格 向下翻页 /kw 向后搜索kw ?kw 向前搜索kw 实时过滤 有时候查看nginx日志时，想查看爬虫抓取记录，可以在查看时输入&amp;bingbot|Googlebot|Baiduspider, &amp;后面接正则表达式，bingbot|Googlebot|Baiduspider表示过滤展示日志中行记录包含必应或者百度或者谷歌蜘蛛的记录，......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/less" role="button">less </a></li>
       
     
   </div>

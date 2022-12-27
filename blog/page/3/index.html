@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (22)</span>
+                <span>Blog (24)</span>
               </a>
             </li>
           
@@ -317,11 +317,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (12)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
         
@@ -329,7 +329,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -406,7 +406,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  22 posts
+                  24 posts
                 </div>
               
             </div>
@@ -456,6 +456,120 @@
           
               <div class="post-wrapper white-bg post-card">
   
+  <a href="https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Laravel查看缓存剩余时间</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 22, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &#39;prefix&#39; =&gt; env(&#39;CACHE_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;).&#39;_cache&#39;) Laravel的数据库配置文件config/database.php &#39;redis&#39; =&gt; [ &#39;client&#39; =&gt; env(&#39;REDIS_CLIENT&#39;, &#39;phpredis&#39;), &#39;options&#39; =&gt; [ &#39;cluster&#39; =&gt; env(&#39;REDIS_CLUSTER&#39;, &#39;redis&#39;), &#39;prefix&#39; =&gt; env(&#39;REDIS_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;) . &#39;_database_&#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">grpc php客户端与golang服务端通信</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 15, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>3 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.21.9 projectpath 代表项目根目录 Go服务端 初始化golang项目，编写proto文件 // projectpath/proto/link.proto syntax = &#34;proto3&#34;; package proto; option go_package = &#34;/proto&#34;; service Link{ rpc GetLink(GetLinkRequest) returns (GetLinkResponse){} } message GetLinkRequest{ int32 driver = 1; string linkId = 2; string token = 3; } message GetLinkResponse { int32 code = 1; string link = 2; string pwd = 3; } 安装所需工具 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 //用于生成xx.pb.go文件 主要是link.proto里面的message对应的go代码 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2 //用于生成xx_grpc.pb.go 即grpc服务的go版本服务端和客户端 //安装之后查看是否安......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/grpc" role="button">grpc </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
   <a href="https://glitterlip.github.io/blog/2022-10/%E7%BC%96%E5%86%99popclip%E6%89%A9%E5%B1%95/">
     <div class="post-header text-center">
       <div class="px-4 post-heading">编写popclip扩展</div>
@@ -500,120 +614,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/mac" role="button">mac </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ssh端口转发</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 6, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel Job添加telescope Tags</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 1, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      请求添加tag laravel开了telescope，请求添加tag还好说 //直接在TelescopeServiceProvider的register方法判断就好了 Telescope::tag(function (IncomingEntry $entry) { if ($entry-&gt;isRequest()){ $tags = []; $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.*.*&#39;, request()-&gt;getClientIp()); $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.$3.*&#39;, request()-&gt;getClientIp()); $tags[] = $t; if (! request()-&gt;header(&#39;referer&#39;) ) { $tags[] = &#39;noreferer&#39;; } return $tags; } }); job添加tag 想给job添加tag,而且需要根据job的数据添加tag,直接在job方法中新增一个tags方法即可 &lt;?php namespace App\Jobs; class XXJob implements ShouldQueue, ShouldBeUnique { use Dispatchable, InteractsWithQueue, Queueable, SerializesModels; public $id; public function __construct($id) { $this-&gt;id = $id; } public function......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/telescope" role="button">telescope </a></li>
       
     
   </div>

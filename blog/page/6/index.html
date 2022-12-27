@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (22)</span>
+                <span>Blog (24)</span>
               </a>
             </li>
           
@@ -317,11 +317,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (12)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
         
@@ -329,7 +329,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (3)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -406,7 +406,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  22 posts
+                  24 posts
                 </div>
               
             </div>
@@ -452,6 +452,123 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-09/umijs%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%8E%AF%E5%A2%83/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">umijs配置多环境</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 8, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      umijs配置多环境 es的index 使用yarn create umi创建的项目，版本umi@4.0.13 首先修改package.json文件 { &#34;scripts&#34;: { &#34;build&#34;: &#34;UMI_ENV=prod max build&#34; } } 修改项目配置文件.umirc.ts import { defineConfig } from &#39;@umijs/max&#39;; const { UMI_ENV } = process.env; export default defineConfig({ define: { &#39;process.env.UMI_ENV&#39;: UMI_ENV, }, }); 在其他js文件中使用 export const BASEURL_HTTP = process.env.UMI_ENV == &#39;prod&#39; ? &#39;/&#39; : &#39;http://127.0.0.1:18083&#39;;......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">umijs Tailwindcss样式冲突</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Aug 25, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &#39;./src/pages/**/*.tsx&#39;, &#39;./src/components/**.tsx&#39;, &#39;./src/layouts/**.tsx&#39;, ], corePlugins: { preflight: false, } }......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button">tailwindcss </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -515,123 +632,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/nginx" role="button">nginx </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/umi4%E8%AE%BE%E7%BD%AEtitle-keyword-description/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">umi4设置title keyword description</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 17, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      umijs升级到v4之后原来v3通过修改src/pages/document.ejs文件来设置title,keyword,description,favicon的方法 失效 了 新版本v4可以通过配置来修改 在config/config.ts中defineConfig方法添加字段 title: &#34;title&#34;, metas: [ { name: &#39;keywords&#39;, content: &#39;keywords&#39; }, { name: &#39;description&#39;, content: &#39;description&#39; }, ],......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ant-design-landing生成页面报错</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 17, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      后台写完了要写个落地页，自己css太菜了，找个现成的吧. 发现这个项目挺好https://github.com/ant-design/ant-design-landing，相当于低代码吧。 编辑器 里面随便点点很快就能生成一个react页面，还可以直接整合到umijs项目里面. 和其他xx开源的项目一样，kpi产物不少，代码放出来就不维护了，在线demo体验很好，一放到本地跑起来就疯狂报错，这个项目也是年......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
       
     
   </div>

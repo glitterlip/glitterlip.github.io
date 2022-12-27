@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP _, n1, _ := net.ParseCIDR(&#34;110.42.x.x/32&#34;) //解析cidr拿到ipnet _, n2, _ := net.ParseCIDR(&#34;119.28.x.x/32&#34;) E.IPExtractor = echo.ExtractIPFromXFFHeader(echo.TrustIPRange(n1),echo.TrustIPRange(n2)) //设置代理的ip">
 
-  <meta property="og:title" content="leetcode" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/leetcode/" />
+  <meta property="og:title" content="Echo获取代理真实Ip" />
+<meta property="og:description" content="后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP _, n1, _ := net.ParseCIDR(&#34;110.42.x.x/32&#34;) //解析cidr拿到ipnet _, n2, _ := net.ParseCIDR(&#34;119.28.x.x/32&#34;) E.IPExtractor = echo.ExtractIPFromXFFHeader(echo.TrustIPRange(n1),echo.TrustIPRange(n2)) //设置代理的ip" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2022-12/echo%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%90%86%E7%9C%9F%E5%AE%9Eip/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2022-12-19T10:43:46+08:00" />
+<meta property="article:modified_time" content="2022-12-19T10:43:46+08:00" />
 
 
 
   <title>
   
-       leetcode | 代码笔记 
+       Echo获取代理真实Ip | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/leetcode/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2022-12/echo%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%90%86%E7%9C%9F%E5%AE%9Eip/">
 
   
   
@@ -259,224 +261,123 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (24)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">Echo获取代理真实Ip</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 19, 2022</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      leetcode
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                5 posts
-              </div>
-            
+
+          <div class="post-content markdown">
+            <p>后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">_</span><span class="p">,</span> <span class="nx">n1</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">ParseCIDR</span><span class="p">(</span><span class="s">&#34;110.42.x.x/32&#34;</span><span class="p">)</span> <span class="c1">//解析cidr拿到ipnet
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">_</span><span class="p">,</span> <span class="nx">n2</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">ParseCIDR</span><span class="p">(</span><span class="s">&#34;119.28.x.x/32&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">E</span><span class="p">.</span><span class="nx">IPExtractor</span> <span class="p">=</span> <span class="nx">echo</span><span class="p">.</span><span class="nf">ExtractIPFromXFFHeader</span><span class="p">(</span><span class="nx">echo</span><span class="p">.</span><span class="nf">TrustIPRange</span><span class="p">(</span><span class="nx">n1</span><span class="p">),</span><span class="nx">echo</span><span class="p">.</span><span class="nf">TrustIPRange</span><span class="p">(</span><span class="nx">n2</span><span class="p">))</span> <span class="c1">//设置代理的ip
+</span></span></span></code></pre></div>
           </div>
-      
+
           
-      </ul>
-      <ul>
-        
+          <div class="row">
+            <div class="col-md-8">
             
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.11</span>
-                </li>
+              <div class="mb-5">
                 
-                    <li class="post-item">
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
-    <span class="meta"><time datetime='2022-11-07T03:59:30&#43;08:00'>Nov 7, 2022</time></span>
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
     
-    <a href="https://glitterlip.github.io/snippet/leetcode/1342/"><span>1342</span></a>
-</li>
-
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-11-05T22:57:57&#43;08:00'>Nov 5, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/leetcode/412/"><span>412</span></a>
-</li>
-
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-11-05T22:57:57&#43;08:00'>Nov 5, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/leetcode/876/"><span>412</span></a>
-</li>
-
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-11-05T00:05:15&#43;08:00'>Nov 5, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/leetcode/1672/"><span>1672</span></a>
-</li>
-
-                
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.8</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-08-10T11:14:43&#43;08:00'>Aug 10, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/snippet/leetcode/1480/"><span>1480. Running Sum of 1d Array #</span></a>
-</li>
-
-                
-            
-        
-      </ul>
-    </div>
-    
+      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>javassist修改jar包</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+                <a href=https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/ class="post-meta">Next
+                  <div class="pt-2 pb-5 flex-reverse">
+                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
+                    <span>golang实现laravel的cache remember方法</span>
+                  </div>
+                </a>
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     

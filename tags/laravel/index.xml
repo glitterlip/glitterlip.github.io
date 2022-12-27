@@ -6,7 +6,16 @@
     <description>Recent content in laravel on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 22 Oct 2022 16:44:28 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Dec 2022 10:15:14 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang实现laravel的cache remember方法</title>
+      <link>https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Tue, 27 Dec 2022 10:15:14 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/</guid>
+      <description>怀念laravel的缓存，太方便了，用golang实现一下 安利一下这个包 gookit/cache type Cache interface { // basic operation Has(key string) bool Get(key string) interface{} Set(key string, val interface{}, ttl time.Duration) (err error) Del(key string) error // multi operation GetMulti(keys []string) map[string]interface{} SetMulti(values map[string]interface{}, ttl time.Duration) (err error) DelMulti(keys []string) error // clear and close Clear() error Close() error } 这个包通过适配各种常用的缓存驱动来提供统一的封装好的缓存操作方法。切换驱动只需要一行代码就行。 func Remember(ctx context.Context, pointer interface{}, key string, ttl time.Duration, cb func() error) error { if cache.Has(key) { //如果缓存有值，则反序列化 return Json.Unmarshal(cache.Get(key).([]byte), pointer) } else { //如果没有值，调用callback， err := cb() if err != nil { return err } /</description>
+    </item>
+    
     <item>
       <title>Laravel查看缓存剩余时间</title>
       <link>https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/</link>
