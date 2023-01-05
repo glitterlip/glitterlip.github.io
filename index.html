@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (24)</span>
+                <span>Blog (25)</span>
               </a>
             </li>
           
@@ -372,7 +372,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -446,6 +446,60 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-01/laravel%E5%8F%91%E9%80%81%E5%93%8D%E5%BA%94return%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Laravel发送响应return后执行代码</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jan 5, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要 比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数&#43;1 这两个任务开始的时候一个放队列处理，一个缓存访问量&#43;1，差值达到阈值之后再保存落库。 Laravel的文档介绍了中间件的terminate方法，问题是可能还没开始处理请求......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -672,63 +726,6 @@
 </div>
 
               
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">goquery 处理中文网页</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 9, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=gb2312&#34;&gt; 爬虫处理网页，标签用的gb2312字符集，goquery拿到的是乱码 刚开始用的 func DecodeToGBK2312(text string) string { dst := make([]byte, len(text)*2) tr := simplifiedchinese.HZGB2312.NewDecoder() nDst, _, _ := tr.Transform(dst, []byte(text), true) return string(dst[:nDst]) } 还是乱码。。。。 后来在wiki里找了一种方法 func detectContentCharset(body io.Reader) string { r := bufio.NewReader(body) if data, err := r.Peek(1024); err == nil { if _, name, ok := charset.DetermineEncoding(data, &#34;&#34;); ok { return name } } return &#34;utf-8&#34; } // DecodeHTMLBody returns an decoding reader of the html Body for the specified `charset` // If `charset` is empty, DecodeHTMLBody tries to guess the encoding from the content func DecodeHTMLBody(body io.Reader, charset string) (io.Reader, error) { if charset == &#34;&#34; { charset = detectContentCharset(body) } e, err := htmlindex.Get(charset) if err != nil { return nil, err } if name, _ := htmlindex.Name(e); name != &#34;utf-8&#34; { body = e.NewDecoder().Reader(body) } return body, nil } 试了下如果......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/goquery" role="button">goquery </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
 
           </div>
         
@@ -779,7 +776,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要 比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数&#43;1 这两个任务开始的时候一个放队列处理，一个缓存访问量&#43;1，差值达到阈值之后再保存落库。 Laravel的文档介绍了中间件的terminate方法，问题是可能还没开始处理请求">
 
-  <meta property="og:title" content="goquery" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/goquery/" />
+  <meta property="og:title" content="Laravel发送响应return后执行代码" />
+<meta property="og:description" content="有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要 比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数&#43;1 这两个任务开始的时候一个放队列处理，一个缓存访问量&#43;1，差值达到阈值之后再保存落库。 Laravel的文档介绍了中间件的terminate方法，问题是可能还没开始处理请求" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-01/laravel%E5%8F%91%E9%80%81%E5%93%8D%E5%BA%94return%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-01-05T16:45:57+08:00" />
+<meta property="article:modified_time" content="2023-01-05T16:45:57+08:00" />
 
 
 
   <title>
   
-       goquery | 代码笔记 
+       Laravel发送响应return后执行代码 | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/goquery/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-01/laravel%E5%8F%91%E9%80%81%E5%93%8D%E5%BA%94return%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81/">
 
   
   
@@ -259,187 +261,134 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (25)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">Laravel发送响应return后执行代码</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Jan 5, 2023</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      goquery
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.11</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-11-09T03:51:51&#43;08:00'>Nov 9, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/"><span>goquery 处理中文网页</span></a>
-</li>
 
-                
+          <div class="post-content markdown">
+            <p>有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要</p>
+<p>比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数+1</p>
+<p>这两个任务开始的时候一个放队列处理，一个缓存访问量+1，差值达到阈值之后再保存落库。</p>
+<p>Laravel的文档介绍了中间件的<code>terminate</code>方法，问题是可能还没开始处理请求，有些参数在中间件里拿不到。</p>
+<p>这时候可以使用</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$log</span>     <span class="o">=</span> <span class="s1">&#39;log msg&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$context</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;request_id&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;xxxx&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;client_ip&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getClientIp</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;time&#39;</span>       <span class="o">=&gt;</span> <span class="nx">time</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">       <span class="c1">//闭包里的代码是在将页面返回给用户客户端之后再执行的，不影响响应时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">\App</span><span class="o">::</span><span class="na">terminating</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$log</span><span class="p">,</span> <span class="nv">$context</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">Log</span><span class="o">::</span><span class="na">info</span><span class="p">(</span><span class="nv">$log</span><span class="p">,</span><span class="nv">$context</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></div><p>用到的原理也是<code>ob_start,ob_end_flush</code>那些</p>
+<p>以前写php还没用框架的时候会手动设置响应头，比如先<code>echo</code>了一个字符串，再调用<code>header</code>方法设置请求头就会报错,如果在入口文件开启<code>ob_start</code>就没问题</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        
-      </ul>
-    </div>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>golang实现laravel的cache remember方法</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     

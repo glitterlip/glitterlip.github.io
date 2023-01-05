@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (24)</span>
+                <span>Blog (25)</span>
               </a>
             </li>
           
@@ -329,7 +329,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (4)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -406,7 +406,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  24 posts
+                  25 posts
                 </div>
               
             </div>
@@ -430,9 +430,6 @@
         <a href="https://glitterlip.github.io/blog/page/6/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
         <a href="https://glitterlip.github.io/blog/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
       </li>
       <li class="page-item">
@@ -445,13 +442,88 @@
         <a href="https://glitterlip.github.io/blog/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
       </li>
       <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item">
         <a href="https://glitterlip.github.io/blog/page/8/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/8/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/9/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Golang Echo,React Umijs 项目部署</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Aug 18, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      nginx 配置文件 server { #强制https listen 80; listen [::]:80; server_name project.com; return 301 https://project.com$request_uri; } map $http_upgrade $connection_upgrade { default upgrade; &#39;&#39; close; } server { listen 443 ssl; ssl_certificate /etc/letsencrypt/live/project.com/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/project.com/privkey.pem; server_name project.com; #默认为umijs 构建产物 location / { root /data/project/project/public/dist; index index.html index.htm; try_files $uri $uri/ /index.html; } location /api { # golang后端api监听18081端口 proxy_pass http://127.0.0.1:18081/api; proxy_set_header Upgrade $http_upgrade; #websocket 链接 proxy_set_header Connection $connection_upgrade; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; } error_log /var/log/nginx/project_error.log; access_log /var/log/nginx/project_access.log; } k8s服务器在国内，这个项目服务器在香港，ci/cd的话直接上传构建产物了，git只作为代码追踪使用 golang echo 部署脚本 #! /bin/bash #打包压缩 GOOS=linux GOARCH=amd64 go build -o project &amp;&amp; zip project.zip project #scp上传......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/umi" role="button">umi </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/nginx" role="button">nginx </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -571,63 +643,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/ant-design-pro-datepicker/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ant design pro datepicker</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 16, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      使用ant design pro的protable时，数据的字段是时间，筛选的时候想按照时间段来筛选 比如订单列表，支付时间字段的column列定义的valueType是dateTime,展示的时候展示成支付时间，但是在列表头筛选的时候按照支付时间段筛选 这个需求可以定义两个字段 { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTime&#39;, hideInSearch: true }, { title: &#39;支付时间&#39;, dataIndex: &#39;paid_at&#39;, ellipsis: true, valueType: &#39;dateTimeRange&#39;, hideInTable: true, search: { transform: (value: any) =&gt; ({startTime: value[0], endTime: value[1]}), } }, 筛选查询的时......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -674,7 +689,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2022 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
