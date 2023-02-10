@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (26)</span>
+                <span>Blog (27)</span>
               </a>
             </li>
           
@@ -363,6 +363,8 @@
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
@@ -448,6 +450,60 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-02/%E5%B1%8F%E8%94%BDgithub%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">屏蔽github搜索结果</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Feb 10, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      每次github搜东西总有几个不相关的项目，github搜索结果一页就八条，那三个项目星星不少，每次都要看一遍再排除,真的麻烦 这次直接用adblock屏蔽掉 chrome装这个插件,支持自定义规则的adblock系插件应该都可以 然后自定义规则即可 github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(cirosantilli)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Dujltqzv)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(lTbgykio)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Don-Jimmy))......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/github" role="button">github </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -660,60 +716,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">javassist修改jar包</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 4, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>3 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      用aspose slide为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制 pom文件 &lt;dependency&gt; &lt;groupId&gt;com.aspose&lt;/groupId&gt; &lt;artifactId&gt;aspose-slides&lt;/artifactId&gt; &lt;version&gt;22.9&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar &lt;/systemPath&gt; &lt;classifier&gt;jdk16&lt;/classifier&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.javassist&lt;/groupId&gt; &lt;artifactId&gt;javassist&lt;/artifactId&gt; &lt;version&gt;3.28.0-GA&lt;/version&gt; &lt;/dependency&gt; 填个错的license试试 String license = &#34;&lt;License&gt;\n&#34; &#43; &#34; &lt;Data&gt;\n&#34; &#43; &#34; &lt;Products&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Total for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Words for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;/Products&gt;\n&#34; &#43; &#34; &lt;EditionType&gt;Enterprise&lt;/EditionType&gt;\n&#34; &#43; &#34; &lt;SubscriptionExpiry&gt;20991231&lt;/SubscriptionExpiry&gt;\n&#34; &#43; &#34; &lt;LicenseExpiry&gt;20991231&lt;/LicenseExpiry&gt;\n&#34; &#43; &#34; &lt;SerialNumber&gt;8bfe198c-7f0c-4ef8-8ff0-&lt;/SerialNumber&gt;\n&#34; &#43; &#34; &lt;/Data&gt;\n&#34; &#43; &#34;&lt;/License&gt;&#34;; InputStream is = new ByteArrayInputStream(license.getBytes(StandardCharsets.UTF_8)); License aposeLic = new License(); aposeLic.setLicense(is); 看看报错信息 2022-12-04 03:03:45.498 ERROR 63412 --- [nio-8091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is class com.aspose.slides.exceptions.InvalidOperationException: License parsing error ---&gt; class com.aspose.slides.exceptions.InvalidOperationException: Signature check error. ---&gt; java.security.SignatureException: Signature length not correct: got 0 but was expecting 256 --- End......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/java" role="button">java </a></li>
       
     
   </div>
