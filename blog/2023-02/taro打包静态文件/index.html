@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &#39;src/audio/&#39;, to: &#39;dist/audios/&#39;, ignore: [&#39;*.js&#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }">
 
-  <meta property="og:title" content="grpc" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/grpc/" />
+  <meta property="og:title" content="Taro打包静态文件" />
+<meta property="og:description" content="小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &#39;src/audio/&#39;, to: &#39;dist/audios/&#39;, ignore: [&#39;*.js&#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-11T23:55:15+08:00" />
+<meta property="article:modified_time" content="2023-02-11T23:55:15+08:00" />
 
 
 
   <title>
   
-       grpc | 代码笔记 
+       Taro打包静态文件 | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/grpc/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/">
 
   
   
@@ -259,193 +261,134 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (28)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">Taro打包静态文件</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Feb 11, 2023</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      grpc
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.10</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-10-15T19:46:21&#43;08:00'>Oct 15, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/"><span>grpc php客户端与golang服务端通信</span></a>
-</li>
 
-                
+          <div class="post-content markdown">
+            <p>小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序</p>
+<p>修改config/index.jx</p>
+<pre tabindex="0"><code>
+{
+...
+copy: {
+    patterns: [
+      { from: &#39;src/audio/&#39;, to: &#39;dist/audios/&#39;, ignore: [&#39;*.js&#39;] }, //把src下audio目录复制到编译后的dist/audios目录
+    ],
+    options: {
+    }
+}
+</code></pre><p>点击按钮时播放音效</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">click</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">innerAudioContext</span> <span class="o">=</span> <span class="nx">Taro</span><span class="p">.</span><span class="nx">createInnerAudioContext</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">autoplay</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">loop</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="sb">`audios/test.mp3`</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">play</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        
-      </ul>
-    </div>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2023-02/%E5%B1%8F%E8%94%BDgithub%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>屏蔽github搜索结果</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     

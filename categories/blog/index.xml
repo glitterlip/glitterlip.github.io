@@ -6,14 +6,23 @@
     <description>Recent content in blog on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Fri, 10 Feb 2023 18:39:11 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Feb 2023 23:55:15 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro打包静态文件</title>
+      <link>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 23:55:15 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+      <description>小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &amp;#39;src/audio/&amp;#39;, to: &amp;#39;dist/audios/&amp;#39;, ignore: [&amp;#39;*.js&amp;#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&amp;gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }</description>
+    </item>
+    
     <item>
       <title>屏蔽github搜索结果</title>
       <link>https://glitterlip.github.io/blog/2023-02/%E5%B1%8F%E8%94%BDgithub%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/</link>
       <pubDate>Fri, 10 Feb 2023 18:39:11 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/blog/2023-02/%E5%B1%8F%E8%94%BDgithub%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/</guid>
-      <description>每次github搜东西总有几个不相关的项目，github搜索结果一页就八条，那三个项目星星不少，每次都要看一遍再排除,真的麻烦 这次直接用adblock屏蔽掉 chrome装这个插件,支持自定义规则的adblock系插件应该都可以 然后自定义规则即可 github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(cirosantilli)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Dujltqzv)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(lTbgykio)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Don-Jimmy))</description>
+      <description>每次github搜东西总有几个不相关的项目，github搜索结果一页就八条，那三个项目星星不少，每次都要看一遍再排除,真的麻烦 这次直接用adblock屏蔽掉 chrome装这个插件,支持自定义规则的adblock系插件应该都可以 然后自定义规则即可 github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(cirosantilli)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Dujltqzv))[](https://) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(lTbgykio)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Don-Jimmy))</description>
     </item>
     
     <item>

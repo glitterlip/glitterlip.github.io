@@ -6,7 +6,16 @@
     <description>Recent content in 小程序 on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 29 Sep 2022 14:23:49 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Feb 2023 23:55:15 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro打包静态文件</title>
+      <link>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 23:55:15 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+      <description>小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &amp;#39;src/audio/&amp;#39;, to: &amp;#39;dist/audios/&amp;#39;, ignore: [&amp;#39;*.js&amp;#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&amp;gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }</description>
+    </item>
+    
     <item>
       <title>小程序加密网络通道,小程序aes加密</title>
       <link>https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/</link>

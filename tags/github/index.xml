@@ -13,7 +13,7 @@
       <pubDate>Fri, 10 Feb 2023 18:39:11 +0800</pubDate>
       
       <guid>https://glitterlip.github.io/blog/2023-02/%E5%B1%8F%E8%94%BDgithub%E6%90%9C%E7%B4%A2%E7%BB%93%E6%9E%9C/</guid>
-      <description>每次github搜东西总有几个不相关的项目，github搜索结果一页就八条，那三个项目星星不少，每次都要看一遍再排除,真的麻烦 这次直接用adblock屏蔽掉 chrome装这个插件,支持自定义规则的adblock系插件应该都可以 然后自定义规则即可 github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(cirosantilli)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Dujltqzv)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(lTbgykio)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Don-Jimmy))</description>
+      <description>每次github搜东西总有几个不相关的项目，github搜索结果一页就八条，那三个项目星星不少，每次都要看一遍再排除,真的麻烦 这次直接用adblock屏蔽掉 chrome装这个插件,支持自定义规则的adblock系插件应该都可以 然后自定义规则即可 github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(cirosantilli)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Dujltqzv))[](https://) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(lTbgykio)) github.com#?#li.repo-list-item.public.source:-abp-has(a:-abp-contains(Don-Jimmy))</description>
     </item>
     
   </channel>

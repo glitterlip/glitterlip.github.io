@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>taro on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/taro/</link>
+    <description>Recent content in taro on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 11 Feb 2023 23:55:15 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/taro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro打包静态文件</title>
+      <link>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>
+      <pubDate>Sat, 11 Feb 2023 23:55:15 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</guid>
+      <description>小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &amp;#39;src/audio/&amp;#39;, to: &amp;#39;dist/audios/&amp;#39;, ignore: [&amp;#39;*.js&amp;#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&amp;gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }</description>
+    </item>
+    
+  </channel>
+</rss>
