@@ -6,7 +6,16 @@
     <description>Recent content in 小程序 on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 11 Feb 2023 23:55:15 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Feb 2023 16:14:01 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taro小程序使用remixicon</title>
+      <link>https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/</link>
+      <pubDate>Sun, 19 Feb 2023 16:14:01 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/</guid>
+      <description>taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.</description>
+    </item>
+    
     <item>
       <title>Taro打包静态文件</title>
       <link>https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/</link>

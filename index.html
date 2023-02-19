@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (28)</span>
+                <span>Blog (29)</span>
               </a>
             </li>
           
@@ -404,7 +404,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
@@ -418,7 +418,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
         
@@ -452,6 +452,63 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Taro小程序使用remixicon</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Feb 19, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -659,63 +716,6 @@
 <div class="li-x div-x post-meta">
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">golang实现laravel的cache remember方法</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 27, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      怀念laravel的缓存，太方便了，用golang实现一下 安利一下这个包 gookit/cache type Cache interface { // basic operation Has(key string) bool Get(key string) interface{} Set(key string, val interface{}, ttl time.Duration) (err error) Del(key string) error // multi operation GetMulti(keys []string) map[string]interface{} SetMulti(values map[string]interface{}, ttl time.Duration) (err error) DelMulti(keys []string) error // clear and close Clear() error Close() error } 这个包通过适配各种常用的缓存驱动来提供统一的封装好的缓存操作方法。切换驱动只需要一行代码就行。 func Remember(ctx context.Context, pointer interface{}, key string, ttl time.Duration, cb func() error) error { if cache.Has(key) { //如果缓存有值，则反序列化 return Json.Unmarshal(cache.Get(key).([]byte), pointer) } else { //如果没有值，调用callback， err := cb() if err != nil { return err } /......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
     
       <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       

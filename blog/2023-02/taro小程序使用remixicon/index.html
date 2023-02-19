@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.">
 
-  <meta property="og:title" content="小程序" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" />
+  <meta property="og:title" content="Taro小程序使用remixicon" />
+<meta property="og:description" content="taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-19T16:14:01+08:00" />
+<meta property="article:modified_time" content="2023-02-19T16:14:01+08:00" />
 
 
 
   <title>
   
-       小程序 | 代码笔记 
+       Taro小程序使用remixicon | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/">
 
   
   
@@ -259,214 +261,171 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (29)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">Taro小程序使用remixicon</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Feb 19, 2023</li>
     
 
     
+      <li class="middot"></li>
+      <li>2 minutes read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      小程序
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                3 posts
-              </div>
-            
+
+          <div class="post-content markdown">
+            <p>taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了</p>
+<p>后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了</p>
+<p>打开<a href="https://transfonter.org/">https://transfonter.org/</a>上传woff2字体文件,选中base64编码</p>
+<p>解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.tsx导入,把<code>node_modules/remixicon/fonts/remixicon.less</code>里的内容复制到<code>icon.less</code>里</p>
+<p>最终的<code>icon.less</code></p>
+<pre tabindex="0"><code>/*
+
+* Remix Icon v2.5.0
+* https://remixicon.com
+* https://github.com/Remix-Design/RemixIcon
+* 
+* Copyright RemixIcon.com
+* Released under the Apache License Version 2.0
+* 
+* Date: 2020-05-23
+  */
+@font-face {
+font-family: &#34;remixicon&#34;;
+src: url(&#39;remixicon.eot?t=1590207869815&#39;); /* IE9*/
+  src: url(&#39;remixicon.eot?t=1590207869815#iefix&#39;) format(&#39;embedded-opentype&#39;), /* IE6-IE8 */
+  url(&#34;remixicon.woff2?t=1590207869815&#34;) format(&#34;woff2&#34;),
+  url(&#34;remixicon.woff?t=1590207869815&#34;) format(&#34;woff&#34;),
+  url(&#39;remixicon.ttf?t=1590207869815&#39;) format(&#39;truetype&#39;), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url(&#39;remixicon.svg?t=1590207869815#remixicon&#39;) format(&#39;svg&#39;); /* iOS 4.1- */
+  font-display: swap;
+  }
+
+[class^=&#34;ri-&#34;], [class*=&#34; ri-&#34;] {
+font-family: &#39;remixicon&#39; !important;
+font-style: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+.ri-lg { font-size: 1.3333em; line-height: 0.75em; vertical-align: -.0667em; }
+.ri-xl { font-size: 1.5em; line-height: 0.6666em; vertical-align: -.075em; }
+.ri-xxs { font-size: .5em; }
+.ri-xs { font-size: .75em; }
+.ri-sm { font-size: .875em }
+.ri-1x { font-size: 1em; }
+.ri-2x { font-size: 2em; }
+.ri-3x { font-size: 3em; }
+.ri-4x { font-size: 4em; }
+.ri-5x { font-size: 5em; }
+.ri-6x { font-size: 6em; }
+.ri-7x { font-size: 7em; }
+.ri-8x { font-size: 8em; }
+.ri-9x { font-size: 9em; }
+.ri-10x { font-size: 10em; }
+.ri-fw { text-align: center; width: 1.25em; }
+//这里的:global要去掉或者注释掉
+</code></pre><p>.ri-24-hours-fill:before { content: &ldquo;\ea01&rdquo;; }
+.ri-24-hours-line:before { content: &ldquo;\ea02&rdquo;; }
+.ri-4k-fill:before { content: &ldquo;\ea03&rdquo;; }
+.ri-4k-line:before { content: &ldquo;\ea04&rdquo;; }
+&hellip;</p>
+<p>.ri-zoom-out-line:before { content: &ldquo;\f2dd&rdquo;; }
+.ri-zzz-fill:before { content: &ldquo;\f2de&rdquo;; }
+.ri-zzz-line:before { content: &ldquo;\f2df&rdquo;; }</p>
+<pre tabindex="0"><code></code></pre>
           </div>
-      
+
           
-      </ul>
-      <ul>
-        
+          <div class="row">
+            <div class="col-md-8">
             
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2023.2</span>
-                </li>
+              <div class="mb-5">
                 
-                    <li class="post-item">
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
-    <span class="meta"><time datetime='2023-02-19T16:14:01&#43;08:00'>Feb 19, 2023</time></span>
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
     
-    <a href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/"><span>Taro小程序使用remixicon</span></a>
-</li>
-
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2023-02-11T23:55:15&#43;08:00'>Feb 11, 2023</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/"><span>Taro打包静态文件</span></a>
-</li>
-
-                
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.9</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-09-29T14:23:49&#43;08:00'>Sep 29, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-09/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%8A%A0%E5%AF%86%E7%BD%91%E7%BB%9C%E9%80%9A%E9%81%93%E5%B0%8F%E7%A8%8B%E5%BA%8Faes%E5%8A%A0%E5%AF%86/"><span>小程序加密网络通道,小程序aes加密</span></a>
-</li>
-
-                
-            
-        
-      </ul>
-    </div>
-    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Taro打包静态文件</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     
