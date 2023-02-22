@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (29)</span>
+                <span>Blog (30)</span>
               </a>
             </li>
           
@@ -404,7 +404,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
@@ -418,7 +418,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (3)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (4)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
         
@@ -452,6 +452,63 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">小程序真机播放音频失败</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Feb 22, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -664,60 +721,6 @@
   <div class="tags-sm">
     
       <li><a href="https://glitterlip.github.io/tags/npm" role="button">npm </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-01/laravel%E5%8F%91%E9%80%81%E5%93%8D%E5%BA%94return%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel发送响应return后执行代码</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jan 5, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要 比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数&#43;1 这两个任务开始的时候一个放队列处理，一个缓存访问量&#43;1，差值达到阈值之后再保存落库。 Laravel的文档介绍了中间件的terminate方法，问题是可能还没开始处理请求......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>

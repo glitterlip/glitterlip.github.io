@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持">
 
-  <meta property="og:title" content="umi" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/tags/umi/" />
+  <meta property="og:title" content="小程序真机播放音频失败" />
+<meta property="og:description" content="小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-02-22T10:38:57+08:00" />
+<meta property="article:modified_time" content="2023-02-22T10:38:57+08:00" />
 
 
 
   <title>
   
-       umi | 代码笔记 
+       小程序真机播放音频失败 | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/tags/umi/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/">
 
   
   
@@ -259,193 +261,156 @@
     
 
     
-<main class="post-main-wrapper px-5">
   
-  <div class="row">
+  <main class="post-main-wrapper">
     
-    <div class="col-md-3">
-      
-      
-      
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta" style="margin-left: -8px;">
-
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (30)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
-
     
-  
-
-      
-      
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (4)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
+    <div class="row">
 
       
 
+      
+      <div class="container pr-5">
+      
 
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
 
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
 
+  <div class="px-4 post-heading">小程序真机播放音频失败</div>
 
-
-  
-
-    </div>
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Feb 22, 2023</li>
     
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
     
-    <div class="col-md-9 mt-3">
-      <ul>
-        <div class="div-x">
-            <div class='post-heading'>
+  </ul>
   
-      umi
-  
+
 </div>
 
-            
-            
-              <div class="px-2 middot"></div>
-              <div>
-                One post
-              </div>
-            
-          </div>
-      
-          
-      </ul>
-      <ul>
-        
-            
-        
-        
-            
-                <li class="post-item no-bullet">
-                    <span class="date">2022.8</span>
-                </li>
-                
-                    <li class="post-item">
-    
-    <span class="meta"><time datetime='2022-08-18T15:30:31&#43;08:00'>Aug 18, 2022</time></span>
-    
-    <a href="https://glitterlip.github.io/blog/2022-08/golang-echoreact-umijs-%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/"><span>Golang Echo,React Umijs 项目部署</span></a>
-</li>
 
-                
+          <div class="post-content markdown">
+            <p>小程序android真机调试时播放音频失败,开发者工具是可以的</p>
+<p>原代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-ts" data-lang="ts"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">innerAudioContext</span> <span class="o">=</span> <span class="nx">Taro</span><span class="p">.</span><span class="nx">createInnerAudioContext</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">autoplay</span> <span class="o">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl"><span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">loop</span> <span class="o">=</span> <span class="kc">false</span>
+</span></span><span class="line"><span class="cl"><span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="sb">`https://a.com/jpmp/api/voice`</span>
+</span></span><span class="line"><span class="cl"><span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">onError</span><span class="p">(</span><span class="nx">e</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nx">innerAudioContext</span><span class="p">.</span><span class="nx">play</span><span class="p">()</span>
+</span></span></code></pre></div><p>出现的错误信息</p>
+<pre tabindex="0"><code>{errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;}
+</code></pre><p>诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音</p>
+<p>开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是<code>audio-16khz-128kbitrate-mono-mp3</code>,陆续换了</p>
+<pre tabindex="0"><code>ogg-16khz-16bit-mono-opus
+webm-16khz-16bit-mono-opus
+riff-8khz-8bit-mono-alaw
+riff-8khz-8bit-mono-mulaw
+riff-8khz-16bit-mono-pcm
+</code></pre><p>竟然没一个能播放的,webm,ogg都不支持</p>
+<p>去社区看了看, <a href="https://developers.weixin.qq.com/community/develop/doc/0006a84c5dccf8c03008b6e1e51000?highLine=62">3年了,程序猿都换了好几波,有的开发团队都解散了,官方一直没解决😭</a></p>
+<p>翻到第五页,总算有个人给出了解决方法,下载到本地然后播放就可以了</p>
+<p>&hellip;.  哎呀,这个bug真的不好说</p>
+<pre tabindex="0"><code>export const DownloadFile = (addr: string): Promise&lt;string&gt; =&gt; {
+  return new Promise(res =&gt; {
+    Taro.downloadFile({
+      url: addr,
+      success: (r) =&gt; {
+        res(r.tempFilePath)
+      }
+    })
+  })
+}
+
+const innerAudioContext = Taro.createInnerAudioContext()
+innerAudioContext.autoplay = true
+innerAudioContext.loop = false
+innerAudioContext.src = `https://a.com/jpmp/api/voice`
+innerAudioContext.onError(e =&gt; {
+  console.log(e)
+
+})
+innerAudioContext.play()
+</code></pre>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        
-      </ul>
-    </div>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
     
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
     
   </div>
-</main> 
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Taro小程序使用remixicon</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
 
     
     

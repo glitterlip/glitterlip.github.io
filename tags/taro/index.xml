@@ -6,7 +6,16 @@
     <description>Recent content in taro on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sun, 19 Feb 2023 16:14:01 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/taro/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Feb 2023 10:38:57 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/taro/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小程序真机播放音频失败</title>
+      <link>https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Wed, 22 Feb 2023 10:38:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/</guid>
+      <description>小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&amp;gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &amp;#34;errCode:62, err:load or init native decode so fail&amp;#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持</description>
+    </item>
+    
     <item>
       <title>Taro小程序使用remixicon</title>
       <link>https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/</link>
