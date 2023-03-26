@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>antd on Paramita</title>
+    <title>antd on 代码笔记</title>
     <link>https://glitterlip.github.io/tags/antd/</link>
-    <description>Recent content in antd on Paramita</description>
+    <description>Recent content in antd on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 10 Aug 2022 11:14:43 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/antd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Mar 2023 10:42:51 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/antd/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ant design pro查看官网预览源码</title>
-      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
-      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      <title>Ant Design Pro umijs 使用 Remixicon</title>
+      <link>https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/</link>
+      <pubDate>Sun, 26 Mar 2023 10:42:51 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
-      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+      <guid>https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/</guid>
+      <description>开了个新项目，使用了 umijs，然后发现了一个好东西，就是 Remixicon，这个图标库，我觉得比 Ant Design 的图标库要好 copilot有点离谱了啊，上面那句话刚说完 「开了个新项目」，一按tab自动给我补全了，好家伙 在ant desgin/ant design pro/umijs项目中使用的话 yarn add remixicon 然后在src/global.less中 @import &amp;#34;~remixicon/fonts/remixicon.css&amp;#34;; 就好了</description>
     </item>
     
   </channel>

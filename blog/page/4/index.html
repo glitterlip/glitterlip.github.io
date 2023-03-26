@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (30)</span>
+                <span>Blog (31)</span>
               </a>
             </li>
           
@@ -312,6 +312,8 @@
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/antd" role="button"><span>antd (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
         
@@ -355,7 +357,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/remixicon" role="button"><span>remixicon (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
         
@@ -412,7 +418,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  30 posts
+                  31 posts
                 </div>
               
             </div>
@@ -454,10 +460,64 @@
         <a href="https://glitterlip.github.io/blog/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/10/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/11/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-12/javassist%E4%BF%AE%E6%94%B9jar%E5%8C%85/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">javassist修改jar包</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 4, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>3 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      用aspose slide为ppt文件生成预览图片，生成图片有水印，可以用javassist修改jar包的方式来去除水印限制 pom文件 &lt;dependency&gt; &lt;groupId&gt;com.aspose&lt;/groupId&gt; &lt;artifactId&gt;aspose-slides&lt;/artifactId&gt; &lt;version&gt;22.9&lt;/version&gt; &lt;scope&gt;system&lt;/scope&gt; &lt;systemPath&gt;${project.basedir}/src/main/resources/lib/aspose-slides-22.9-jdk16.jar &lt;/systemPath&gt; &lt;classifier&gt;jdk16&lt;/classifier&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.javassist&lt;/groupId&gt; &lt;artifactId&gt;javassist&lt;/artifactId&gt; &lt;version&gt;3.28.0-GA&lt;/version&gt; &lt;/dependency&gt; 填个错的license试试 String license = &#34;&lt;License&gt;\n&#34; &#43; &#34; &lt;Data&gt;\n&#34; &#43; &#34; &lt;Products&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Total for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;Product&gt;Aspose.Words for Java&lt;/Product&gt;\n&#34; &#43; &#34; &lt;/Products&gt;\n&#34; &#43; &#34; &lt;EditionType&gt;Enterprise&lt;/EditionType&gt;\n&#34; &#43; &#34; &lt;SubscriptionExpiry&gt;20991231&lt;/SubscriptionExpiry&gt;\n&#34; &#43; &#34; &lt;LicenseExpiry&gt;20991231&lt;/LicenseExpiry&gt;\n&#34; &#43; &#34; &lt;SerialNumber&gt;8bfe198c-7f0c-4ef8-8ff0-&lt;/SerialNumber&gt;\n&#34; &#43; &#34; &lt;/Data&gt;\n&#34; &#43; &#34;&lt;/License&gt;&#34;; InputStream is = new ByteArrayInputStream(license.getBytes(StandardCharsets.UTF_8)); License aposeLic = new License(); aposeLic.setLicense(is); 看看报错信息 2022-12-04 03:03:45.498 ERROR 63412 --- [nio-8091-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet] : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is class com.aspose.slides.exceptions.InvalidOperationException: License parsing error ---&gt; class com.aspose.slides.exceptions.InvalidOperationException: Signature check error. ---&gt; java.security.SignatureException: Signature length not correct: got 0 but was expecting 256 --- End......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/java" role="button">java </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -563,66 +623,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/goquery" role="button">goquery </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-11/fix-cloudflare-r2-network-connection-lost-error/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">fix Cloudflare R2 Network connection lost error</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 1, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      想白嫖下cloudflare的R2，workers上传文件的时候总是会出现Network connection lost error错误， 用的Hono包，完全照着cloudflare的官方文档抄 export const AddFile = async (c: Context): Promise&lt;Response&gt; =&gt; { //save object const data = await c.req.formData(); const file: File = data.get(&#34;file&#34;) as File; const name = await md5(file) as string; const bucket = c.env.DRIVE as R2Bucket try { const saved = await bucket.put(name, file, { httpMetadata: { contentType: file.type }, customMetadata: { createdAt: Date.now().toString(), } }) } catch (e) { console.log(e) return Error(c, CODE_CLOUDFLARE_SERVICE_FAILED, &#39;service unavailable,please try again later&#39;) } return Success(c, &#39;ok&#39;) } 结果总是网络链接断开,用wrangler还有网站的Real-time Logs 啥信息都看不出来......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button">cloudflare </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/workers" role="button">workers </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/r2" role="button">R2 </a></li>
       
     
   </div>

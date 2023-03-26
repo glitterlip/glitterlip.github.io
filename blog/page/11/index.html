@@ -435,32 +435,32 @@
             
             
     <ul class="pagination pagination-default">
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
       </li>
-      <li class="page-item disabled">
-        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/10/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/7/" aria-label="Page 7" class="page-link" role="button">7</a>
+      </li>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/8/" aria-label="Page 8" class="page-link" role="button">8</a>
+      </li>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/9/" aria-label="Page 9" class="page-link" role="button">9</a>
+      </li>
+      <li class="page-item">
+        <a href="https://glitterlip.github.io/blog/page/10/" aria-label="Page 10" class="page-link" role="button">10</a>
       </li>
       <li class="page-item active">
-        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+        <a aria-current="page" aria-label="Page 11" class="page-link" role="button">11</a>
       </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Next" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;</span></a>
       </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
-      </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/4/" aria-label="Page 4" class="page-link" role="button">4</a>
-      </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/5/" aria-label="Page 5" class="page-link" role="button">5</a>
-      </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
-      </li>
-      <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/11/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Last" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
@@ -468,12 +468,12 @@
           
               <div class="post-wrapper white-bg post-card">
   
-  <a href="https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/">
+  <a href="https://glitterlip.github.io/blog/2022-07/golang-cron%E5%8C%85%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E4%B8%8D%E6%89%A7%E8%A1%8C/">
     <div class="post-header text-center">
-      <div class="px-4 post-heading">Ant Design Pro umijs 使用 Remixicon</div>
+      <div class="px-4 post-heading">golang cron包计划任务不执行</div>
       <ul class="post-meta li-x mt-1">
         
-          <li>Mar 26, 2023</li>
+          <li>Jul 18, 2022</li>
         
     
         
@@ -485,7 +485,7 @@
     
 
     
-      开了个新项目，使用了 umijs，然后发现了一个好东西，就是 Remixicon，这个图标库，我觉得比 Ant Design 的图标库要好 copilot有点离谱了啊，上面那句话刚说完 「开了个新项目」，一按tab自动给我补全了，好家伙 在ant desgin/ant design pro/umijs项目中使用的话 yarn add remixicon 然后在src/global.less中 @import &#34;~remixicon/fonts/remixicon.css&#34;; 就好了......
+      cron包旧版本中的表达式和常见的linux crontab表达式并不一致， 多了一个秒级别的定时，新版本中v3已经移除了 如果你在使用github.com/robfig/cron/v3这个包的时候遇到计划任务未执行可能是这个原因 使用秒级定时器 c:=cron.New(cron.WithSeconds()) c.AddFunc(&#34;0 30 * * * *&#34;, func() { fmt.Println(&#34;Every hour on the half hour&#34;) }) 不需要秒级定时器 c:=cron.New() c.AddFunc(&#34;30 * * * *&#34;, func() { fmt.Println(&#34;Every hour on the half hour&#34;) })......
     
   </a>
 
@@ -508,127 +508,7 @@
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/antd" role="button">antd </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/remixicon" role="button">remixicon </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">小程序真机播放音频失败</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 22, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Taro小程序使用remixicon</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 19, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
       
     
   </div>

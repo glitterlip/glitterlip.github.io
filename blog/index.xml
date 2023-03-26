@@ -8,6 +8,15 @@
     <language>zn-Hans</language>
     <lastBuildDate>Thu, 13 Sep 2018 22:31:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Ant Design Pro umijs 使用 Remixicon</title>
+      <link>https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/</link>
+      <pubDate>Sun, 26 Mar 2023 10:42:51 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/</guid>
+      <description>开了个新项目，使用了 umijs，然后发现了一个好东西，就是 Remixicon，这个图标库，我觉得比 Ant Design 的图标库要好 copilot有点离谱了啊，上面那句话刚说完 「开了个新项目」，一按tab自动给我补全了，好家伙 在ant desgin/ant design pro/umijs项目中使用的话 yarn add remixicon 然后在src/global.less中 @import &amp;#34;~remixicon/fonts/remixicon.css&amp;#34;; 就好了</description>
+    </item>
+    
+    <item>
       <title>小程序真机播放音频失败</title>
       <link>https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/</link>
       <pubDate>Wed, 22 Feb 2023 10:38:57 +0800</pubDate>
