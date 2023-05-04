@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Paramita">
+  <meta name="description" content="项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败 这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置 $client = new S3Client([ &#39;version&#39; =&gt; &#39;latest&#39;, &#39;region&#39; =&gt; config(&#39;filesystems.disks.s3.region&#39;), ]); $bucket = config(&#39;filesystems.disks.s3.bucket&#39;); $temp_path = &#39;uploads/temp/images&#39;; $options = [ [&#39;bucket&#39; =&gt; $bucket], [&#39;content-length-range&#39; ,0, 20000000], //这里限制上传文件大">
+
+  <meta property="og:title" content="Php 生成 Aws Pregisn Request" />
+<meta property="og:description" content="项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败 这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置 $client = new S3Client([ &#39;version&#39; =&gt; &#39;latest&#39;, &#39;region&#39; =&gt; config(&#39;filesystems.disks.s3.region&#39;), ]); $bucket = config(&#39;filesystems.disks.s3.bucket&#39;); $temp_path = &#39;uploads/temp/images&#39;; $options = [ [&#39;bucket&#39; =&gt; $bucket], [&#39;content-length-range&#39; ,0, 20000000], //这里限制上传文件大" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-05-04T20:43:26+08:00" />
+<meta property="article:modified_time" content="2023-05-04T20:43:26+08:00" />
+
+
+
+  <title>
+  
+       Php 生成 Aws Pregisn Request | 代码笔记 
+  
+  </title>
+
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/">
+
+  
+  
+
+  
+  <link href="https://glitterlip.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://glitterlip.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://glitterlip.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://glitterlip.github.io/img/zheng.png"
+  
+  >
+
+
+  
+
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://glitterlip.github.io/">
+          
+        <img class="avatar" src="https://glitterlip.github.io/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Paramita</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://glitterlip.github.io/">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/blog/" >Blog  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/moment/" >Moment  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/snippet/" >Snippet  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/about/" >About  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://glitterlip.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://glitterlip.github.io/img/profile.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://glitterlip.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>代码笔记</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/glitterlip" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Php 生成 Aws Pregisn Request</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>May 4, 2023</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>2 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <p>项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败</p>
+<p>这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">        <span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">S3Client</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;latest&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;region&#39;</span>  <span class="o">=&gt;</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;filesystems.disks.s3.region&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$bucket</span> <span class="o">=</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;filesystems.disks.s3.bucket&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$temp_path</span> <span class="o">=</span> <span class="s1">&#39;uploads/temp/images&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$options</span>    <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">            <span class="p">[</span><span class="s1">&#39;bucket&#39;</span> <span class="o">=&gt;</span> <span class="nv">$bucket</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">            <span class="p">[</span><span class="s1">&#39;content-length-range&#39;</span> <span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20000000</span><span class="p">],</span> <span class="c1">//这里限制上传文件大小，超出大小s3会返回错误
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">[</span><span class="s1">&#39;starts-with&#39;</span> <span class="p">,</span><span class="s1">&#39;$key&#39;</span><span class="p">,</span><span class="nv">$temp_path</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span><span class="p">],</span> <span class="c1">//限制上传到指定目录，你也可以直接指定上传到那个文件夹，文件名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="c1">//[&#39;eq&#39;, &#39;$Content-Type&#39;, &#39;image/jpeg&#39;], //限制上传文件类型
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="nv">$postObject</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PostObjectV4</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$client</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$bucket</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="p">[],</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$options</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">         <span class="k">return</span> <span class="nx">response</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">json</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;attr&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$postObject</span><span class="o">-&gt;</span><span class="na">getFormAttributes</span><span class="p">(),</span>
+</span></span><span class="line"><span class="cl">            <span class="s1">&#39;input&#39;</span> <span class="o">=&gt;</span> <span class="nx">array_merge</span><span class="p">(</span><span class="nv">$postObject</span><span class="o">-&gt;</span><span class="na">getFormInputs</span><span class="p">(),[</span>
+</span></span><span class="line"><span class="cl">                <span class="s1">&#39;key&#39;</span><span class="o">=&gt;</span><span class="nv">$temp_path</span> <span class="o">.</span> <span class="s1">&#39;/&#39;</span> <span class="o">.</span> <span class="nx">Carbon</span><span class="o">::</span><span class="na">now</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">format</span><span class="p">(</span><span class="s1">&#39;Y-m-d&#39;</span><span class="p">)</span><span class="o">.</span><span class="s1">&#39;/&#39;</span><span class="o">.</span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="p">]);</span>
+</span></span></code></pre></div><p>示例响应</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;attr&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;https://cxx.s3.ap-southeast-1.amazonaws.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;method&#34;</span><span class="p">:</span> <span class="s2">&#34;POST&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;enctype&#34;</span><span class="p">:</span> <span class="s2">&#34;multipart/form-data&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;input&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;key&#34;</span><span class="p">:</span> <span class="s2">&#34;uploads/temp/posts/images/2023-05-04/Screenshot 2023-05-03 at 11.03.33.png&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;X-Amz-Credential&#34;</span><span class="p">:</span> <span class="s2">&#34;AKIAV7ASRH6Z642DM35C/20230504/ap-southeast-1/s3/aws4_request&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;X-Amz-Algorithm&#34;</span><span class="p">:</span> <span class="s2">&#34;AWS4-HMAC-SHA256&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;X-Amz-Date&#34;</span><span class="p">:</span> <span class="s2">&#34;20230504T131615Z&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;Policy&#34;</span><span class="p">:</span> <span class="s2">&#34;eyJleHBpcmF0aW9uIjoiMjAyMy0wNS0wNFQxNDoxNjoxNVoiLCJjb25kaXRpb25zIjpbeyJidWNrZXQiOiJmYmJ1Y2NrZXQxMjMifSxbImNvbnRlbnQtbGVuZ3RoLXJhbmdlIiwwLDEwMDAwMDAwXSxbInN0YXJ0cy13aXRoIiwiJGtleSIsInVwbG9hZHNcL3RlbXBcL3Bvc3RzXC9pbWFnZXNcLzIwMjMtMDUtMDRcLyJdLHsiWC1BbXotRGF0ZSI6IjIwMjMwNTA0VDEzMTYxNVoifSx7IlgtQW16LUNyZWRlbnRpYWwiOiJBS0lBVjdBU1JINlo2NDJETTM1Q1wvMjAyMzA1MDRcL2FwLXNvdXRoZWFzdC0xXC9zM1wvYXdzNF9yZXF1ZXN0In0seyJYLUFtei1BbGdvcml0aG0iOiJBV1M0LUhNQUMtU0hBMjU2In1dfQ==&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;X-Amz-Signature&#34;</span><span class="p">:</span> <span class="s2">&#34;82120e8d2dd1515cb18dc9a39810d5aca682f4fbbd5cc5b13a1d28007e29dd4e&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>前端接受到参数后，构建post请求到s3的bucket即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="p">{</span><span class="nx">attr</span><span class="p">,</span> <span class="nx">input</span><span class="p">}</span> <span class="o">=</span> <span class="nx">response</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="kr">const</span> <span class="nx">amzForm</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FormData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">input</span><span class="p">).</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">k</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nx">amzForm</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="nx">k</span><span class="p">,</span> <span class="nx">input</span><span class="p">[</span><span class="nx">k</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">amzForm</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span> <span class="nx">fileToUpload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="nx">axios</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">url</span><span class="o">:</span> <span class="nx">attr</span><span class="p">.</span><span class="nx">action</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">method</span><span class="o">:</span> <span class="s1">&#39;post&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">headers</span><span class="o">:</span> <span class="p">{</span><span class="s2">&#34;Content-Type&#34;</span><span class="o">:</span> <span class="s2">&#34;multipart/form-data&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">data</span><span class="o">:</span> <span class="nx">amzForm</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})(</span><span class="nx">attr</span><span class="p">.</span><span class="nx">action</span><span class="p">,</span> <span class="nx">amzForm</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">r</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//这里是上传成功，可以通知后端
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="nx">r</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">})</span>
+</span></span></code></pre></div><p>这里如果上传成功，s3会给一个204的响应，如果失败了，会给一个400的响应,格式是xml</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;Error&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Code&gt;</span>EntityTooLarge<span class="nt">&lt;/Code&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Message&gt;</span>Your proposed upload exceeds the maximum allowed size<span class="nt">&lt;/Message&gt;</span> //可以看到错误原因是文件太大
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;ProposedSize&gt;</span>10002748<span class="nt">&lt;/ProposedSize&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;MaxSizeAllowed&gt;</span>10000000<span class="nt">&lt;/MaxSizeAllowed&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;RequestId&gt;</span>XBPNJFVJP7MR9SMD<span class="nt">&lt;/RequestId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;HostId&gt;</span>Kg7cWw=<span class="nt">&lt;/HostId&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/Error&gt;</span>
+</span></span></code></pre></div><p>还有一个问题是即使你在签名时指定了content-type限制，<code>['eq', '$Content-Type', 'image/jpeg']</code>，s3只会验证你的form的content-type字段的值是不是image/jpeg,至于你上传的文件的mime type是不是image/jpeg，s3是不会去验证的</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/aws" role="button">aws </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/s3" role="button">s3 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/lambda" role="button">lambda </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Ant Design Pro umijs 使用 Remixicon</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/glitterlip " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://glitterlip.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://glitterlip.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://glitterlip.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

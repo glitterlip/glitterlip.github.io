@@ -2,28 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://glitterlip.github.io/tags/aws/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/categories/blog/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/categories/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/lambda/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/php/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/s3/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/</loc>
+    <lastmod>2023-05-04T20:43:26+08:00</lastmod>
+  </url><url>
     <loc>https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/</loc>
     <lastmod>2023-03-26T10:42:51+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/antd/</loc>
     <lastmod>2023-03-26T10:42:51+08:00</lastmod>
   </url><url>
-    <loc>https://glitterlip.github.io/categories/blog/</loc>
-    <lastmod>2023-03-26T10:42:51+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/categories/</loc>
-    <lastmod>2023-03-26T10:42:51+08:00</lastmod>
-  </url><url>
     <loc>https://glitterlip.github.io/tags/react/</loc>
     <lastmod>2023-03-26T10:42:51+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/remixicon/</loc>
-    <lastmod>2023-03-26T10:42:51+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/tags/</loc>
-    <lastmod>2023-03-26T10:42:51+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/</loc>
     <lastmod>2023-03-26T10:42:51+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/taro/</loc>
@@ -147,9 +162,6 @@
     <lastmod>2022-10-15T19:46:21+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/</loc>
-    <lastmod>2022-10-15T19:46:21+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/tags/php/</loc>
     <lastmod>2022-10-15T19:46:21+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/mac/</loc>

@@ -1,55 +1,92 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Snippet Code on 代码笔记</title>
+    <title>Snippets on 代码笔记</title>
     <link>https://glitterlip.github.io/snippet/</link>
-    <description>Recent content in Snippet Code on 代码笔记</description>
+    <description>Recent content in Snippets on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Wed, 19 Aug 2015 20:29:37 -0700</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Nov 2022 03:59:30 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/snippet/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>golang</title>
-      <link>https://glitterlip.github.io/snippet/golang/</link>
+      <title>1342</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1342/</link>
       <pubDate>Mon, 07 Nov 2022 03:59:30 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/golang/</guid>
-      <description></description>
+      <guid>https://glitterlip.github.io/snippet/leetcode/1342/</guid>
+      <description>1342. Number of Steps to Reduce a Number to Zero 题目 Given an integer num, return the number of steps to reduce it to zero. In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it. Example 1: Input: num = 14 Output: 6 Explanation: Step 1) 14 is even; divide by 2 and obtain 7. Step 2) 7 is odd; subtract 1 and obtain 6. Step 3) 6 is even; divide by 2 and obtain 3. Step 4) 3 is odd; subtract 1 and obtain 2. Step 5) 2 is even; divide by 2 and obtain 1. Step 6) 1 is odd; subtract 1 and obtain 0. Example 2: Input: num = 8 Output: 4 Explanation: Step 1) 8 is even; divide by 2 and obtain 4. Step 2) 4 is even; divide by 2 and obtain 2. Step 3) 2 is even; divide by 2 and obtain 1. Step 4) 1 is odd; subtract 1 and obtain 0. Example 3: Input: num = 123 Output: 12 Constraints: 0 &amp;lt;= num &amp;lt;= 106 题目大意 给你一个数，偶数</description>
     </item>
     
     <item>
-      <title>leetcode</title>
-      <link>https://glitterlip.github.io/snippet/leetcode/</link>
-      <pubDate>Mon, 07 Nov 2022 03:59:30 +0800</pubDate>
+      <title>412</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/412/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/leetcode/</guid>
-      <description></description>
+      <guid>https://glitterlip.github.io/snippet/leetcode/412/</guid>
+      <description>412. Fizz Buzz 题目 Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output “Fizz” instead of the number and for the multiples of five output “Buzz”. For numbers which are multiples of both three and five output “FizzBuzz”. Example: n = 15, Return: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;4&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;7&amp;#34;, &amp;#34;8&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;Buzz&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;Fizz&amp;#34;, &amp;#34;13&amp;#34;, &amp;#34;14&amp;#34;, &amp;#34;FizzBuzz&amp;#34; ] 题目大意 3的倍数输出 &amp;ldquo;Fizz&amp;rdquo;，5的倍数输出 &amp;ldquo;Buzz&amp;rdquo;，15的倍数输出 &amp;ldquo;FizzBuzz&amp;rdquo;，其他时候都输出原本的数字。 解题思路 按照题意</description>
     </item>
     
     <item>
-      <title>reactjs</title>
-      <link>https://glitterlip.github.io/snippet/reactjs/</link>
+      <title>412</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/876/</link>
+      <pubDate>Sat, 05 Nov 2022 22:57:57 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/876/</guid>
+      <description>412. Fizz Buzz 题目 Given a non-empty, singly linked list with head node head, return a middle node of linked list. If there are two middle nodes, return the second middle node. Example 1: Input: [1,2,3,4,5] Output: Node 3 from this list (Serialization: [3,4,5]) The returned node has value 3. (The judge&amp;#39;s serialization of this node is [3,4,5]). Note that we returned a ListNode object ans, such that: ans.val = 3, ans.next.val = 4, ans.next.next.val = 5, and ans.next.next.next = NULL. Example 2: Input: [1,2,3,4,5,6] Output: Node 4 from this list (Serialization: [4,5,6]) Since the list has two middle nodes with values 3 and 4, we return the second one. Note: The number of nodes in the given list will be between 1 and 100. 题目大意 输出链表中间结点。这题在前面题目中反复出现了很多次了。 如果链表长度是奇数，输出中间结点是中间结点。如果链表长度是双数，输出中间结点是中位数后</description>
+    </item>
+    
+    <item>
+      <title>1672</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1672/</link>
+      <pubDate>Sat, 05 Nov 2022 00:05:15 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/leetcode/1672/</guid>
+      <description>1672. Richest Customer Wealth 题目 You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the ith customer has in the jth bank. Return the wealth that the richest customer has. A customer&amp;rsquo;s wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth. Example 1: Input: accounts = [[1,2,3],[3,2,1]] Output: 6 Explanation:1st customer has wealth = 1 + 2 + 3 = 6 2nd customer has wealth = 3 + 2 + 1 = 6 Both customers are considered the richest with a wealth of 6 each, so return 6. Example 2: Input: accounts = [[1,5],[7,3],[3,5]] Output: 10 Explanation: 1st customer has wealth = 6 2nd customer has wealth = 10 3rd customer has wealth = 8 The 2nd customer is the richest with a wealth of 10. Example 3: Input: accounts = [[2,8,7],[7,1,3],[1,9,5]] Output: 17 Constraints: m == accounts.length n == accounts[i].length 1 &amp;lt;= m, n &amp;lt;= 50 1 &amp;lt;= accounts[i][j] &amp;lt;= 100 题目大意 给你一个 m x n 的整数网格 accounts ，其中 accounts[i][j] 是第 i</description>
+    </item>
+    
+    <item>
+      <title>Qrcode React</title>
+      <link>https://glitterlip.github.io/snippet/qrcode-react/</link>
       <pubDate>Thu, 03 Nov 2022 03:38:38 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/reactjs/</guid>
-      <description></description>
+      <guid>https://glitterlip.github.io/snippet/qrcode-react/</guid>
+      <description>download qrcode.react svg as png to fix Function components cannot be given refs. Attempts to access this ref will fail error
+import React,{useRef} from &amp;#39;react&amp;#39;; import {QRCodeCanvas} from &amp;#39;qrcode.react&amp;#39; export function App(props) { const divRef = useRef(null); const download = () =&amp;gt; { const node = divRef.current?.children[0]; if (node == null) { return; } const dataURI = node.toDataURL(&amp;#39;image/png&amp;#39;); let a = document.createElement(&amp;#39;a&amp;#39;); a.download = &amp;#39;qrcode-canvas.png&amp;#39;; a.href = dataURI; a.click(); }; return ( &amp;lt;div className=&amp;#39;App&amp;#39;&amp;gt; &amp;lt;h1&amp;gt;Hello React.&amp;lt;/h1&amp;gt; &amp;lt;div className={&amp;#39;mx-auto pt-2&amp;#39;} ref={divRef}&amp;gt; &amp;lt;QRCodeCanvas value={&amp;#34;https://playcode.io/react&amp;#34;} /&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;div className=&amp;#39;mx-auto pt-2&amp;#39;&amp;gt; &amp;lt;button onClick={download}&amp;gt; Download &amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; ); } // Log to console console.log(&amp;#39;Hello console&amp;#39;); </description>
     </item>
     
     <item>
-      <title>antd</title>
-      <link>https://glitterlip.github.io/snippet/antd/</link>
+      <title>1480. Running Sum of 1d Array #</title>
+      <link>https://glitterlip.github.io/snippet/leetcode/1480/</link>
       <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/antd/</guid>
-      <description></description>
+      <guid>https://glitterlip.github.io/snippet/leetcode/1480/</guid>
+      <description>1480. Running Sum of 1d Array 题目 Given an array nums. We define a running sum of an array as runningSum[i] = sum(nums[0]…nums[i]). Return the running sum of nums. Example 1: Input: nums = [1,2,3,4] Output: [1,3,6,10] Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4]. Example 2: Input: nums = [1,1,1,1,1] Output: [1,2,3,4,5] Explanation: Running sum is obtained as follows: [1, 1+1, 1+1+1, 1+1+1+1, 1+1+1+1+1]. Example 3: Input: nums = [3,1,2,10,1] Output: [3,4,6,16,17] Constraints: 1 &amp;lt;= nums.length &amp;lt;= 1000 -10^6 &amp;lt;= nums[i] &amp;lt;= 10^6 题目大意 给你一个数组 nums 。数组「动态和」的计算公式为：runningSum[i] = sum(nums[0]…nums[i]) 。请返回 nums 的动态和。 解题思路 简单题，按照题意依次循环计算前缀和即</description>
     </item>
     
     <item>
-      <title>php</title>
-      <link>https://glitterlip.github.io/snippet/php/</link>
+      <title>ant design pro查看官网预览源码</title>
+      <link>https://glitterlip.github.io/snippet/ant-pro-preview/</link>
+      <pubDate>Wed, 10 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/ant-pro-preview/</guid>
+      <description>emmm觉得官网的demo例子写的不错，想照着抄一下 克隆仓库git clone https://github.com/ant-design/ant-design-pro.git 进入项目目录yarn安装依赖 yarn run pro fetch-blocks --branch=v5获取代码块 yarn start就可以在本地跑起来demo了 config/routes.ts是路由文件，src/pages里面是源码</description>
+    </item>
+    
+    <item>
+      <title>golang mysql设置时区</title>
+      <link>https://glitterlip.github.io/snippet/mysql-loc/</link>
+      <pubDate>Sat, 06 Aug 2022 11:14:43 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/snippet/mysql-loc/</guid>
+      <description>github.com/go-sql-driver包设置时区 DSN方式追加loc参数，值必须转义,/用%2F替换 DSN: parseTime=true&amp;amp;loc=Asia%2FShanghai</description>
+    </item>
+    
+    <item>
+      <title>laravel telescope get response code</title>
+      <link>https://glitterlip.github.io/snippet/telescope-response-code/</link>
       <pubDate>Wed, 20 Jul 2022 09:53:11 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/snippet/php/</guid>
-      <description></description>
+      <guid>https://glitterlip.github.io/snippet/telescope-response-code/</guid>
+      <description>Telescope::tag(function (IncomingEntry $entry) { $tags = []; if ( $entry-&amp;gt;isRequest() ) { if ( $entry-&amp;gt;content[&amp;#39;response_status&amp;#39;] == 302 ) { $tags[] = &amp;#39;redirect&amp;#39;; } } return $tags; }); </description>
     </item>
     
   </channel>

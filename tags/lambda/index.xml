@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lambda on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/lambda/</link>
+    <description>Recent content in lambda on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Thu, 04 May 2023 20:43:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Php 生成 Aws Pregisn Request</title>
+      <link>https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/</link>
+      <pubDate>Thu, 04 May 2023 20:43:26 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/</guid>
+      <description>项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败 这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置 $client = new S3Client([ &amp;#39;version&amp;#39; =&amp;gt; &amp;#39;latest&amp;#39;, &amp;#39;region&amp;#39; =&amp;gt; config(&amp;#39;filesystems.disks.s3.region&amp;#39;), ]); $bucket = config(&amp;#39;filesystems.disks.s3.bucket&amp;#39;); $temp_path = &amp;#39;uploads/temp/images&amp;#39;; $options = [ [&amp;#39;bucket&amp;#39; =&amp;gt; $bucket], [&amp;#39;content-length-range&amp;#39; ,0, 20000000], //这里限制上传文件大</description>
+    </item>
+    
+  </channel>
+</rss>
