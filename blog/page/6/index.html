@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (32)</span>
+                <span>Blog (33)</span>
               </a>
             </li>
           
@@ -325,7 +325,9 @@
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/git" role="button"><span>git (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
@@ -424,7 +426,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  32 posts
+                  33 posts
                 </div>
               
             </div>
@@ -470,6 +472,60 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Laravel查看缓存剩余时间</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 22, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &#39;prefix&#39; =&gt; env(&#39;CACHE_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;).&#39;_cache&#39;) Laravel的数据库配置文件config/database.php &#39;redis&#39; =&gt; [ &#39;client&#39; =&gt; env(&#39;REDIS_CLIENT&#39;, &#39;phpredis&#39;), &#39;options&#39; =&gt; [ &#39;cluster&#39; =&gt; env(&#39;REDIS_CLUSTER&#39;, &#39;redis&#39;), &#39;prefix&#39; =&gt; env(&#39;REDIS_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;) . &#39;_database_&#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -578,63 +634,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/mac" role="button">mac </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/ssh%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ssh端口转发</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 6, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      ssh端口转发 本地端口转发 将发送到本机某个端口的请求转发给远程ssh服务器的某个端口 ssh -L [LOCAL_IP:]LOCAL_PORT:DESTINATION:DESTINATION_PORT [USER@]SSH_SERVER 比如服务器elk的kibana服务，mysql服务，Druid,nacos的管理端,rancher的管理端这些肯定是不能暴露给公网访问的 ssh -L -N 15601:127.0.0.1:5601 root@remoteip 这条命令会将发送到本机15601端口的请求转发到服务器的5601端口，在本机打开浏览器访问http://localhost:15601/即可访问服务器上部署的ki......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/shell" role="button">shell </a></li>
       
     
   </div>

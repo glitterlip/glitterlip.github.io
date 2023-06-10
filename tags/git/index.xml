@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/git/</link>
+    <description>Recent content in git on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Sat, 10 Jun 2023 20:43:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github 推送代码失败</title>
+      <link>https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/</link>
+      <pubDate>Sat, 10 Jun 2023 20:43:26 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/</guid>
+      <description>周末在家写点代码，写完死活推不上去 kex_exchange_identification: Connection closed by remote host Connection closed by 198.18.0.16 port 22 fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. 我以为是我挂了代理，github可能怀疑恶意用户不让我推代码。。。 实际是祖国更墙大了 Host github.com Hostname ssh.github.com Port 443 User git 把上面代码加入到~/.ssh/config就好了</description>
+    </item>
+    
+  </channel>
+</rss>

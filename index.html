@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (32)</span>
+                <span>Blog (33)</span>
               </a>
             </li>
           
@@ -368,7 +368,9 @@
         
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/git" role="button"><span>git (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
         
@@ -464,6 +466,63 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Github 推送代码失败</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jun 10, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      周末在家写点代码，写完死活推不上去 kex_exchange_identification: Connection closed by remote host Connection closed by 198.18.0.16 port 22 fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. 我以为是我挂了代理，github可能怀疑恶意用户不让我推代码。。。 实际是祖国更墙大了 Host github.com Hostname ssh.github.com Port 443 User git 把上面代码加入到~/.ssh/config就好了......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/github" role="button">github </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/git" role="button">git </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -665,63 +724,6 @@
 
     
       taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Taro打包静态文件</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 11, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &#39;src/audio/&#39;, to: &#39;dist/audios/&#39;, ignore: [&#39;*.js&#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }......
     
   </a>
 
