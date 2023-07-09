@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (33)</span>
+                <span>Blog (34)</span>
               </a>
             </li>
           
@@ -353,6 +353,8 @@
       </div>
 
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
+        
+            <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button"><span>alplinejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
@@ -466,6 +468,60 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Alplinejs 同时监听多个值</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 9, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      chatgpt给的错误答案 $watch([&#39;count&#39;, &#39;name&#39;], (newValues, oldValues) =&gt; {}) 上面的代码虽然可以监听到count和name的变化,但是newValues永远是count的值,name是无法拿到的 正确的写法是 Alpine.data(&#39;box&#39;, () =&gt; ({ init() { this.$watch(&#39;[first,last]&#39;, (v,oldV) =&gt; { console.log(v) this.name=`${v[0]} ${v[1]}` }) }, } )) chatgpt还给了这段代码监听,结果也是错的 &lt;script&gt; const app = Alpine.data(&#39;myComponent&#39;, () =&gt; ({ myData: &#39;Hello&#39; })); app.$watch(&#39;myData&#39;, (newValue, oldValue) =&gt; { console.log(`myData changed from ${oldValue} to ${newValue}`); }); &lt;/script&gt; Alpine.data方法根本就没有返回值,app是undefined,所以app.$watch是无效的,......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button">alplinejs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -667,63 +723,6 @@
 
     
       小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Taro小程序使用remixicon</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 19, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.......
     
   </a>
 

@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (33)</span>
+                <span>Blog (34)</span>
               </a>
             </li>
           
@@ -310,6 +310,8 @@
       </div>
 
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
+        
+            <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button"><span>alplinejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
@@ -426,7 +428,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  33 posts
+                  34 posts
                 </div>
               
             </div>
@@ -468,10 +470,64 @@
         <a href="https://glitterlip.github.io/blog/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/11/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/12/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Alplinejs 同时监听多个值</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 9, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      chatgpt给的错误答案 $watch([&#39;count&#39;, &#39;name&#39;], (newValues, oldValues) =&gt; {}) 上面的代码虽然可以监听到count和name的变化,但是newValues永远是count的值,name是无法拿到的 正确的写法是 Alpine.data(&#39;box&#39;, () =&gt; ({ init() { this.$watch(&#39;[first,last]&#39;, (v,oldV) =&gt; { console.log(v) this.name=`${v[0]} ${v[1]}` }) }, } )) chatgpt还给了这段代码监听,结果也是错的 &lt;script&gt; const app = Alpine.data(&#39;myComponent&#39;, () =&gt; ({ myData: &#39;Hello&#39; })); app.$watch(&#39;myData&#39;, (newValue, oldValue) =&gt; { console.log(`myData changed from ${oldValue} to ${newValue}`); }); &lt;/script&gt; Alpine.data方法根本就没有返回值,app是undefined,所以app.$watch是无效的,......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button">alplinejs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -583,66 +639,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/lambda" role="button">lambda </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-03/ant-design-pro-umijs-%E4%BD%BF%E7%94%A8-remixicon/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Ant Design Pro umijs 使用 Remixicon</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Mar 26, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      开了个新项目，使用了 umijs，然后发现了一个好东西，就是 Remixicon，这个图标库，我觉得比 Ant Design 的图标库要好 copilot有点离谱了啊，上面那句话刚说完 「开了个新项目」，一按tab自动给我补全了，好家伙 在ant desgin/ant design pro/umijs项目中使用的话 yarn add remixicon 然后在src/global.less中 @import &#34;~remixicon/fonts/remixicon.css&#34;; 就好了......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/antd" role="button">antd </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/remixicon" role="button">remixicon </a></li>
       
     
   </div>

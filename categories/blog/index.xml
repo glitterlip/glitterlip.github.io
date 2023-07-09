@@ -6,7 +6,16 @@
     <description>Recent content in blog on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sat, 10 Jun 2023 20:43:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Jul 2023 15:33:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Alplinejs 同时监听多个值</title>
+      <link>https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</link>
+      <pubDate>Sun, 09 Jul 2023 15:33:26 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</guid>
+      <description>chatgpt给的错误答案 $watch([&amp;#39;count&amp;#39;, &amp;#39;name&amp;#39;], (newValues, oldValues) =&amp;gt; {}) 上面的代码虽然可以监听到count和name的变化,但是newValues永远是count的值,name是无法拿到的 正确的写法是 Alpine.data(&amp;#39;box&amp;#39;, () =&amp;gt; ({ init() { this.$watch(&amp;#39;[first,last]&amp;#39;, (v,oldV) =&amp;gt; { console.log(v) this.name=`${v[0]} ${v[1]}` }) }, } )) chatgpt还给了这段代码监听,结果也是错的 &amp;lt;script&amp;gt; const app = Alpine.data(&amp;#39;myComponent&amp;#39;, () =&amp;gt; ({ myData: &amp;#39;Hello&amp;#39; })); app.$watch(&amp;#39;myData&amp;#39;, (newValue, oldValue) =&amp;gt; { console.log(`myData changed from ${oldValue} to ${newValue}`); }); &amp;lt;/script&amp;gt; Alpine.data方法根本就没有返回值,app是undefined,所以app.$watch是无效的,</description>
+    </item>
+    
     <item>
       <title>Github 推送代码失败</title>
       <link>https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/</link>

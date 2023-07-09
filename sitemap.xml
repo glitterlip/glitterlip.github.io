@@ -2,11 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://glitterlip.github.io/tags/alplinejs/</loc>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</loc>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
+  </url><url>
     <loc>https://glitterlip.github.io/categories/blog/</loc>
-    <lastmod>2023-06-10T20:43:26+08:00</lastmod>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/categories/</loc>
-    <lastmod>2023-06-10T20:43:26+08:00</lastmod>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/tags/</loc>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
+  </url><url>
+    <loc>https://glitterlip.github.io/</loc>
+    <lastmod>2023-07-09T15:33:26+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/git/</loc>
     <lastmod>2023-06-10T20:43:26+08:00</lastmod>
@@ -15,12 +27,6 @@
     <lastmod>2023-06-10T20:43:26+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/</loc>
-    <lastmod>2023-06-10T20:43:26+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/tags/</loc>
-    <lastmod>2023-06-10T20:43:26+08:00</lastmod>
-  </url><url>
-    <loc>https://glitterlip.github.io/</loc>
     <lastmod>2023-06-10T20:43:26+08:00</lastmod>
   </url><url>
     <loc>https://glitterlip.github.io/tags/aws/</loc>
