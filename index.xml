@@ -6,13 +6,22 @@
     <description>Recent content on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Sun, 09 Jul 2023 15:33:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 21:14:29 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Alplinejs 同时监听多个值</title>
-      <link>https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</link>
+      <title>Alpinejs 全局</title>
+      <link>https://glitterlip.github.io/blog/2023-09/alpinejs-%E5%85%A8%E5%B1%80/</link>
+      <pubDate>Wed, 13 Sep 2023 21:14:29 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-09/alpinejs-%E5%85%A8%E5%B1%80/</guid>
+      <description>把Alpinejs实例曝露到外部,控制台访问Alpinejs实例 &amp;lt;div x-data=&amp;#34;dropdown&amp;#34;&amp;gt; &amp;lt;button @click=&amp;#34;toggle&amp;#34;&amp;gt;...&amp;lt;/button&amp;gt; &amp;lt;div x-show=&amp;#34;open&amp;#34;&amp;gt;...&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;script&amp;gt; document.addEventListener(&amp;#39;alpine:init&amp;#39;, () =&amp;gt; { Alpine.data(&amp;#39;dropdown&amp;#39;, () =&amp;gt; ({ init(){ window.AlpApp = this }, open: false, toggle() { this.open = ! this.open } })) }) &amp;lt;/script&amp;gt; 这样页面里就可以打开控制台方便调试了console.log(window.AlpApp.$data.open) 不过拿到的是proxy,也可以这样获取 document.querySelectorAll(&amp;#39;[x-data]&amp;#39;).forEach(el =&amp;gt; { console.log(el.__x.getUnobservedData()); });</description>
+    </item>
+    
+    <item>
+      <title>Alpinejs 同时监听多个值</title>
+      <link>https://glitterlip.github.io/blog/2023-07/alpinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</link>
       <pubDate>Sun, 09 Jul 2023 15:33:26 +0800</pubDate>
       
-      <guid>https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</guid>
+      <guid>https://glitterlip.github.io/blog/2023-07/alpinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/</guid>
       <description>chatgpt给的错误答案 $watch([&amp;#39;count&amp;#39;, &amp;#39;name&amp;#39;], (newValues, oldValues) =&amp;gt; {}) 上面的代码虽然可以监听到count和name的变化,但是newValues永远是count的值,name是无法拿到的 正确的写法是 Alpine.data(&amp;#39;box&amp;#39;, () =&amp;gt; ({ init() { this.$watch(&amp;#39;[first,last]&amp;#39;, (v,oldV) =&amp;gt; { console.log(v) this.name=`${v[0]} ${v[1]}` }) }, } )) chatgpt还给了这段代码监听,结果也是错的 &amp;lt;script&amp;gt; const app = Alpine.data(&amp;#39;myComponent&amp;#39;, () =&amp;gt; ({ myData: &amp;#39;Hello&amp;#39; })); app.$watch(&amp;#39;myData&amp;#39;, (newValue, oldValue) =&amp;gt; { console.log(`myData changed from ${oldValue} to ${newValue}`); }); &amp;lt;/script&amp;gt; Alpine.data方法根本就没有返回值,app是undefined,所以app.$watch是无效的,</description>
     </item>
     

@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (34)</span>
+                <span>Blog (35)</span>
               </a>
             </li>
           
@@ -311,7 +311,7 @@
 
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
         
-            <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button"><span>alplinejs (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button"><span>alpinejs (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
@@ -428,7 +428,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  34 posts
+                  35 posts
                 </div>
               
             </div>
@@ -478,9 +478,63 @@
           
               <div class="post-wrapper white-bg post-card">
   
-  <a href="https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+  <a href="https://glitterlip.github.io/blog/2023-09/alpinejs-%E5%85%A8%E5%B1%80/">
     <div class="post-header text-center">
-      <div class="px-4 post-heading">Alplinejs 同时监听多个值</div>
+      <div class="px-4 post-heading">Alpinejs 全局</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 13, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      把Alpinejs实例曝露到外部,控制台访问Alpinejs实例 &lt;div x-data=&#34;dropdown&#34;&gt; &lt;button @click=&#34;toggle&#34;&gt;...&lt;/button&gt; &lt;div x-show=&#34;open&#34;&gt;...&lt;/div&gt; &lt;/div&gt; &lt;script&gt; document.addEventListener(&#39;alpine:init&#39;, () =&gt; { Alpine.data(&#39;dropdown&#39;, () =&gt; ({ init(){ window.AlpApp = this }, open: false, toggle() { this.open = ! this.open } })) }) &lt;/script&gt; 这样页面里就可以打开控制台方便调试了console.log(window.AlpApp.$data.open) 不过拿到的是proxy,也可以这样获取 document.querySelectorAll(&#39;[x-data]&#39;).forEach(el =&gt; { console.log(el.__x.getUnobservedData()); });......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-07/alpinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Alpinejs 同时监听多个值</div>
       <ul class="post-meta li-x mt-1">
         
           <li>Jul 9, 2023</li>
@@ -518,7 +572,7 @@
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button">alplinejs </a></li>
+      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
       
     
   </div>
@@ -576,69 +630,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/git" role="button">git </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Php 生成 Aws Pregisn Request</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>May 4, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败 这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置 $client = new S3Client([ &#39;version&#39; =&gt; &#39;latest&#39;, &#39;region&#39; =&gt; config(&#39;filesystems.disks.s3.region&#39;), ]); $bucket = config(&#39;filesystems.disks.s3.bucket&#39;); $temp_path = &#39;uploads/temp/images&#39;; $options = [ [&#39;bucket&#39; =&gt; $bucket], [&#39;content-length-range&#39; ,0, 20000000], //这里限制上传文件大......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/aws" role="button">aws </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/s3" role="button">s3 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/lambda" role="button">lambda </a></li>
       
     
   </div>

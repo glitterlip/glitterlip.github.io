@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (34)</span>
+                <span>Blog (35)</span>
               </a>
             </li>
           
@@ -354,7 +354,7 @@
 
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
         
-            <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button"><span>alplinejs (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button"><span>alpinejs (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
@@ -471,9 +471,63 @@
               
                   <div class="post-wrapper white-bg post-card">
   
-  <a href="https://glitterlip.github.io/blog/2023-07/alplinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+  <a href="https://glitterlip.github.io/blog/2023-09/alpinejs-%E5%85%A8%E5%B1%80/">
     <div class="post-header text-center">
-      <div class="px-4 post-heading">Alplinejs 同时监听多个值</div>
+      <div class="px-4 post-heading">Alpinejs 全局</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 13, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      把Alpinejs实例曝露到外部,控制台访问Alpinejs实例 &lt;div x-data=&#34;dropdown&#34;&gt; &lt;button @click=&#34;toggle&#34;&gt;...&lt;/button&gt; &lt;div x-show=&#34;open&#34;&gt;...&lt;/div&gt; &lt;/div&gt; &lt;script&gt; document.addEventListener(&#39;alpine:init&#39;, () =&gt; { Alpine.data(&#39;dropdown&#39;, () =&gt; ({ init(){ window.AlpApp = this }, open: false, toggle() { this.open = ! this.open } })) }) &lt;/script&gt; 这样页面里就可以打开控制台方便调试了console.log(window.AlpApp.$data.open) 不过拿到的是proxy,也可以这样获取 document.querySelectorAll(&#39;[x-data]&#39;).forEach(el =&gt; { console.log(el.__x.getUnobservedData()); });......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-07/alpinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Alpinejs 同时监听多个值</div>
       <ul class="post-meta li-x mt-1">
         
           <li>Jul 9, 2023</li>
@@ -511,7 +565,7 @@
   <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
   <div class="tags-sm">
     
-      <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button">alplinejs </a></li>
+      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
       
     
   </div>
@@ -692,63 +746,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/remixicon" role="button">remixicon </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%9C%9F%E6%9C%BA%E6%92%AD%E6%94%BE%E9%9F%B3%E9%A2%91%E5%A4%B1%E8%B4%A5/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">小程序真机播放音频失败</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 22, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
       
     
   </div>

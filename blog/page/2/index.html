@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (34)</span>
+                <span>Blog (35)</span>
               </a>
             </li>
           
@@ -311,7 +311,7 @@
 
       <div class="li-x post-meta tags-md" style="margin-left: -8px;">
         
-            <li><a href="https://glitterlip.github.io/tags/alplinejs" role="button"><span>alplinejs (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button"><span>alpinejs (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
         
@@ -428,7 +428,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  34 posts
+                  35 posts
                 </div>
               
             </div>
@@ -474,6 +474,69 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Php 生成 Aws Pregisn Request</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>May 4, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      项目使用laravel开发，用bref部署到aws的lambda上，有一个上传文件的接口，由于lambda限制请求和响应大小为6mb，导致上传大于6mb的文件失败 这时候可以使用s3的presign post让前端直接上传到s3，presign post比presign url多了一个policy功能，你可以限制上传的文件大小，位置 $client = new S3Client([ &#39;version&#39; =&gt; &#39;latest&#39;, &#39;region&#39; =&gt; config(&#39;filesystems.disks.s3.region&#39;), ]); $bucket = config(&#39;filesystems.disks.s3.bucket&#39;); $temp_path = &#39;uploads/temp/images&#39;; $options = [ [&#39;bucket&#39; =&gt; $bucket], [&#39;content-length-range&#39; ,0, 20000000], //这里限制上传文件大......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/aws" role="button">aws </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/s3" role="button">s3 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/lambda" role="button">lambda </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -556,63 +619,6 @@
 
     
       小程序android真机调试时播放音频失败,开发者工具是可以的 原代码 const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = true innerAudioContext.loop = false innerAudioContext.src = `https://a.com/jpmp/api/voice` innerAudioContext.onError(e =&gt; { console.log(e) }) innerAudioContext.play() 出现的错误信息 {errCode: 10001, errMsg: &#34;errCode:62, err:load or init native decode so fail&#34;} 诡异的是域名已经白名单,开发时也可以播放,真机调试就是没声音 开始以为是mp3音频的编码格式手机不支持,不能解码无法播放,原始格式是audio-16khz-128kbitrate-mono-mp3,陆续换了 ogg-16khz-16bit-mono-opus webm-16khz-16bit-mono-opus riff-8khz-8bit-mono-alaw riff-8khz-8bit-mono-mulaw riff-8khz-16bit-mono-pcm 竟然没一个能播放的,webm,ogg都不支持......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-02/taro%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%BD%BF%E7%94%A8remixicon/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Taro小程序使用remixicon</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Feb 19, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      taro开发小程序时,开发阶段使用图标字体没问题,真机预览后图标就不显示了 后来改成直接导入对应图标的svg,每次都要找svg图片就很烦,而且一放大字体也跟着变粗,看了下源文件也不大,打算直接放进项目里了 打开https://transfonter.org/上传woff2字体文件,选中base64编码 解压下载的文件夹,把stylesheet.css文件重命名为icon.less放到src下面,app.......
     
   </a>
 
