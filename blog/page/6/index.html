@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (35)</span>
+                <span>Blog (36)</span>
               </a>
             </li>
           
@@ -341,13 +341,15 @@
         
             <li><a href="https://glitterlip.github.io/tags/lambda" role="button"><span>lambda (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (5)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (6)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/livewirejs" role="button"><span>livewirejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
         
@@ -428,7 +430,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  35 posts
+                  36 posts
                 </div>
               
             </div>
@@ -474,6 +476,63 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Aspose Slide 生成图片缩略图中文乱码</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Nov 15, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      aspose slide生成图片缩略图中文乱码 使用aspose slide 给ppt生成图片缩略图，mac上没问题，部署到服务器上，生成的缩略图中文全部都是方块 把mac的字体传到服务器上还是不行,读取ppt时会出现 class com.aspose.slides.PptxReadException: Index 32 out of bounds for length 32 ---&gt; class com.aspose.slides.ms.pbdb106a0.bt com.aspose.slides.avm.do(Unknown Source) com.aspose.slides.Presentation.int(Unknown Source) com.aspose.slides.Presentation.if(Unknown Source) com.aspose.slides.Presentation.&lt;init&gt;(Unknown Source) com.aspose.slides.Presentation.&lt;init&gt;(Unknown Source) 这个错误，后来换成使用win10的字体可以了 centos7的步骤 把字体上传到 /usr/share/fonts/win 目录 cd /usr/share/fonts/win mkfontscale //建立索引 fc-cache //刷新缓存 fc-list //查看字体列表 fc-list :lang=zh......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/aspose" role="button">aspose </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/ppt" role="button">ppt </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -582,60 +641,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/r2" role="button">R2 </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/laravel%E6%9F%A5%E7%9C%8B%E7%BC%93%E5%AD%98%E5%89%A9%E4%BD%99%E6%97%B6%E9%97%B4/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel查看缓存剩余时间</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 22, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      laravel当配置redis为缓存时查看缓存的剩余时间 Laravel版本9.12 Laravel的缓存配置文件config/cache.php &#39;prefix&#39; =&gt; env(&#39;CACHE_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;).&#39;_cache&#39;) Laravel的数据库配置文件config/database.php &#39;redis&#39; =&gt; [ &#39;client&#39; =&gt; env(&#39;REDIS_CLIENT&#39;, &#39;phpredis&#39;), &#39;options&#39; =&gt; [ &#39;cluster&#39; =&gt; env(&#39;REDIS_CLUSTER&#39;, &#39;redis&#39;), &#39;prefix&#39; =&gt; env(&#39;REDIS_PREFIX&#39;, Str::slug(env(&#39;APP_NAME&#39;, &#39;laravel&#39;), &#39;_&#39;) . &#39;_database_&#39;), ], ] Laravel 缓存key的生成规则为config(&#39;database.redis.options.prefix&#39;).config(&#39;cache......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>
