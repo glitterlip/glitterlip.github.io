@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (36)</span>
+                <span>Blog (37)</span>
               </a>
             </li>
           
@@ -341,7 +341,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/lambda" role="button"><span>lambda (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (6)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (7)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -430,7 +430,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  36 posts
+                  37 posts
                 </div>
               
             </div>
@@ -472,10 +472,67 @@
         <a href="https://glitterlip.github.io/blog/page/5/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/12/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-02/taro%E6%89%93%E5%8C%85%E9%9D%99%E6%80%81%E6%96%87%E4%BB%B6/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Taro打包静态文件</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Feb 11, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      小程序需要添加音效和背景音乐，网络加载会有一定延迟，音效文件也不大，直接打包进小程序 修改config/index.jx { ... copy: { patterns: [ { from: &#39;src/audio/&#39;, to: &#39;dist/audios/&#39;, ignore: [&#39;*.js&#39;] }, //把src下audio目录复制到编译后的dist/audios目录 ], options: { } } 点击按钮时播放音效 const click = () =&gt; { const innerAudioContext = Taro.createInnerAudioContext() innerAudioContext.autoplay = false innerAudioContext.loop = false innerAudioContext.src = `audios/test.mp3` innerAudioContext.play() }......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button">小程序 </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/taro" role="button">taro </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -575,60 +632,6 @@
   <div class="tags-sm">
     
       <li><a href="https://glitterlip.github.io/tags/npm" role="button">npm </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-01/laravel%E5%8F%91%E9%80%81%E5%93%8D%E5%BA%94return%E5%90%8E%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel发送响应return后执行代码</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jan 5, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      有时候处理请求时，有些日志收尾工作，直接处理吧增加响应时间，建个job放队列处理又感觉没啥必要 比如记录访问者日志信息，我们会根据ip去调用go服务查询asn，country code，city，大致的经纬度，访问了资源会把访问次数&#43;1 这两个任务开始的时候一个放队列处理，一个缓存访问量&#43;1，差值达到阈值之后再保存落库。 Laravel的文档介绍了中间件的terminate方法，问题是可能还没开始处理请求......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>

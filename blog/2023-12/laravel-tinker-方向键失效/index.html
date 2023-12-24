@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="本机用的zsh&#43;iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼. 具体是在tinker中 按上下左右方向键,出来的确是^[[A^[[B^[[D^[[C 乱码. 开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果&hellip;. 继续go">
 
-  <meta property="og:title" content="Series" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/series/" />
+  <meta property="og:title" content="laravel tinker 方向键失效" />
+<meta property="og:description" content="本机用的zsh&#43;iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼. 具体是在tinker中 按上下左右方向键,出来的确是^[[A^[[B^[[D^[[C 乱码. 开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果&hellip;. 继续go" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-12-24T20:12:36+08:00" />
+<meta property="article:modified_time" content="2023-12-24T20:12:36+08:00" />
 
 
 
   <title>
   
-       Series | 代码笔记 
+       laravel tinker 方向键失效 | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/series/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/">
 
   
   
@@ -259,185 +261,121 @@
     
 
     
-  <main class="post-main-wrapper px-5">
+  
+  <main class="post-main-wrapper">
+    
     
     <div class="row">
+
       
-      <div class="col-md-3">
-        
-        
-        
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
 
-      <div class="li-x post-meta" style="margin-left: -8px;">
+      
+      <div class="container pr-5">
+      
 
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (37)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">laravel tinker 方向键失效</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Dec 24, 2023</li>
+    
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
+    
+  </ul>
   
 
-        
-        
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button"><span>alpinejs (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/antd" role="button"><span>antd (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/git" role="button"><span>git (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/lambda" role="button"><span>lambda (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (7)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/livewirejs" role="button"><span>livewirejs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (4)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/remixicon" role="button"><span>remixicon (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/s3" role="button"><span>s3 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (4)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
-
-        
-
-
-
-
-
-
-  
-
-      </div>
-      
-
-      
-      
-      <div class="col-md-9 mt-3">  
-        <ul>
-          <div class='post-heading'>
-  
-      Series
-  
 </div>
 
-        
+
+          <div class="post-content markdown">
+            <p>本机用的zsh+iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼.</p>
+<p>具体是在tinker中 按上下左右方向键,出来的确是<code>^[[A^[[B^[[D^[[C</code> 乱码.</p>
+<p>开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果&hellip;.</p>
+<p>继续google,原来是服务器的php编译时没有<code>readline</code>扩展</p>
+<p>可以通过下面命令查看</p>
+<pre tabindex="0"><code>php -m|grep readline
+</code></pre><p>如果没有的话&hellip;那肯定不能重新编译了</p>
+<p>centos 通过yum安装rlwrap即可</p>
+<pre tabindex="0"><code>sudo yum install rlwrap
+alias tinker=&#39;rlwrap php artisan tinker&#39;
+</code></pre><p><a href="https://stackoverflow.com/questions/70121049/the-arrow-key-outputs-a-b-c-d-strings-in-tmux-oh-my-zsh">stackoverflow1</a>
+<a href="https://stackoverflow.com/questions/28733733/laravel-tinker-arrow-keys-not-working-in-shell">stackoverflow2</a></p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        </ul>
-        <ul>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
           
+
           
-        </ul>
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2023-10/livewirejs-404%E9%97%AE%E9%A2%98/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Livewirejs 404问题</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
       </div>
       
+
       
+
     </div>
+    
+
+
   </main>
+  
+
 
     
     

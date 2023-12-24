@@ -6,7 +6,16 @@
     <description>Recent content on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 03 Oct 2023 00:06:23 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Dec 2023 20:12:36 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>laravel tinker 方向键失效</title>
+      <link>https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/</link>
+      <pubDate>Sun, 24 Dec 2023 20:12:36 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/</guid>
+      <description>本机用的zsh+iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼. 具体是在tinker中 按上下左右方向键,出来的确是^[[A^[[B^[[D^[[C 乱码. 开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果&amp;hellip;. 继续go</description>
+    </item>
+    
     <item>
       <title>Livewirejs 404问题</title>
       <link>https://glitterlip.github.io/blog/2023-10/livewirejs-404%E9%97%AE%E9%A2%98/</link>
