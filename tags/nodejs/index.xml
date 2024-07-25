@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nodejs on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/nodejs/</link>
+    <description>Recent content in nodejs on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Thu, 25 Jul 2024 16:24:00 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/nodejs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Typeorm</title>
+      <link>https://glitterlip.github.io/blog/2024-07/typeorm/</link>
+      <pubDate>Thu, 25 Jul 2024 16:24:00 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2024-07/typeorm/</guid>
+      <description>在typeorm里orderby 使用 coalesce 函数 const q = this.announcementRepository.createQueryBuilder( &amp;#39;announcement&amp;#39;, ); q.orderBy(`COALESCE(announcement.scheduled_at, announcement.updated_at, announcement.created_at)`, &amp;#39;DESC&amp;#39;) //这么写 会报错 &amp;#34;COALESCE(`announcement&amp;#34; alias was not found. Maybe you forgot to join it? //要先addselect 添加alias 然后 q.orderBy(`COALESCE(announcement_scheduled_at, announcement_updated_at, announcement_created_at)`, &amp;#39;DESC&amp;#39;) 真的是无语了,为啥typeorm 连个orderByBaw的方法都没有,自带的raw方法返回的是FindOperator???</description>
+    </item>
+    
+  </channel>
+</rss>

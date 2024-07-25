@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (37)</span>
+                <span>Blog (38)</span>
               </a>
             </li>
           
@@ -355,7 +355,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/nestjs" role="button"><span>nestjs (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/nodejs" role="button"><span>nodejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
         
@@ -384,6 +388,8 @@
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/typeorm" role="button"><span>typeorm (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
         
@@ -430,7 +436,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  37 posts
+                  38 posts
                 </div>
               
             </div>
@@ -476,6 +482,66 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2024-07/typeorm/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Typeorm</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 25, 2024</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      在typeorm里orderby 使用 coalesce 函数 const q = this.announcementRepository.createQueryBuilder( &#39;announcement&#39;, ); q.orderBy(`COALESCE(announcement.scheduled_at, announcement.updated_at, announcement.created_at)`, &#39;DESC&#39;) //这么写 会报错 &#34;COALESCE(`announcement&#34; alias was not found. Maybe you forgot to join it? //要先addselect 添加alias 然后 q.orderBy(`COALESCE(announcement_scheduled_at, announcement_updated_at, announcement_created_at)`, &#39;DESC&#39;) 真的是无语了,为啥typeorm 连个orderByBaw的方法都没有,自带的raw方法返回的是FindOperator???......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/nodejs" role="button">nodejs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/typeorm" role="button">typeorm </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/nestjs" role="button">nestjs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -589,60 +655,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-09/alpinejs-%E5%85%A8%E5%B1%80/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Alpinejs 全局</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 13, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      把Alpinejs实例曝露到外部,控制台访问Alpinejs实例 &lt;div x-data=&#34;dropdown&#34;&gt; &lt;button @click=&#34;toggle&#34;&gt;...&lt;/button&gt; &lt;div x-show=&#34;open&#34;&gt;...&lt;/div&gt; &lt;/div&gt; &lt;script&gt; document.addEventListener(&#39;alpine:init&#39;, () =&gt; { Alpine.data(&#39;dropdown&#39;, () =&gt; ({ init(){ window.AlpApp = this }, open: false, toggle() { this.open = ! this.open } })) }) &lt;/script&gt; 这样页面里就可以打开控制台方便调试了console.log(window.AlpApp.$data.open) 不过拿到的是proxy,也可以这样获取 document.querySelectorAll(&#39;[x-data]&#39;).forEach(el =&gt; { console.log(el.__x.getUnobservedData()); });......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -689,7 +701,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

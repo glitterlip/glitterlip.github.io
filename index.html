@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (37)</span>
+                <span>Blog (38)</span>
               </a>
             </li>
           
@@ -398,7 +398,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/nestjs" role="button"><span>nestjs (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/nodejs" role="button"><span>nodejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
         
@@ -427,6 +431,8 @@
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/typeorm" role="button"><span>typeorm (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
         
@@ -470,6 +476,66 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2024-07/typeorm/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Typeorm</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jul 25, 2024</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      在typeorm里orderby 使用 coalesce 函数 const q = this.announcementRepository.createQueryBuilder( &#39;announcement&#39;, ); q.orderBy(`COALESCE(announcement.scheduled_at, announcement.updated_at, announcement.created_at)`, &#39;DESC&#39;) //这么写 会报错 &#34;COALESCE(`announcement&#34; alias was not found. Maybe you forgot to join it? //要先addselect 添加alias 然后 q.orderBy(`COALESCE(announcement_scheduled_at, announcement_updated_at, announcement_created_at)`, &#39;DESC&#39;) 真的是无语了,为啥typeorm 连个orderByBaw的方法都没有,自带的raw方法返回的是FindOperator???......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/nodejs" role="button">nodejs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/typeorm" role="button">typeorm </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/nestjs" role="button">nestjs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -690,63 +756,6 @@
 </div>
 
               
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-06/github-%E6%8E%A8%E9%80%81%E4%BB%A3%E7%A0%81%E5%A4%B1%E8%B4%A5/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Github 推送代码失败</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jun 10, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      周末在家写点代码，写完死活推不上去 kex_exchange_identification: Connection closed by remote host Connection closed by 198.18.0.16 port 22 fatal: Could not read from remote repository. Please make sure you have the correct access rights and the repository exists. 我以为是我挂了代理，github可能怀疑恶意用户不让我推代码。。。 实际是祖国更墙大了 Host github.com Hostname ssh.github.com Port 443 User git 把上面代码加入到~/.ssh/config就好了......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/github" role="button">github </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/git" role="button">git </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
 
           </div>
         
@@ -797,7 +806,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

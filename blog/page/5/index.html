@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (37)</span>
+                <span>Blog (38)</span>
               </a>
             </li>
           
@@ -355,7 +355,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/nestjs" role="button"><span>nestjs (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/nodejs" role="button"><span>nodejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
         
@@ -384,6 +388,8 @@
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/typeorm" role="button"><span>typeorm (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
         
@@ -430,7 +436,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  37 posts
+                  38 posts
                 </div>
               
             </div>
@@ -476,6 +482,60 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2023-02/npm%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7-%E7%99%BB%E5%BD%95%E6%97%B6403%E9%94%99%E8%AF%AF/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">npm添加用户 登录时403错误</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Feb 6, 2023</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      写了个包想发布到npm上，结果npm login/npm adduser的时候总是返回403错误 npm ERR! code E403 npm ERR! 403 403 Forbidden - PUT https://registry.npmmirror.com/-/user/org.couchdb.user:dogdayslast - [FORBIDDEN] Public registration is not allowed npm ERR! 403 In most cases, you or one of your dependencies are requesting npm ERR! 403 a package version that is forbidden by your security policy, or npm ERR! 403 on a server you do not have access to. npm ERR! A complete log of this run can be found in: npm ERR! /Users/bao/.npm/_logs/2023-02-06T03_42_04_150Z-debug-0.log 仔细检查了没有冲突的包名，第一次发布也没有版本冲突，命令行代理也关了，nvm也use了最新的npm版本,让我看日志也看了，连个error都没有 0 verbose cli [ 0 verbose cli &#39;/Users/bao/.nvm/versions/node/v16.15.0/bin/node&#39;, 0 verbose cli &#39;/Users/bao/.nvm/versions/node/v16.15.0/bin/npm&#39;, 0 verbose cli &#39;completion&#39;, 0......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/npm" role="button">npm </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -589,63 +649,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-12/echo%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%90%86%E7%9C%9F%E5%AE%9Eip/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Echo获取代理真实Ip</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 19, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP _, n1, _ := net.ParseCIDR(&#34;110.42.x.x/32&#34;) //解析cidr拿到ipnet _, n2, _ := net.ParseCIDR(&#34;119.28.x.x/32&#34;) E.IPExtractor = echo.ExtractIPFromXFFHeader(echo.TrustIPRange(n1),echo.TrustIPRange(n2)) //设置代理的ip......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -692,7 +695,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

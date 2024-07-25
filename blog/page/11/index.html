@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (37)</span>
+                <span>Blog (38)</span>
               </a>
             </li>
           
@@ -355,7 +355,11 @@
         
             <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/nestjs" role="button"><span>nestjs (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/nodejs" role="button"><span>nodejs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
         
@@ -384,6 +388,8 @@
             <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/typeorm" role="button"><span>typeorm (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
         
@@ -430,7 +436,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  37 posts
+                  38 posts
                 </div>
               
             </div>
@@ -476,6 +482,69 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">umijs Tailwindcss样式冲突</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Aug 25, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &#39;./src/pages/**/*.tsx&#39;, &#39;./src/components/**.tsx&#39;, &#39;./src/layouts/**.tsx&#39;, ], corePlugins: { preflight: false, } }......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button">tailwindcss </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -610,63 +679,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/ant-design-landing%E7%94%9F%E6%88%90%E9%A1%B5%E9%9D%A2%E6%8A%A5%E9%94%99/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">ant-design-landing生成页面报错</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 17, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>2 minutes read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      后台写完了要写个落地页，自己css太菜了，找个现成的吧. 发现这个项目挺好https://github.com/ant-design/ant-design-landing，相当于低代码吧。 编辑器 里面随便点点很快就能生成一个react页面，还可以直接整合到umijs项目里面. 和其他xx开源的项目一样，kpi产物不少，代码放出来就不维护了，在线demo体验很好，一放到本地跑起来就疯狂报错，这个项目也是年......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -713,7 +725,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2023 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
