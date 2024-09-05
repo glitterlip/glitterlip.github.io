@@ -7,22 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="[得到的都是侥幸 失去的都是人生]">
+  <meta name="description" content="filamentphp 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以 同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了 按照以下步骤检查了配置 env的APP_URL配置正确 vite的配置也对 import {defineConfig} from &#39;vite&#39;; import laravel from &#39;laravel-vite-plugin&#39;; export default defineConfig({ plugins: [ laravel({ input: [ &#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;, &#39;resources/css/filament/admin/theme.css&#39; ], refresh: true, }), ], }); tailwindcss也没啥问题 import defaultTheme from &#39;tailwindcss/defaultTheme&#39;; import forms from &#39;@tailwindcss/forms&#39;; /** @type {import(&#39;tailwindcss&#39;).Config} */ export default { content: [ &#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&#39;, &#39;./storage/framework/views/*.php&#39;, &#39;./resources/views/**/*.blade.php&#39;, ],">
 
-  <meta property="og:title" content="Series" />
-<meta property="og:description" content="[得到的都是侥幸 失去的都是人生]" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://glitterlip.github.io/series/" />
+  <meta property="og:title" content="Filamentphp" />
+<meta property="og:description" content="filamentphp 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以 同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了 按照以下步骤检查了配置 env的APP_URL配置正确 vite的配置也对 import {defineConfig} from &#39;vite&#39;; import laravel from &#39;laravel-vite-plugin&#39;; export default defineConfig({ plugins: [ laravel({ input: [ &#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;, &#39;resources/css/filament/admin/theme.css&#39; ], refresh: true, }), ], }); tailwindcss也没啥问题 import defaultTheme from &#39;tailwindcss/defaultTheme&#39;; import forms from &#39;@tailwindcss/forms&#39;; /** @type {import(&#39;tailwindcss&#39;).Config} */ export default { content: [ &#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&#39;, &#39;./storage/framework/views/*.php&#39;, &#39;./resources/views/**/*.blade.php&#39;, ]," />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2024-09/filamentphp/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2024-09-06T03:44:13+08:00" />
+<meta property="article:modified_time" content="2024-09-06T03:44:13+08:00" />
 
 
 
   <title>
   
-       Series | 代码笔记 
+       Filamentphp | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/series/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2024-09/filamentphp/">
 
   
   
@@ -259,193 +261,190 @@
     
 
     
-  <main class="post-main-wrapper px-5">
+  
+  <main class="post-main-wrapper">
+    
     
     <div class="row">
+
       
-      <div class="col-md-3">
-        
-        
-        
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/categories/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-folder-open pr-1" aria-hidden="true"></i>
-            Categories
-          </span>
-        </a>
-      </div>
 
-      <div class="li-x post-meta" style="margin-left: -8px;">
+      
+      <div class="container pr-5">
+      
 
-          
-            <li class="py-1">
-              <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (39)</span>
-              </a>
-            </li>
-          
-      </div>
-    </div>
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">Filamentphp</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Sep 6, 2024</li>
+    
 
     
+      <li class="middot"></li>
+      <li>One minute read</li>
+    
+  </ul>
   
 
-        
-        
-
-  <hr>
-  
-    <div class="post-meta">
-      <div class="mb-2">
-        <a href="https://glitterlip.github.io/tags/">
-          <span class="font-weight-bold text-uppercase post-meta">
-            <i class="fas fa-tags pr-1" aria-hidden="true"></i>
-            Featured Tags
-          </span>
-        </a>
-      </div>
-
-      <div class="li-x post-meta tags-md" style="margin-left: -8px;">
-        
-            <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button"><span>alpinejs (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ant-design" role="button"><span>ant-design (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/antd" role="button"><span>antd (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aspose" role="button"><span>aspose (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/filamentphp" role="button"><span>filamentphp (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/git" role="button"><span>git (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/lambda" role="button"><span>lambda (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (8)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/less" role="button"><span>less (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/linux" role="button"><span>linux (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/livewirejs" role="button"><span>livewirejs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mac" role="button"><span>mac (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/mysql" role="button"><span>mysql (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nestjs" role="button"><span>nestjs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nginx" role="button"><span>nginx (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/nodejs" role="button"><span>nodejs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (5)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/ppt" role="button"><span>ppt (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/remixicon" role="button"><span>remixicon (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/s3" role="button"><span>s3 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/shell" role="button"><span>shell (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button"><span>tailwindcss (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/taro" role="button"><span>taro (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/tarojs" role="button"><span>tarojs (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/telescope" role="button"><span>telescope (2)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/typeorm" role="button"><span>typeorm (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umi" role="button"><span>umi (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F" role="button"><span>小程序 (4)</span></a></li>
-        
-            <li><a href="https://glitterlip.github.io/tags/%E6%94%AF%E4%BB%98%E5%AE%9D" role="button"><span>支付宝 (1)</span></a></li>
-        
-      </div>
-    </div>
-
-
-  
-
-
-        
-
-
-
-
-
-
-  
-
-      </div>
-      
-
-      
-      
-      <div class="col-md-9 mt-3">  
-        <ul>
-          <div class='post-heading'>
-  
-      Series
-  
 </div>
 
-        
+
+          <div class="post-content markdown">
+            <p><code>filamentphp</code> 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以</p>
+<p>同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了</p>
+<p>按照以下步骤检查了配置</p>
+<h2 id="env的app_url配置正确">env的APP_URL配置正确</h2>
+<h2 id="vite的配置也对">vite的配置也对</h2>
+<pre tabindex="0"><code>import {defineConfig} from &#39;vite&#39;;
+import laravel from &#39;laravel-vite-plugin&#39;;
+
+export default defineConfig({
+    plugins: [
+        laravel({
+            input: [
+                &#39;resources/css/app.css&#39;,
+                &#39;resources/js/app.js&#39;,
+                &#39;resources/css/filament/admin/theme.css&#39;
+            ],
+            refresh: true,
+        }),
+    ],
+});
+</code></pre><h2 id="tailwindcss也没啥问题">tailwindcss也没啥问题</h2>
+<pre tabindex="0"><code>import defaultTheme from &#39;tailwindcss/defaultTheme&#39;;
+import forms from &#39;@tailwindcss/forms&#39;;
+
+/** @type {import(&#39;tailwindcss&#39;).Config} */
+export default {
+    content: [
+        &#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&#39;,
+        &#39;./storage/framework/views/*.php&#39;,
+        &#39;./resources/views/**/*.blade.php&#39;,
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: [&#39;Figtree&#39;, ...defaultTheme.fontFamily.sans],
+            },
+        },
+    },
+    darkMode: false,
+    plugins: [forms, require(&#39;daisyui&#39;)],
+    daisyui: {
+        themes: [&#39;light&#39;],
+        darkTheme: false,
+        base: true,
+        styled: true,
+        utils: true,
+        prefix: &#34;&#34;,
+        logs: true,
+        themeRoot: &#34;:root&#34;,
+    },
+};
+</code></pre><h2 id="public目录也有hot文件">public目录也有hot文件</h2>
+<p><code>http://[::1]:5173</code>
+奈何浏览器控制台并没有</p>
+<pre tabindex="0"><code>[vite] connecting...
+[vite] connected.
+</code></pre><p>应该是不知道为什么
+<code>@vite('resources/js/app.js')</code> 这个代码没有注入到filamentphp的layout文件里</p>
+<h2 id="解决方法">解决方法</h2>
+<p>直接修改adminpanelprovider,手动把这行代码注入进去</p>
+<pre tabindex="0"><code>class AdminPanelProvider extends PanelProvider
+{
+
+    public function register(): void
+    {
+        parent::register();
+        FilamentView::registerRenderHook(PanelsRenderHook::HEAD_END, fn(): string =&gt; Blade::render(&#34;@vite(&#39;resources/js/app.js&#39;)&#34;));
+
+    }
+    public function panel(Panel $panel): Panel
+    {
+        return $panel;
+    }
+}
+</code></pre><p>完美,少按一次<code>r</code>😭</p>
+
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
             
-        </ul>
-        <ul>
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/filamentphp" role="button">filamentphp </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
           
+
           
-        </ul>
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2024-07/typeorm/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Typeorm</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
       </div>
       
+
       
+
     </div>
+    
+
+
   </main>
+  
+
 
     
     

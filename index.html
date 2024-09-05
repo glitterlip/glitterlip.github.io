@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (38)</span>
+                <span>Blog (39)</span>
               </a>
             </li>
           
@@ -368,6 +368,8 @@
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
+            <li><a href="https://glitterlip.github.io/tags/filamentphp" role="button"><span>filamentphp (1)</span></a></li>
+        
             <li><a href="https://glitterlip.github.io/tags/gin" role="button"><span>gin (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/git" role="button"><span>git (1)</span></a></li>
@@ -384,7 +386,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/lambda" role="button"><span>lambda (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (7)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/laravel" role="button"><span>laravel (8)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/leetcode" role="button"><span>leetcode (5)</span></a></li>
         
@@ -406,7 +408,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/npm" role="button"><span>npm (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (4)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/php" role="button"><span>php (5)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/popclip" role="button"><span>popclip (1)</span></a></li>
         
@@ -476,6 +478,66 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2024-09/filamentphp/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Filamentphp</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 6, 2024</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      filamentphp 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以 同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了 按照以下步骤检查了配置 env的APP_URL配置正确 vite的配置也对 import {defineConfig} from &#39;vite&#39;; import laravel from &#39;laravel-vite-plugin&#39;; export default defineConfig({ plugins: [ laravel({ input: [ &#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;, &#39;resources/css/filament/admin/theme.css&#39; ], refresh: true, }), ], }); tailwindcss也没啥问题 import defaultTheme from &#39;tailwindcss/defaultTheme&#39;; import forms from &#39;@tailwindcss/forms&#39;; /** @type {import(&#39;tailwindcss&#39;).Config} */ export default { content: [ &#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&#39;, &#39;./storage/framework/views/*.php&#39;, &#39;./resources/views/**/*.blade.php&#39;, ],......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/filamentphp" role="button">filamentphp </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -668,60 +730,6 @@
 
     
       把Alpinejs实例曝露到外部,控制台访问Alpinejs实例 &lt;div x-data=&#34;dropdown&#34;&gt; &lt;button @click=&#34;toggle&#34;&gt;...&lt;/button&gt; &lt;div x-show=&#34;open&#34;&gt;...&lt;/div&gt; &lt;/div&gt; &lt;script&gt; document.addEventListener(&#39;alpine:init&#39;, () =&gt; { Alpine.data(&#39;dropdown&#39;, () =&gt; ({ init(){ window.AlpApp = this }, open: false, toggle() { this.open = ! this.open } })) }) &lt;/script&gt; 这样页面里就可以打开控制台方便调试了console.log(window.AlpApp.$data.open) 不过拿到的是proxy,也可以这样获取 document.querySelectorAll(&#39;[x-data]&#39;).forEach(el =&gt; { console.log(el.__x.getUnobservedData()); });......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/alpinejs" role="button">Alpinejs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-07/alpinejs-%E5%90%8C%E6%97%B6%E7%9B%91%E5%90%AC%E5%A4%9A%E4%B8%AA%E5%80%BC/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Alpinejs 同时监听多个值</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jul 9, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      chatgpt给的错误答案 $watch([&#39;count&#39;, &#39;name&#39;], (newValues, oldValues) =&gt; {}) 上面的代码虽然可以监听到count和name的变化,但是newValues永远是count的值,name是无法拿到的 正确的写法是 Alpine.data(&#39;box&#39;, () =&gt; ({ init() { this.$watch(&#39;[first,last]&#39;, (v,oldV) =&gt; { console.log(v) this.name=`${v[0]} ${v[1]}` }) }, } )) chatgpt还给了这段代码监听,结果也是错的 &lt;script&gt; const app = Alpine.data(&#39;myComponent&#39;, () =&gt; ({ myData: &#39;Hello&#39; })); app.$watch(&#39;myData&#39;, (newValue, oldValue) =&gt; { console.log(`myData changed from ${oldValue} to ${newValue}`); }); &lt;/script&gt; Alpine.data方法根本就没有返回值,app是undefined,所以app.$watch是无效的,......
     
   </a>
 

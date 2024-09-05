@@ -6,7 +6,16 @@
     <description>Recent content in php on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Thu, 04 May 2023 20:43:26 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 06 Sep 2024 03:44:13 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filamentphp</title>
+      <link>https://glitterlip.github.io/blog/2024-09/filamentphp/</link>
+      <pubDate>Fri, 06 Sep 2024 03:44:13 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2024-09/filamentphp/</guid>
+      <description>filamentphp 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以 同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了 按照以下步骤检查了配置 env的APP_URL配置正确 vite的配置也对 import {defineConfig} from &amp;#39;vite&amp;#39;; import laravel from &amp;#39;laravel-vite-plugin&amp;#39;; export default defineConfig({ plugins: [ laravel({ input: [ &amp;#39;resources/css/app.css&amp;#39;, &amp;#39;resources/js/app.js&amp;#39;, &amp;#39;resources/css/filament/admin/theme.css&amp;#39; ], refresh: true, }), ], }); tailwindcss也没啥问题 import defaultTheme from &amp;#39;tailwindcss/defaultTheme&amp;#39;; import forms from &amp;#39;@tailwindcss/forms&amp;#39;; /** @type {import(&amp;#39;tailwindcss&amp;#39;).Config} */ export default { content: [ &amp;#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&amp;#39;, &amp;#39;./storage/framework/views/*.php&amp;#39;, &amp;#39;./resources/views/**/*.blade.php&amp;#39;, ],</description>
+    </item>
+    
     <item>
       <title>Php 生成 Aws Pregisn Request</title>
       <link>https://glitterlip.github.io/blog/2023-05/php-%E7%94%9F%E6%88%90-aws-pregisn-request/</link>
