@@ -6,7 +6,16 @@
     <description>Recent content in blog on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Fri, 06 Sep 2024 03:44:13 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 14 Dec 2024 22:56:21 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mecab日语分词</title>
+      <link>https://glitterlip.github.io/blog/2024-12/mecab%E6%97%A5%E8%AF%AD%E5%88%86%E8%AF%8D/</link>
+      <pubDate>Sat, 14 Dec 2024 22:56:21 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2024-12/mecab%E6%97%A5%E8%AF%AD%E5%88%86%E8%AF%8D/</guid>
+      <description>Mac brew install mecab mecab-ipadic export CGO_LDFLAGS=&amp;#34;`mecab-config --libs`&amp;#34; export CGO_CFLAGS=&amp;#34;-I`mecab-config --inc-dir`&amp;#34; go get -u github.com/shogo82148/go-mecab Linux yum install mecab mecab-ipadic mecab-devel export CGO_LDFLAGS=&amp;#34;`mecab-config --libs`&amp;#34; export CGO_CFLAGS=&amp;#34;-I`mecab-config --inc-dir`&amp;#34; Usage mecab 输入内容回车 指定输入输出文件 mecab input.txt -o output.txt Format 小野さん，今日はしっかり食べておいてください。明日からハードスケジュールで，あちこち行きますからね。 tagger, _ := mecab.New(map[string]string{&amp;#34;output-format-type&amp;#34;: &amp;#34;wakati&amp;#34;}) tagger, _ := mecab.New(map[string]string{&amp;#34;output-format-type&amp;#34;: &amp;#34;wakati&amp;#34;}) defer tagger.Destroy() format := c.FormValue(&amp;#34;format&amp;#34;) if format == &amp;#34;lattice&amp;#34; { lattice, _ := mecab.NewLattice() defer lattice.Destroy() lattice.SetSentence(c.FormValue(&amp;#34;sentence&amp;#34;)) _ = tagger.ParseLattice(lattice) r := lattice.String() return util.Success(c, strings.Split(r, &amp;#34;\n&amp;#34;)) } result, _ := tagger.Parse(c.FormValue(&amp;#34;sentence&amp;#34;)) return util.Success(c, strings.Split(result, &amp;#34;\n&amp;#34;)) //lattice 换行区分 [ &amp;#34;小野\t名詞,固有名詞,人名,姓,*,*,小野,オノ,オノ&amp;#34;, &amp;#34;さん\t名</description>
+    </item>
+    
     <item>
       <title>Filamentphp</title>
       <link>https://glitterlip.github.io/blog/2024-09/filamentphp/</link>

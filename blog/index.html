@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (39)</span>
+                <span>Blog (40)</span>
               </a>
             </li>
           
@@ -333,11 +333,15 @@
         
             <li><a href="https://glitterlip.github.io/tags/github" role="button"><span>github (2)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (14)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/go-mecab" role="button"><span>go-mecab (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/golang" role="button"><span>golang (15)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/goquery" role="button"><span>goquery (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/grpc" role="button"><span>grpc (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/japanese" role="button"><span>japanese (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/java" role="button"><span>java (1)</span></a></li>
         
@@ -438,7 +442,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  39 posts
+                  40 posts
                 </div>
               
             </div>
@@ -480,10 +484,70 @@
         <a href="https://glitterlip.github.io/blog/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
       </li>
       <li class="page-item">
-        <a href="https://glitterlip.github.io/blog/page/13/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+        <a href="https://glitterlip.github.io/blog/page/14/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2024-12/mecab%E6%97%A5%E8%AF%AD%E5%88%86%E8%AF%8D/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Mecab日语分词</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 14, 2024</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>3 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      Mac brew install mecab mecab-ipadic export CGO_LDFLAGS=&#34;`mecab-config --libs`&#34; export CGO_CFLAGS=&#34;-I`mecab-config --inc-dir`&#34; go get -u github.com/shogo82148/go-mecab Linux yum install mecab mecab-ipadic mecab-devel export CGO_LDFLAGS=&#34;`mecab-config --libs`&#34; export CGO_CFLAGS=&#34;-I`mecab-config --inc-dir`&#34; Usage mecab 输入内容回车 指定输入输出文件 mecab input.txt -o output.txt Format 小野さん，今日はしっかり食べておいてください。明日からハードスケジュールで，あちこち行きますからね。 tagger, _ := mecab.New(map[string]string{&#34;output-format-type&#34;: &#34;wakati&#34;}) tagger, _ := mecab.New(map[string]string{&#34;output-format-type&#34;: &#34;wakati&#34;}) defer tagger.Destroy() format := c.FormValue(&#34;format&#34;) if format == &#34;lattice&#34; { lattice, _ := mecab.NewLattice() defer lattice.Destroy() lattice.SetSentence(c.FormValue(&#34;sentence&#34;)) _ = tagger.ParseLattice(lattice) r := lattice.String() return util.Success(c, strings.Split(r, &#34;\n&#34;)) } result, _ := tagger.Parse(c.FormValue(&#34;sentence&#34;)) return util.Success(c, strings.Split(result, &#34;\n&#34;)) //lattice 换行区分 [ &#34;小野\t名詞,固有名詞,人名,姓,*,*,小野,オノ,オノ&#34;, &#34;さん\t名......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/go-mecab" role="button">go-mecab </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/japanese" role="button">japanese </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -595,60 +659,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/nestjs" role="button">nestjs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">laravel tinker 方向键失效</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 24, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      本机用的zsh&#43;iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼. 具体是在tinker中 按上下左右方向键,出来的确是^[[A^[[B^[[D^[[C 乱码. 开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果…. 继续go......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>
