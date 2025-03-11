@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (40)</span>
+                <span>Blog (41)</span>
               </a>
             </li>
           
@@ -322,6 +322,8 @@
             <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -377,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -402,6 +404,8 @@
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -442,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  40 posts
+                  41 posts
                 </div>
               
             </div>
@@ -488,6 +492,66 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-10/grpc-php%E5%AE%A2%E6%88%B7%E7%AB%AF%E4%B8%8Egolang%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%80%9A%E4%BF%A1/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">grpc php客户端与golang服务端通信</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Oct 15, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>3 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      版本 go version go1.19.1 darwin/arm64 protoc --version libprotoc 3.21.9 projectpath 代表项目根目录 Go服务端 初始化golang项目，编写proto文件 // projectpath/proto/link.proto syntax = &#34;proto3&#34;; package proto; option go_package = &#34;/proto&#34;; service Link{ rpc GetLink(GetLinkRequest) returns (GetLinkResponse){} } message GetLinkRequest{ int32 driver = 1; string linkId = 2; string token = 3; } message GetLinkResponse { int32 code = 1; string link = 2; string pwd = 3; } 安装所需工具 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.28 //用于生成xx.pb.go文件 主要是link.proto里面的message对应的go代码 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2 //用于生成xx_grpc.pb.go 即grpc服务的go版本服务端和客户端 //安装之后查看是否安......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/grpc" role="button">grpc </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -604,63 +668,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-10/laravel-job%E6%B7%BB%E5%8A%A0telescope-tags/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Laravel Job添加telescope Tags</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 1, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      请求添加tag laravel开了telescope，请求添加tag还好说 //直接在TelescopeServiceProvider的register方法判断就好了 Telescope::tag(function (IncomingEntry $entry) { if ($entry-&gt;isRequest()){ $tags = []; $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.*.*&#39;, request()-&gt;getClientIp()); $tags[] = preg_replace(&#39;/(\d&#43;)\.(\d&#43;)\.(\d&#43;)\.(\d&#43;)/&#39;, &#39;$1.$2.$3.*&#39;, request()-&gt;getClientIp()); $tags[] = $t; if (! request()-&gt;header(&#39;referer&#39;) ) { $tags[] = &#39;noreferer&#39;; } return $tags; } }); job添加tag 想给job添加tag,而且需要根据job的数据添加tag,直接在job方法中新增一个tags方法即可 &lt;?php namespace App\Jobs; class XXJob implements ShouldQueue, ShouldBeUnique { use Dispatchable, InteractsWithQueue, Queueable, SerializesModels; public $id; public function __construct($id) { $this-&gt;id = $id; } public function......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/telescope" role="button">telescope </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -707,7 +714,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

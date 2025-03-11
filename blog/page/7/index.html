@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (40)</span>
+                <span>Blog (41)</span>
               </a>
             </li>
           
@@ -322,6 +322,8 @@
             <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -377,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -402,6 +404,8 @@
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -442,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  40 posts
+                  41 posts
                 </div>
               
             </div>
@@ -488,6 +492,63 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-12/echo%E8%8E%B7%E5%8F%96%E4%BB%A3%E7%90%86%E7%9C%9F%E5%AE%9Eip/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Echo获取代理真实Ip</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 19, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      后端用的echo，前面分别挂了一台上海和香港的服务器做代理转发,反向代理之后获取不到真实IP _, n1, _ := net.ParseCIDR(&#34;110.42.x.x/32&#34;) //解析cidr拿到ipnet _, n2, _ := net.ParseCIDR(&#34;119.28.x.x/32&#34;) E.IPExtractor = echo.ExtractIPFromXFFHeader(echo.TrustIPRange(n1),echo.TrustIPRange(n2)) //设置代理的ip......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/echo" role="button">echo </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -601,63 +662,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-11/goquery-%E5%A4%84%E7%90%86%E4%B8%AD%E6%96%87%E7%BD%91%E9%A1%B5/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">goquery 处理中文网页</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 9, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      &lt;meta http-equiv=&#34;Content-Type&#34; content=&#34;text/html; charset=gb2312&#34;&gt; 爬虫处理网页，标签用的gb2312字符集，goquery拿到的是乱码 刚开始用的 func DecodeToGBK2312(text string) string { dst := make([]byte, len(text)*2) tr := simplifiedchinese.HZGB2312.NewDecoder() nDst, _, _ := tr.Transform(dst, []byte(text), true) return string(dst[:nDst]) } 还是乱码。。。。 后来在wiki里找了一种方法 func detectContentCharset(body io.Reader) string { r := bufio.NewReader(body) if data, err := r.Peek(1024); err == nil { if _, name, ok := charset.DetermineEncoding(data, &#34;&#34;); ok { return name } } return &#34;utf-8&#34; } // DecodeHTMLBody returns an decoding reader of the html Body for the specified `charset` // If `charset` is empty, DecodeHTMLBody tries to guess the encoding from the content func DecodeHTMLBody(body io.Reader, charset string) (io.Reader, error) { if charset == &#34;&#34; { charset = detectContentCharset(body) } e, err := htmlindex.Get(charset) if err != nil { return nil, err } if name, _ := htmlindex.Name(e); name != &#34;utf-8&#34; { body = e.NewDecoder().Reader(body) } return body, nil } 试了下如果......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/goquery" role="button">goquery </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -704,7 +708,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zn-Hans">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
+  <meta name="author" content="Paramita">
+  <meta name="description" content="迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡&hellip; 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro">
+
+  <meta property="og:title" content="React性能优化" />
+<meta property="og:description" content="迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡&hellip; 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-03-11T22:26:32+08:00" />
+<meta property="article:modified_time" content="2025-03-11T22:26:32+08:00" />
+
+
+
+  <title>
+  
+       React性能优化 | 代码笔记 
+  
+  </title>
+
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+
+  
+  
+
+  
+  <link href="https://glitterlip.github.io/css/vendors-extensions/fontawesome/all.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:300,400,500,600">
+  <link href="https://glitterlip.github.io/css/font.css" rel="stylesheet">
+
+  
+  <link href="https://glitterlip.github.io/css/vendors/bootstrap4/bootstrap.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors-extensions/mdb/mdb.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/vendors/mdb/style.min.css" rel="stylesheet">
+  <link href="https://glitterlip.github.io/css/main.css" rel="stylesheet">
+
+
+  
+  <link rel="shortcut icon"
+  
+      href="https://glitterlip.github.io/img/zheng.png"
+  
+  >
+
+
+  
+
+
+  <style type="text/css">
+      @media (min-width: 800px) and (max-width: 850px) {
+              .navbar:not(.top-nav-collapse) {
+                  background: #1C2331!important;
+              }
+          }
+  </style>
+
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/js/vendors/katex/katex.min.css">
+  
+  
+
+  
+  
+    <link rel="stylesheet" href="https://glitterlip.github.io/css/vendors/highlight/github-gist.css">
+  
+
+</head>
+
+  <body class="bg-light" data-spy="scroll" data-target="#page-scrollspy" data-offset="90">
+  
+    
+    
+
+    
+      
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+    <div class="container">
+
+      
+      <a class="navbar-brand" href="https://glitterlip.github.io/">
+          
+        <img class="avatar" src="https://glitterlip.github.io/img/zheng.png" style="width: 40px!important;height: auto;"  class="d-inline-block align-top" alt="" >
+        
+        <strong> Paramita</strong>
+      </a>
+
+      
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        
+        <ul class="navbar-nav mr-auto ">
+          <li class="nav-item ">
+            <a class="nav-link" href="https://glitterlip.github.io/">Home</a>
+          </li>
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/blog/" >Blog  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/moment/" >Moment  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/snippet/" >Snippet  </a>
+            </li>
+
+          
+            <li class="nav-item ">
+              <a class="nav-link" href="https://glitterlip.github.io/about/" >About  </a>
+            </li>
+
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  
+ 
+      
+ 
+
+
+
+
+
+
+<div id="site-header" class="carousel slide carousel-fade" data-ride="carousel" style="height: 18rem;" >  
+
+  
+  
+  
+
+  
+  <div class="carousel-inner" role="listbox">
+    
+      
+
+        
+        <div class="carousel-item active">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides/raw_1515691746.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+              
+              
+              
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+      
+
+        
+        <div class="carousel-item">
+          <div class="view" style="background-image: url('https://glitterlip.github.io/img/header-slides//raw_1515847341.jpg'); background-repeat: no-repeat; background-size: cover;">
+
+            
+            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
+
+            
+
+            </div>
+            
+
+          </div>
+        </div>
+        
+      
+    
+
+  
+  </div>
+  
+
+  
+  <div class="carousel-content text-center white-text wow fadeIn">
+    <div class="row mx-0 headfont mt-3 pt-4">
+      
+      <div class="col-12 col-sm-5 align-middle">
+        <a href="https://glitterlip.github.io/">
+          
+            <img class="pull-right avatar avatar-md" src="https://glitterlip.github.io/img/profile.jpg" alt="" >
+          
+        </a>
+      </div>
+      
+      <div class="col-12 col-sm-7 text-left pl-2">
+        <a href="https://glitterlip.github.io/">
+          <h1 class="mb-2 h1" style="font-weight: 300;" >
+            <strong>代码笔记</strong>
+          </h1>
+        </a>
+        
+
+             
+        <div class="mt-2" style="font-size: 1rem; color: white;">
+            
+              <a href="//github.com/glitterlip" target="_blank" rel="noopener"><i class="fab fa-github pr-1" aria-hidden="true"></i></a>    
+            
+            
+
+            
+
+            
+
+            
+
+            
+    
+            
+    
+        
+            
+                <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open pr-1" aria-hidden="true"></i></a>
+            
+    
+            
+
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  
+  
+
+</div>
+  
+    
+
+    
+  
+  <main class="post-main-wrapper">
+    
+    
+    <div class="row">
+
+      
+
+      
+      <div class="container pr-5">
+      
+
+        
+        <div class="z-depth-1  post-wrapper white-bg single-post">
+
+          <div class="post-header text-center" >
+  <ul class="post-meta li-x">
+    
+      
+        <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+      
+    
+    
+  </ul>
+
+  <div class="px-4 post-heading">React性能优化</div>
+
+  <ul class="post-meta li-x mt-1">
+    
+      <li>Mar 11, 2025</li>
+    
+
+    
+      <li class="middot"></li>
+      <li>2 minutes read</li>
+    
+  </ul>
+  
+
+</div>
+
+
+          <div class="post-content markdown">
+            <p>迫于<code>dva</code>4年没更新,把老项目切换成<code>zustand</code>,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡</p>
+<h2 id="hooks">Hooks</h2>
+<p><code>useEffect</code>,<code>useMemo</code>,<code>useCallback</code> 这几个hooks全用上了,还是有点卡&hellip;</p>
+<p>控制台打开网络请求,也不慢啊😥</p>
+<h2 id="react-devtools">React DevTools</h2>
+<p>这个时候可以使用<code>React DevTools</code>来查看性能</p>
+<p><code>React DevTools</code>是一个浏览器插件,可以查看<code>React</code>组件的层级结构,状态和性能</p>
+<p><code>React DevTools</code>的<code>Profiler</code>功能可以帮助我们找到性能瓶颈,首先右上角设置里勾选<code> Highlight updates when components render.</code> 这样当组件更新渲染时候会高亮显示,进行了一下比较卡的操作,发现组件一直在rerender</p>
+<p>然后点击<code>Start profiling</code>进行性能检测,进行了一下比较卡的操作,点击<code>Stop profiling</code>,等一会就会自动刷新性能报告,有一个<code>Flamegraph</code>的图表,可以看到每个组件的渲染时间,找到耗时的组件,进行优化,还有一个<code>Ranked chart</code>可以看到每个组件的更新次数,找到更新频繁的组件,进行优化</p>
+<h2 id="why-did-you-render-vs-usewhydidyouupdate">why-did-you-render vs useWhyDidYouUpdate</h2>
+<p><code>why-did-you-render</code> 是一个<code>React</code>组件更新检测工具,可以帮助我们找到不必要的组件更新,安装后在入口文件引入即可,有些项目可能配置起来比较麻烦</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;development&#39;</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">whyDidYouRender</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@welldone-software/why-did-you-render&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">whyDidYouRender</span><span class="p">(</span><span class="nx">React</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">trackAllPureComponents</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>打开控制台,可以看到组件名,以及更新原因</p>
+<p><code>useWhyDidYouUpdate</code>是<code>aHooks</code>的组件更新检测hook,这个hook必须要自己去手动设置观测数据才行,不过0配置,用起来比较简单,但是有可能你只观测了A,实际上B才是问题所在,这样就会漏掉问题</p>
+<h2 id="优化">优化</h2>
+<p>最后发现是因为</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//这么写是不对的,appstore里任意一项数据变化都会导致组件更新
+</span></span></span></code></pre></div><p>改成</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//只用了一个name还好说,万一用了多个,就要写多个useAppStore,这个时候可以使用useShallow
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">name</span><span class="p">,</span><span class="nx">setName</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">setAge</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">(</span><span class="nx">useShallow</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">setName</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">setAge</span><span class="p">]))</span>
+</span></span></code></pre></div>
+          </div>
+
+          
+          <div class="row">
+            <div class="col-md-8">
+            
+              <div class="mb-5">
+                
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/zustand" role="button">zustand </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/dva" role="button">dva </a></li>
+      
+    
+  </div>
+</div>
+              </div>
+            
+            </div>
+            
+          </div>
+          
+
+          
+          <div class="row pt-3">
+            <div class="col-md-6">
+              
+                <a href=https://glitterlip.github.io/blog/2024-12/mecab%E6%97%A5%E8%AF%AD%E5%88%86%E8%AF%8D/ class="post-meta">Previous
+                  <div class="pt-2 pb-5 d-flex">
+                    <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
+                    <span>Mecab日语分词</span>
+                  </div>
+                </a>
+              
+            </div>
+            
+            <div class="col-md-6 text-right" >
+              
+            </div>
+          </div>
+
+          
+
+        </div>
+        
+
+      </div>
+      
+
+      
+
+    </div>
+    
+
+
+  </main>
+  
+
+
+    
+    
+
+<footer class="page-footer text-center font-small mt-4 wow fadeIn">
+
+
+  
+  <div class="pb-2 mt-5 pt-5">
+    
+      <a href="//github.com/glitterlip " target="_blank" rel="noopener"><i class="fab fa-github mr-3" aria-hidden="true"></i></a>    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+    
+        <a href="mailto:worldtongfb@gmail.com"><i class="far fa-envelope-open mr-3" aria-hidden="true"></i></a>
+    
+
+    
+
+    
+
+  </div>
+  
+
+  
+  <div class="copyright py-4">
+    
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+  </div>
+  
+
+</footer>
+
+
+    
+
+
+
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/jquery/jquery.smooth-scroll.min.js"></script>
+
+
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/popper.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/holder.min.js"></script>
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors-extensions/bootstrap4/bootstrap.js" ></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/vendors/mdb/mdb.min.js"></script>
+
+<script type="text/javascript" src="https://glitterlip.github.io/js/main.js"></script>
+
+
+
+  
+  <script src="https://glitterlip.github.io/js/vendors/highlight.pack.js"> </script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+ 
+  <script src="https://glitterlip.github.io/js/vendors/katex/katex.min.js"> </script>
+  <script src="https://glitterlip.github.io/js/vendors/katex/contrib/auto-render.min.js"></script>
+
+  <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          renderMathInElement(document.body);
+      });
+  </script>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+  
+  new WOW().init();
+</script>
+
+
+
+
+  </body>
+</html>

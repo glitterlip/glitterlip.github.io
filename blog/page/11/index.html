@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (40)</span>
+                <span>Blog (41)</span>
               </a>
             </li>
           
@@ -322,6 +322,8 @@
             <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -377,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -402,6 +404,8 @@
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -442,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  40 posts
+                  41 posts
                 </div>
               
             </div>
@@ -488,6 +492,63 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-09/linux-less%E5%91%BD%E4%BB%A4/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">linux less命令</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Sep 28, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      linux中的less命令 -G 移动到最后一页 -gg 第一页 -F 实时更新 -b 向上翻页 -空格 向下翻页 /kw 向后搜索kw ?kw 向前搜索kw 实时过滤 有时候查看nginx日志时，想查看爬虫抓取记录，可以在查看时输入&amp;bingbot|Googlebot|Baiduspider, &amp;后面接正则表达式，bingbot|Googlebot|Baiduspider表示过滤展示日志中行记录包含必应或者百度或者谷歌蜘蛛的记录，......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/linux" role="button">linux </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/less" role="button">less </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -601,69 +662,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-08/umijs-tailwindcss%E6%A0%B7%E5%BC%8F%E5%86%B2%E7%AA%81/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">umijs Tailwindcss样式冲突</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Aug 25, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      umi同时开启了tailwindcss和ant design插件，会导致样式冲突 可以在tailwindcss.css中关闭，只保留工具类即可 /*@tailwind base;*/ /*@tailwind components;*/ @tailwind utilities; 但是css动画在base里，开了base之后又会导致ant design按钮及其他组件样式覆盖 可以tailwind.config.js设置里关掉preflight module.exports = { content: [ &#39;./src/pages/**/*.tsx&#39;, &#39;./src/components/**.tsx&#39;, &#39;./src/layouts/**.tsx&#39;, ], corePlugins: { preflight: false, } }......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/tailwindcss" role="button">tailwindcss </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/umijs" role="button">umijs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ant-design" role="button">ant design </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/reactjs" role="button">reactjs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -710,7 +708,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

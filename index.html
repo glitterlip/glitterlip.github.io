@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (40)</span>
+                <span>Blog (41)</span>
               </a>
             </li>
           
@@ -365,6 +365,8 @@
             <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -420,7 +422,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -445,6 +447,8 @@
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -482,6 +486,66 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">React性能优化</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Mar 11, 2025</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡…能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡… 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/zustand" role="button">zustand </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/dva" role="button">dva </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -717,63 +781,6 @@
 </div>
 
               
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-10/livewirejs-404%E9%97%AE%E9%A2%98/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Livewirejs 404问题</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Oct 3, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      laravel项目,装了filament作为后台,本地开发没问题,线上发布之后无法登录. 具体表现是点了登录按钮只是刷新页面,确认帐号密码是正确的. 打开控制台后资源加载报错/livewire/livewire.js not found php artisan route:list|grep livewire是有记录返回的 最后确定是nginx配置问题,当成静态文件去public目录找肯定是没有的,关闭缓存也不现实呢 location ~ .*\.(js|css)?$ { expires 12h; error_log /dev/null; access_log /dev/null; } 改成下面就可以了 location = /livewire/livewire.js { expires off; try_files $uri......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/livewirejs" role="button">livewirejs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
 
           </div>
         
@@ -824,7 +831,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 

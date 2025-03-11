@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dva on 代码笔记</title>
+    <link>https://glitterlip.github.io/tags/dva/</link>
+    <description>Recent content in dva on 代码笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zn-Hans</language>
+    <lastBuildDate>Tue, 11 Mar 2025 22:26:32 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/dva/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React性能优化</title>
+      <link>https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Tue, 11 Mar 2025 22:26:32 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</guid>
+      <description>迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡&amp;hellip;能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡&amp;hellip; 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro</description>
+    </item>
+    
+  </channel>
+</rss>

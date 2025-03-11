@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (40)</span>
+                <span>Blog (41)</span>
               </a>
             </li>
           
@@ -322,6 +322,8 @@
             <li><a href="https://glitterlip.github.io/tags/aws" role="button"><span>aws (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -377,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -402,6 +404,8 @@
             <li><a href="https://glitterlip.github.io/tags/umijs" role="button"><span>umijs (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
+        
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -442,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  40 posts
+                  41 posts
                 </div>
               
             </div>
@@ -488,6 +492,66 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">React性能优化</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Mar 11, 2025</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>2 minutes read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡…能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡… 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/zustand" role="button">zustand </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/dva" role="button">dva </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -610,66 +674,6 @@
 </div>
 
           
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2024-07/typeorm/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Typeorm</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Jul 25, 2024</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      在typeorm里orderby 使用 coalesce 函数 const q = this.announcementRepository.createQueryBuilder( &#39;announcement&#39;, ); q.orderBy(`COALESCE(announcement.scheduled_at, announcement.updated_at, announcement.created_at)`, &#39;DESC&#39;) //这么写 会报错 &#34;COALESCE(`announcement&#34; alias was not found. Maybe you forgot to join it? //要先addselect 添加alias 然后 q.orderBy(`COALESCE(announcement_scheduled_at, announcement_updated_at, announcement_created_at)`, &#39;DESC&#39;) 真的是无语了,为啥typeorm 连个orderByBaw的方法都没有,自带的raw方法返回的是FindOperator???......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/nodejs" role="button">nodejs </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/typeorm" role="button">typeorm </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/nestjs" role="button">nestjs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
             
         </div>
       </div>
@@ -716,7 +720,7 @@
   
   <div class="copyright py-4">
     
-    <span>  2016 - 2024 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
+    <span>  2016 - 2025 &copy; | Theme <a href='https://github.com/orianna-zzo/AllinOne' target="_blank">AllinOne</a> by <a href='https://github.com/orianna-zzo' target="_blank">Orianna</a>  </span>
   </div>
   
 
