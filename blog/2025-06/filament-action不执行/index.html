@@ -7,24 +7,24 @@
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1" />
   <meta name="author" content="Paramita">
-  <meta name="description" content="迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡&hellip; 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro">
+  <meta name="description" content="filament的resource列表页table使用了groupBy分组统计,设置column action后点击不执行 期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action. 解决方法是重写对应resource的ListRecords实现类的getTableRecordKey和getTableR">
 
-  <meta property="og:title" content="React性能优化" />
-<meta property="og:description" content="迫于dva4年没更新,把老项目切换成zustand,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡 Hooks useEffect,useMemo,useCallback 这几个hooks全用上了,还是有点卡&hellip; 控制台打开网络请求,也不慢啊😥 React DevTools 这个时候可以使用React DevTools来查看性能 React DevTools是一个浏览器插件,可以查看React组件的层级结构,状态和性能 React DevTools的Pro" />
+  <meta property="og:title" content="Filament action不执行" />
+<meta property="og:description" content="filament的resource列表页table使用了groupBy分组统计,设置column action后点击不执行 期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action. 解决方法是重写对应resource的ListRecords实现类的getTableRecordKey和getTableR" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" /><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2025-03-11T22:26:32+08:00" />
-<meta property="article:modified_time" content="2025-03-11T22:26:32+08:00" />
+<meta property="og:url" content="https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2025-06-18T10:57:04+08:00" />
+<meta property="article:modified_time" content="2025-06-18T10:57:04+08:00" />
 
 
 
   <title>
   
-       React性能优化 | 代码笔记 
+       Filament action不执行 | 代码笔记 
   
   </title>
 
-  <link rel="canonical" href="https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">
+  <link rel="canonical" href="https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/">
 
   
   
@@ -286,16 +286,16 @@
     
   </ul>
 
-  <div class="px-4 post-heading">React性能优化</div>
+  <div class="px-4 post-heading">Filament action不执行</div>
 
   <ul class="post-meta li-x mt-1">
     
-      <li>Mar 11, 2025</li>
+      <li>Jun 18, 2025</li>
     
 
     
       <li class="middot"></li>
-      <li>2 minutes read</li>
+      <li>One minute read</li>
     
   </ul>
   
@@ -304,35 +304,24 @@
 
 
           <div class="post-content markdown">
-            <p>迫于<code>dva</code>4年没更新,把老项目切换成<code>zustand</code>,用起来真的简单,完美支持typescript,但是换完之后真的好卡&hellip;能感觉出来的那种卡</p>
-<h2 id="hooks">Hooks</h2>
-<p><code>useEffect</code>,<code>useMemo</code>,<code>useCallback</code> 这几个hooks全用上了,还是有点卡&hellip;</p>
-<p>控制台打开网络请求,也不慢啊😥</p>
-<h2 id="react-devtools">React DevTools</h2>
-<p>这个时候可以使用<code>React DevTools</code>来查看性能</p>
-<p><code>React DevTools</code>是一个浏览器插件,可以查看<code>React</code>组件的层级结构,状态和性能</p>
-<p><code>React DevTools</code>的<code>Profiler</code>功能可以帮助我们找到性能瓶颈,首先右上角设置里勾选<code> Highlight updates when components render.</code> 这样当组件更新渲染时候会高亮显示,进行了一下比较卡的操作,发现组件一直在rerender</p>
-<p>然后点击<code>Start profiling</code>进行性能检测,进行了一下比较卡的操作,点击<code>Stop profiling</code>,等一会就会自动刷新性能报告,有一个<code>Flamegraph</code>的图表,可以看到每个组件的渲染时间,找到耗时的组件,进行优化,还有一个<code>Ranked chart</code>可以看到每个组件的更新次数,找到更新频繁的组件,进行优化</p>
-<h2 id="why-did-you-render-vs-usewhydidyouupdate">why-did-you-render vs useWhyDidYouUpdate</h2>
-<p><code>why-did-you-render</code> 是一个<code>React</code>组件更新检测工具,可以帮助我们找到不必要的组件更新,安装后在入口文件引入即可,有些项目可能配置起来比较麻烦</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NODE_ENV</span> <span class="o">===</span> <span class="s1">&#39;development&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">whyDidYouRender</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;@welldone-software/why-did-you-render&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">  <span class="nx">whyDidYouRender</span><span class="p">(</span><span class="nx">React</span><span class="p">,</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">trackAllPureComponents</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">  <span class="p">});</span>
+            <p>filament的resource列表页table使用了<code>groupBy</code>分组统计,设置column action后点击不执行</p>
+<p>期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action.</p>
+<p>解决方法是重写对应resource的<code>ListRecords</code>实现类的<code>getTableRecordKey</code>和<code>getTableRecord</code>方法,返回记录即可触发</p>
+<p>例如对于产品来说,有一个按照产品分类统计的table,主键设置成<code>product_cat</code>,返回第一条这个分类的产品即可</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTableRecordKey</span><span class="p">(</span><span class="nx">Model</span> <span class="nv">$record</span><span class="p">)</span><span class="o">:</span> <span class="nx">string</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$record</span><span class="o">-&gt;</span><span class="na">product_cat</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTableRecord</span><span class="p">(</span><span class="o">?</span><span class="nx">string</span> <span class="nv">$key</span><span class="p">)</span><span class="o">:</span> <span class="o">?</span><span class="nx">Model</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getTableQuery</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;product_cat&#39;</span><span class="p">,</span> <span class="nv">$key</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">first</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span></code></pre></div><p>action逻辑</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nx">Tables\Actions\Action</span><span class="o">::</span><span class="na">make</span><span class="p">(</span><span class="s1">&#39;detail_&#39;</span><span class="o">.</span><span class="nv">$detail</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">modal</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">modalContent</span><span class="p">(</span><span class="k">function</span> <span class="p">(</span><span class="nv">$livewire</span><span class="p">,</span> <span class="nv">$record</span><span class="p">,</span> <span class="nx">Table</span> <span class="nv">$table</span><span class="p">)</span> <span class="k">use</span> <span class="p">(</span><span class="nv">$detail</span><span class="p">)</span> <span class="p">{</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p>打开控制台,可以看到组件名,以及更新原因</p>
-<p><code>useWhyDidYouUpdate</code>是<code>aHooks</code>的组件更新检测hook,这个hook必须要自己去手动设置观测数据才行,不过0配置,用起来比较简单,但是有可能你只观测了A,实际上B才是问题所在,这样就会漏掉问题</p>
-<h2 id="优化">优化</h2>
-<p>最后发现是因为</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">store</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//这么写是不对的,appstore里任意一项数据变化都会导致组件更新
-</span></span></span></code></pre></div><p>改成</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-typescript" data-lang="typescript"><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="c1">//只用了一个name还好说,万一用了多个,就要写多个useAppStore,这个时候可以使用useShallow
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="p">[</span><span class="nx">name</span><span class="p">,</span><span class="nx">setName</span><span class="p">,</span><span class="nx">age</span><span class="p">,</span><span class="nx">setAge</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useAppStore</span><span class="p">(</span><span class="nx">useShallow</span><span class="p">(</span><span class="nx">state</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="nx">state</span><span class="p">.</span><span class="nx">name</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">setName</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">age</span><span class="p">,</span><span class="nx">state</span><span class="p">.</span><span class="nx">setAge</span><span class="p">]))</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>在modalcontent里可以通过依赖注入获取对应信息</p>
+
           </div>
 
           
@@ -367,23 +356,16 @@
           <div class="row pt-3">
             <div class="col-md-6">
               
-                <a href=https://glitterlip.github.io/blog/2024-12/mecab%E6%97%A5%E8%AF%AD%E5%88%86%E8%AF%8D/ class="post-meta">Previous
+                <a href=https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/ class="post-meta">Previous
                   <div class="pt-2 pb-5 d-flex">
                     <i class="fas fa-angle-left text-grey font-weight-bold mr-2 active-color"></i>
-                    <span>Mecab日语分词</span>
+                    <span>React性能优化</span>
                   </div>
                 </a>
               
             </div>
             
             <div class="col-md-6 text-right" >
-              
-                <a href=https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/ class="post-meta">Next
-                  <div class="pt-2 pb-5 flex-reverse">
-                    <i class="fas fa-angle-right text-grey font-weight-bold ml-2 active-color"></i>
-                    <span>Filament action不执行</span>
-                  </div>
-                </a>
               
             </div>
           </div>

@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (41)</span>
+                <span>Blog (42)</span>
               </a>
             </li>
           
@@ -323,7 +323,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -379,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -405,7 +405,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -446,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  41 posts
+                  42 posts
                 </div>
               
             </div>
@@ -492,6 +492,66 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Filament action不执行</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jun 18, 2025</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      filament的resource列表页table使用了groupBy分组统计,设置column action后点击不执行 期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action. 解决方法是重写对应resource的ListRecords实现类的getTableRecordKey和getTableR......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/zustand" role="button">zustand </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/dva" role="button">dva </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -603,66 +663,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/japanese" role="button">japanese </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2024-09/filamentphp/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Filamentphp</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Sep 6, 2024</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      filamentphp 是可以修改代码自动刷新页面的,不仅是blade文件,resource文件也可以 同事做的项目初始化,我接手的时候,filament已经安装好了,无奈hot reload一直不行,每次改完都要按一下刷新,太难了 按照以下步骤检查了配置 env的APP_URL配置正确 vite的配置也对 import {defineConfig} from &#39;vite&#39;; import laravel from &#39;laravel-vite-plugin&#39;; export default defineConfig({ plugins: [ laravel({ input: [ &#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;, &#39;resources/css/filament/admin/theme.css&#39; ], refresh: true, }), ], }); tailwindcss也没啥问题 import defaultTheme from &#39;tailwindcss/defaultTheme&#39;; import forms from &#39;@tailwindcss/forms&#39;; /** @type {import(&#39;tailwindcss&#39;).Config} */ export default { content: [ &#39;./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php&#39;, &#39;./storage/framework/views/*.php&#39;, &#39;./resources/views/**/*.blade.php&#39;, ],......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/php" role="button">php </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/filamentphp" role="button">filamentphp </a></li>
       
     
   </div>

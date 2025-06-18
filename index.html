@@ -327,7 +327,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (41)</span>
+                <span>Blog (42)</span>
               </a>
             </li>
           
@@ -366,7 +366,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -422,7 +422,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -448,7 +448,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -486,6 +486,66 @@
         
           
           <div>
+              
+                  <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">Filament action不执行</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Jun 18, 2025</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      filament的resource列表页table使用了groupBy分组统计,设置column action后点击不执行 期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action. 解决方法是重写对应resource的ListRecords实现类的getTableRecordKey和getTableR......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/react" role="button">react </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/zustand" role="button">zustand </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/dva" role="button">dva </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
+
               
                   <div class="post-wrapper white-bg post-card">
   
@@ -716,60 +776,6 @@
       
     
       <li><a href="https://glitterlip.github.io/tags/nestjs" role="button">nestjs </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-              
-                  <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2023-12/laravel-tinker-%E6%96%B9%E5%90%91%E9%94%AE%E5%A4%B1%E6%95%88/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">laravel tinker 方向键失效</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Dec 24, 2023</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      本机用的zsh&#43;iterm2,使用tinker时,是可以通过上下方向键查找历史命令,左右方向键移动光标的,奈何ssh到服务器就乱码了,每次都要edit使用vim来改,改完再保存执行,真的蛋疼. 具体是在tinker中 按上下左右方向键,出来的确是^[[A^[[B^[[D^[[C 乱码. 开始以为是iterm2的问题,因为之前碰到过iterm2 和 tmux 异常滚动的问题 改了几个参数没有效果…. 继续go......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
       
     
   </div>

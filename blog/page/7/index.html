@@ -285,7 +285,7 @@
           
             <li class="py-1">
               <a href="https://glitterlip.github.io/categories/blog">
-                <span>Blog (41)</span>
+                <span>Blog (42)</span>
               </a>
             </li>
           
@@ -323,7 +323,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/cloudflare" role="button"><span>cloudflare (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/dva" role="button"><span>dva (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/echo" role="button"><span>echo (2)</span></a></li>
         
@@ -379,7 +379,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/r2" role="button"><span>r2 (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (2)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/react" role="button"><span>react (3)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/reactjs" role="button"><span>reactjs (9)</span></a></li>
         
@@ -405,7 +405,7 @@
         
             <li><a href="https://glitterlip.github.io/tags/workers" role="button"><span>workers (1)</span></a></li>
         
-            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (1)</span></a></li>
+            <li><a href="https://glitterlip.github.io/tags/zustand" role="button"><span>zustand (2)</span></a></li>
         
             <li><a href="https://glitterlip.github.io/tags/%E5%85%8D%E7%AD%BE" role="button"><span>免签 (1)</span></a></li>
         
@@ -446,7 +446,7 @@
               
                 <div class="px-2 middot"></div>
                 <div>
-                  41 posts
+                  42 posts
                 </div>
               
             </div>
@@ -492,6 +492,63 @@
       </li>
     </ul>
           </div>
+
+          
+              <div class="post-wrapper white-bg post-card">
+  
+  <a href="https://glitterlip.github.io/blog/2022-12/golang%E5%AE%9E%E7%8E%B0laravel%E7%9A%84cache-remember%E6%96%B9%E6%B3%95/">
+    <div class="post-header text-center">
+      <div class="px-4 post-heading">golang实现laravel的cache remember方法</div>
+      <ul class="post-meta li-x mt-1">
+        
+          <li>Dec 27, 2022</li>
+        
+    
+        
+          <li class="middot"></li>
+          <li>One minute read</li>
+        
+      </ul>
+    </div>
+    
+
+    
+      怀念laravel的缓存，太方便了，用golang实现一下 安利一下这个包 gookit/cache type Cache interface { // basic operation Has(key string) bool Get(key string) interface{} Set(key string, val interface{}, ttl time.Duration) (err error) Del(key string) error // multi operation GetMulti(keys []string) map[string]interface{} SetMulti(values map[string]interface{}, ttl time.Duration) (err error) DelMulti(keys []string) error // clear and close Clear() error Close() error } 这个包通过适配各种常用的缓存驱动来提供统一的封装好的缓存操作方法。切换驱动只需要一行代码就行。 func Remember(ctx context.Context, pointer interface{}, key string, ttl time.Duration, cb func() error) error { if cache.Has(key) { //如果缓存有值，则反序列化 return Json.Unmarshal(cache.Get(key).([]byte), pointer) } else { //如果没有值，调用callback， err := cb() if err != nil { return err } /......
+    
+  </a>
+
+  
+  
+  <div class="post-meta li-x mt-2 div-x">
+    <div>
+      
+        
+          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
+        
+      
+      
+    </div>
+   
+    <div>
+      
+        
+<div class="li-x div-x post-meta">
+  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
+  <div class="tags-sm">
+    
+      <li><a href="https://glitterlip.github.io/tags/golang" role="button">golang </a></li>
+      
+    
+      <li><a href="https://glitterlip.github.io/tags/laravel" role="button">laravel </a></li>
+      
+    
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+</div>
 
           
               <div class="post-wrapper white-bg post-card">
@@ -594,63 +651,6 @@
   <div class="tags-sm">
     
       <li><a href="https://glitterlip.github.io/tags/java" role="button">java </a></li>
-      
-    
-  </div>
-</div>
-      
-    </div>
-  </div>
-
-</div>
-
-          
-              <div class="post-wrapper white-bg post-card">
-  
-  <a href="https://glitterlip.github.io/blog/2022-11/aspose-slide-%E7%94%9F%E6%88%90%E5%9B%BE%E7%89%87%E7%BC%A9%E7%95%A5%E5%9B%BE%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/">
-    <div class="post-header text-center">
-      <div class="px-4 post-heading">Aspose Slide 生成图片缩略图中文乱码</div>
-      <ul class="post-meta li-x mt-1">
-        
-          <li>Nov 15, 2022</li>
-        
-    
-        
-          <li class="middot"></li>
-          <li>One minute read</li>
-        
-      </ul>
-    </div>
-    
-
-    
-      aspose slide生成图片缩略图中文乱码 使用aspose slide 给ppt生成图片缩略图，mac上没问题，部署到服务器上，生成的缩略图中文全部都是方块 把mac的字体传到服务器上还是不行,读取ppt时会出现 class com.aspose.slides.PptxReadException: Index 32 out of bounds for length 32 ---&gt; class com.aspose.slides.ms.pbdb106a0.bt com.aspose.slides.avm.do(Unknown Source) com.aspose.slides.Presentation.int(Unknown Source) com.aspose.slides.Presentation.if(Unknown Source) com.aspose.slides.Presentation.&lt;init&gt;(Unknown Source) com.aspose.slides.Presentation.&lt;init&gt;(Unknown Source) 这个错误，后来换成使用win10的字体可以了 centos7的步骤 把字体上传到 /usr/share/fonts/win 目录 cd /usr/share/fonts/win mkfontscale //建立索引 fc-cache //刷新缓存 fc-list //查看字体列表 fc-list :lang=zh......
-    
-  </a>
-
-  
-  
-  <div class="post-meta li-x mt-2 div-x">
-    <div>
-      
-        
-          <li><a href="https://glitterlip.github.io/categories/blog"><i class="fas fa-folder-open pr-1" aria-hidden="true"></i> blog </a></li>
-        
-      
-      
-    </div>
-   
-    <div>
-      
-        
-<div class="li-x div-x post-meta">
-  <li class="pr-0"><a href="https://glitterlip.github.io/tags/"><i class="fas fa-tags"></i></a></li>
-  <div class="tags-sm">
-    
-      <li><a href="https://glitterlip.github.io/tags/aspose" role="button">aspose </a></li>
-      
-    
-      <li><a href="https://glitterlip.github.io/tags/ppt" role="button">ppt </a></li>
       
     
   </div>

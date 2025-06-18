@@ -6,7 +6,16 @@
     <description>Recent content in zustand on 代码笔记</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zn-Hans</language>
-    <lastBuildDate>Tue, 11 Mar 2025 22:26:32 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/zustand/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Jun 2025 10:57:04 +0800</lastBuildDate><atom:link href="https://glitterlip.github.io/tags/zustand/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Filament action不执行</title>
+      <link>https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/</link>
+      <pubDate>Wed, 18 Jun 2025 10:57:04 +0800</pubDate>
+      
+      <guid>https://glitterlip.github.io/blog/2025-06/filament-action%E4%B8%8D%E6%89%A7%E8%A1%8C/</guid>
+      <description>filament的resource列表页table使用了groupBy分组统计,设置column action后点击不执行 期望是点击column弹出modal,debug后发现点击column时filament会根据当前行主键查数据库,找不到当前行记录,就不会触发相关action. 解决方法是重写对应resource的ListRecords实现类的getTableRecordKey和getTableR</description>
+    </item>
+    
     <item>
       <title>React性能优化</title>
       <link>https://glitterlip.github.io/blog/2025-03/react%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</link>
